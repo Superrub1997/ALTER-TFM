@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ALTER-EMF/src" modelPluginID="ALTER-EMF" modelName="Physics"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Physics.ecore</foreignModel>
+  <genPackages prefix="Physics" disposableProviderFactory="true" ecorePackage="Physics.ecore#/">
+    <genClasses ecoreClass="Physics.ecore#//Physic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Physic/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Physics.ecore#//Class">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Class/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Physics.ecore#//PhysicBody">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/mass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/bodyType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/charge"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/friction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/rollingFriction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/restitution"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/damping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/angularDamping"/>
+    </genClasses>
+    <genClasses ecoreClass="Physics.ecore#//Force">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Force/xVector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Force/yVector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Force/zVector"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Force/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Force/gesture"/>
+    </genClasses>
+    <genClasses ecoreClass="Physics.ecore#//BitMasks">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//BitMasks/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//BitMasks/collision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//BitMasks/contactTest"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

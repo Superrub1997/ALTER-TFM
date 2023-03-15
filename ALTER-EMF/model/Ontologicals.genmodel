@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ALTER-EMF/src" modelPluginID="ALTER-EMF" modelName="Ontologicals"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Ontologicals.ecore</foreignModel>
+  <genPackages prefix="Ontologicals" disposableProviderFactory="true" ecorePackage="Ontologicals.ecore#/">
+    <genClasses ecoreClass="Ontologicals.ecore#//Ontological">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/URI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/external"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/onlyCodes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/bluetooth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/firebase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/physics"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/gameloop"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Ontological/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="Ontologicals.ecore#//Class">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Class/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Class/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Class/noSCN"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Class/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Class/references"/>
+    </genClasses>
+    <genClasses ecoreClass="Ontologicals.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/default"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/isParam"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/isKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/readOnly"/>
+    </genClasses>
+    <genClasses ecoreClass="Ontologicals.ecore#//Reference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/containtment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/opposite"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

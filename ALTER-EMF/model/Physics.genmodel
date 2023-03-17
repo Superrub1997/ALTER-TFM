@@ -7,9 +7,13 @@
   <genPackages prefix="Physics" disposableProviderFactory="true" ecorePackage="Physics.ecore#/">
     <genClasses ecoreClass="Physics.ecore#//Physic">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Physic/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Physics.ecore#//Physic/classes"/>
     </genClasses>
     <genClasses ecoreClass="Physics.ecore#//Class">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Class/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Physics.ecore#//Class/physicBody"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Physics.ecore#//Class/bitMasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Physics.ecore#//Class/forces"/>
     </genClasses>
     <genClasses ecoreClass="Physics.ecore#//PhysicBody">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/mass"/>

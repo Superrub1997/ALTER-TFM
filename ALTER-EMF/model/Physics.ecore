@@ -3,9 +3,17 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Physics" nsURI="http://physics/1.0" nsPrefix="Physics">
   <eClassifiers xsi:type="ecore:EClass" name="Physic">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" lowerBound="1"
+        upperBound="-1" eType="#//Class" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physicBody" lowerBound="1"
+        eType="#//PhysicBody" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bitMasks" lowerBound="1"
+        eType="#//BitMasks" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forces" upperBound="-1"
+        eType="#//Force" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PhysicBody">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mass" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>

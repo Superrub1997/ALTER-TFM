@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ontologicals:Ontological
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Ontologicals="http://ontologicals/1.0"
+    xsi:schemaLocation="http://ontologicals/1.0 Ontologicals.ecore"
+    name="skeet"
+    physics="true"
+    gameloop="true">
+  <classes name="bullet"/>
+  <classes name="target"/>
+  <classes name="player"
+      noSCN="true">
+    <attributes
+        name="ammo"
+        type="Int"
+        min="1"
+        max="1"
+        default="6"/>
+  </classes>
+</Ontologicals:Ontological>

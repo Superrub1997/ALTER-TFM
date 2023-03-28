@@ -13,9 +13,10 @@
         eType="#//Collision" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actionsTriggers" upperBound="-1"
         eType="#//Trigger" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="gamepad" eType="#//GamePad"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gamepad" upperBound="-1"
+        eType="#//GamePad" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ontoModel" lowerBound="1"
+        eType="ecore:EClass /ALTER-EMF/model/Ontologicals.ecore#//Ontological"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GamePad">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -24,12 +25,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjInit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="posX" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="posY" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="posZ" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
         eType="#//Rule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ontoClass" lowerBound="1"
+        eType="ecore:EClass /ALTER-EMF/model/Ontologicals.ecore#//Class"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScoreSystem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -42,8 +44,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scoreChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeTrigger" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="physicChanges" eType="#//PhysicChange"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physicChanges" upperBound="-1"
+        eType="#//PhysicChange" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Collision">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classA" lowerBound="1"
@@ -54,8 +56,26 @@
         eType="#//Trigger"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PhysicChange">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="ecore:EClass /ALTER-EMF/model/Ontologicals.ecore#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="changeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" lowerBound="1"
+        eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="object" lowerBound="1"
+        eType="#//ObjInit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="force" eType="ecore:EClass /ALTER-EMF/model/Physics.ecore#//Force"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="#//Position"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Action">
+    <eLiterals name="create"/>
+    <eLiterals name="edit" value="1"/>
+    <eLiterals name="delete" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Position">
+    <eLiterals name="front"/>
+    <eLiterals name="default" value="1"/>
+    <eLiterals name="back" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Rule">
@@ -95,7 +115,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="LogicOps">
     <eLiterals name="Or"/>
-    <eLiterals name="And"/>
+    <eLiterals name="And" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ArithmOps">
     <eLiterals name="equal"/>

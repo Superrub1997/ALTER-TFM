@@ -12,8 +12,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/onlyCodes"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/bluetooth"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/firebase"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/physics"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/gameloop"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Ontological/classes"/>
     </genClasses>
     <genClasses ecoreClass="Ontologicals.ecore#//Class">

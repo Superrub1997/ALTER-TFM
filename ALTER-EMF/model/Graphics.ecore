@@ -2,13 +2,11 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Graphics" nsURI="http://graphics/1.0" nsPrefix="Graphics">
   <eClassifiers xsi:type="ecore:EClass" name="Graphic">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="URI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" lowerBound="1"
-        upperBound="-1" eType="#//Class" containment="true"/>
+        upperBound="-1" eType="#//GraphicClass" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ontoModel" eType="ecore:EClass /ALTER-EMF/model/Ontologicals.ecore#//Ontological"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Class">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphicClass">
     <eStructuralFeatures xsi:type="ecore:EReference" name="versions" lowerBound="1"
         eType="#//Versions" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="vname" lowerBound="1" eType="#//VersionName"
@@ -21,6 +19,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="materialAttributes" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ontoClass" lowerBound="1"
+        eType="ecore:EClass /ALTER-EMF/model/Ontologicals.ecore#//Class"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Versions">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="v1" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -34,7 +34,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraints">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="planes" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="#//Planes"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ilumination" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sizeMax" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
@@ -69,5 +69,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Planes">
+    <eLiterals name="any"/>
+    <eLiterals name="horizontal" value="1"/>
+    <eLiterals name="vertical" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

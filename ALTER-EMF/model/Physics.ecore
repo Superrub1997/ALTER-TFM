@@ -4,8 +4,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Physic">
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" lowerBound="1"
         upperBound="-1" eType="#//PhysicClass" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ontoModel" lowerBound="1"
-        eType="ecore:EClass Ontologicals.ecore#//Ontological"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PhysicClass">
     <eStructuralFeatures xsi:type="ecore:EReference" name="physicBody" lowerBound="1"

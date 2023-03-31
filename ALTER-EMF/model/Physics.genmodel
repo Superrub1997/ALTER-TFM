@@ -12,7 +12,6 @@
     </genEnums>
     <genClasses ecoreClass="Physics.ecore#//Physic">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Physics.ecore#//Physic/classes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Physics.ecore#//Physic/ontoModel"/>
     </genClasses>
     <genClasses ecoreClass="Physics.ecore#//PhysicClass">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Physics.ecore#//PhysicClass/physicBody"/>
@@ -52,6 +51,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/bluetooth"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/firebase"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Ontological/classes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Ontological/graphic"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Ontological/physic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Ontological/gameloop"/>
     </genClasses>
     <genClasses ecoreClass="Ontologicals.ecore#//Class">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Class/name"/>
@@ -78,6 +80,161 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/max"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/target"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/opposite"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Graphics" ecorePackage="Graphics.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Graphics.ecore#//Planes">
+      <genEnumLiterals ecoreEnumLiteral="Graphics.ecore#//Planes/any"/>
+      <genEnumLiterals ecoreEnumLiteral="Graphics.ecore#//Planes/horizontal"/>
+      <genEnumLiterals ecoreEnumLiteral="Graphics.ecore#//Planes/vertical"/>
+    </genEnums>
+    <genClasses ecoreClass="Graphics.ecore#//Graphic">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Graphics.ecore#//Graphic/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="Graphics.ecore#//GraphicClass">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Graphics.ecore#//GraphicClass/versions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Graphics.ecore#//GraphicClass/vname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Graphics.ecore#//GraphicClass/constraints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Graphics.ecore#//GraphicClass/connections"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//GraphicClass/showAttributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//GraphicClass/materialAttributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Graphics.ecore#//GraphicClass/ontoClass"/>
+    </genClasses>
+    <genClasses ecoreClass="Graphics.ecore#//Versions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Versions/v1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Versions/v2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Versions/v3"/>
+    </genClasses>
+    <genClasses ecoreClass="Graphics.ecore#//VersionName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//VersionName/v1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//VersionName/v2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//VersionName/v3"/>
+    </genClasses>
+    <genClasses ecoreClass="Graphics.ecore#//Constraints">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/planes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/ilumination"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/sizeMax"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/sizeMin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/sizeInit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/overlapping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/xToOriginPos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/yToOriginPos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/zToOriginPos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/textColor"/>
+    </genClasses>
+    <genClasses ecoreClass="Graphics.ecore#//Connection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/textColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/decorator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/decoratorPos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/pattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/position"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Gameloop" ecorePackage="Gameloop.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Gameloop.ecore#//Action">
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//Action/create"/>
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//Action/edit"/>
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//Action/delete"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Gameloop.ecore#//Position">
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//Position/front"/>
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//Position/default"/>
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//Position/back"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Gameloop.ecore#//LogicOps">
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//LogicOps/Or"/>
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//LogicOps/And"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Gameloop.ecore#//ArithmOps">
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//ArithmOps/equal"/>
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//ArithmOps/greater"/>
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//ArithmOps/greaterEqual"/>
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//ArithmOps/lower"/>
+      <genEnumLiterals ecoreEnumLiteral="Gameloop.ecore#//ArithmOps/lowerEqual"/>
+    </genEnums>
+    <genClasses ecoreClass="Gameloop.ecore#//Game">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Game/win"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Game/lose"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Game/start"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Game/objInit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Game/score"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Game/collisions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Game/actionsTriggers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Game/gamepad"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//GamePad">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//GamePad/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gameloop.ecore#//GamePad/trigger"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//ObjInit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ObjInit/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ObjInit/posX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ObjInit/posY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ObjInit/posZ"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//ObjInit/rules"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gameloop.ecore#//ObjInit/class"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//ScoreSystem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ScoreSystem/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ScoreSystem/finish"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ScoreSystem/lives"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//Trigger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Trigger/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Trigger/scoreChange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Trigger/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Trigger/timeTrigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Trigger/physicChanges"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//Collision">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Collision/classA"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Collision/classB"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Collision/action"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//PhysicChange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//PhysicChange/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//PhysicChange/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//PhysicChange/changeValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//PhysicChange/action"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gameloop.ecore#//PhysicChange/object"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gameloop.ecore#//PhysicChange/force"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//PhysicChange/position"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gameloop.ecore#//PhysicChange/class"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Gameloop.ecore#//Condition"/>
+    <genClasses ecoreClass="Gameloop.ecore#//Rule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Rule/condition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Rule/action"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Gameloop.ecore#//LogicOp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//LogicOp/left"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//Not"/>
+    <genClasses ecoreClass="Gameloop.ecore#//Arithmetic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Arithmetic/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Arithmetic/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Arithmetic/right"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Gameloop.ecore#//Value"/>
+    <genClasses ecoreClass="Gameloop.ecore#//AllInstances">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//AllInstances/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//AttributeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//AttributeValue/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//AttributeValue/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//ConstantValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ConstantValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//Binary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Binary/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Binary/right"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

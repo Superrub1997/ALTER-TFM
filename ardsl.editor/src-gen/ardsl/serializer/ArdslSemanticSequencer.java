@@ -3,10 +3,37 @@
  */
 package ardsl.serializer;
 
+import Gameloop.AllInstances;
+import Gameloop.Arithmetic;
+import Gameloop.AttributeValue;
+import Gameloop.Binary;
+import Gameloop.Collision;
+import Gameloop.ConstantValue;
+import Gameloop.Game;
+import Gameloop.GamePad;
+import Gameloop.GameloopPackage;
+import Gameloop.Not;
+import Gameloop.ObjInit;
+import Gameloop.PhysicChange;
+import Gameloop.Rule;
+import Gameloop.ScoreSystem;
+import Gameloop.Trigger;
+import Graphics.Constraints;
+import Graphics.Graphic;
+import Graphics.GraphicClass;
+import Graphics.GraphicsPackage;
+import Graphics.VersionName;
+import Graphics.Versions;
 import Ontologicals.Attribute;
 import Ontologicals.Ontological;
 import Ontologicals.OntologicalsPackage;
 import Ontologicals.Reference;
+import Physics.BitMasks;
+import Physics.Force;
+import Physics.Physic;
+import Physics.PhysicBody;
+import Physics.PhysicClass;
+import Physics.PhysicsPackage;
 import ardsl.services.ArdslGrammarAccess;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -16,7 +43,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -30,7 +59,70 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		ParserRule rule = context.getParserRule();
 		Action action = context.getAssignedAction();
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
-		if (epackage == OntologicalsPackage.eINSTANCE)
+		if (epackage == GameloopPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case GameloopPackage.ALL_INSTANCES:
+				sequence_AllInstances(context, (AllInstances) semanticObject); 
+				return; 
+			case GameloopPackage.ARITHMETIC:
+				sequence_Arithmetic(context, (Arithmetic) semanticObject); 
+				return; 
+			case GameloopPackage.ATTRIBUTE_VALUE:
+				sequence_AttributeValue(context, (AttributeValue) semanticObject); 
+				return; 
+			case GameloopPackage.BINARY:
+				sequence_Binary(context, (Binary) semanticObject); 
+				return; 
+			case GameloopPackage.COLLISION:
+				sequence_Collisions(context, (Collision) semanticObject); 
+				return; 
+			case GameloopPackage.CONSTANT_VALUE:
+				sequence_ConstantValue(context, (ConstantValue) semanticObject); 
+				return; 
+			case GameloopPackage.GAME:
+				sequence_Gameloop(context, (Game) semanticObject); 
+				return; 
+			case GameloopPackage.GAME_PAD:
+				sequence_GamePad(context, (GamePad) semanticObject); 
+				return; 
+			case GameloopPackage.NOT:
+				sequence_Not(context, (Not) semanticObject); 
+				return; 
+			case GameloopPackage.OBJ_INIT:
+				sequence_ObjInit(context, (ObjInit) semanticObject); 
+				return; 
+			case GameloopPackage.PHYSIC_CHANGE:
+				sequence_PhysicChanges(context, (PhysicChange) semanticObject); 
+				return; 
+			case GameloopPackage.RULE:
+				sequence_Rule(context, (Rule) semanticObject); 
+				return; 
+			case GameloopPackage.SCORE_SYSTEM:
+				sequence_Score(context, (ScoreSystem) semanticObject); 
+				return; 
+			case GameloopPackage.TRIGGER:
+				sequence_Actions(context, (Trigger) semanticObject); 
+				return; 
+			}
+		else if (epackage == GraphicsPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case GraphicsPackage.CONSTRAINTS:
+				sequence_Constraints(context, (Constraints) semanticObject); 
+				return; 
+			case GraphicsPackage.GRAPHIC:
+				sequence_Graphic(context, (Graphic) semanticObject); 
+				return; 
+			case GraphicsPackage.GRAPHIC_CLASS:
+				sequence_GraphicClass(context, (GraphicClass) semanticObject); 
+				return; 
+			case GraphicsPackage.VERSION_NAME:
+				sequence_VersionName(context, (VersionName) semanticObject); 
+				return; 
+			case GraphicsPackage.VERSIONS:
+				sequence_Versions(context, (Versions) semanticObject); 
+				return; 
+			}
+		else if (epackage == OntologicalsPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case OntologicalsPackage.ATTRIBUTE:
 				sequence_Attribute(context, (Attribute) semanticObject); 
@@ -45,9 +137,120 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				sequence_Reference(context, (Reference) semanticObject); 
 				return; 
 			}
+		else if (epackage == PhysicsPackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case PhysicsPackage.BIT_MASKS:
+				sequence_BitMasks(context, (BitMasks) semanticObject); 
+				return; 
+			case PhysicsPackage.FORCE:
+				sequence_Forces(context, (Force) semanticObject); 
+				return; 
+			case PhysicsPackage.PHYSIC:
+				sequence_Physics(context, (Physic) semanticObject); 
+				return; 
+			case PhysicsPackage.PHYSIC_BODY:
+				sequence_PhysicBody(context, (PhysicBody) semanticObject); 
+				return; 
+			case PhysicsPackage.PHYSIC_CLASS:
+				sequence_PhysicClass(context, (PhysicClass) semanticObject); 
+				return; 
+			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Actions returns Trigger
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=EString 
+	 *         action=BasicActions? 
+	 *         message=EString? 
+	 *         scoreChange=EInt? 
+	 *         timeTrigger=EInt? 
+	 *         (physicChanges+=PhysicChanges physicChanges+=PhysicChanges*)?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Actions(ISerializationContext context, Trigger semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Value returns AllInstances
+	 *     AllInstances returns AllInstances
+	 *
+	 * Constraint:
+	 *     type=EString
+	 * </pre>
+	 */
+	protected void sequence_AllInstances(ISerializationContext context, AllInstances semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.ALL_INSTANCES__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.ALL_INSTANCES__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAllInstancesAccess().getTypeEStringParserRuleCall_1_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Condition returns Arithmetic
+	 *     Arithmetic returns Arithmetic
+	 *
+	 * Constraint:
+	 *     (left=Value op=ArithmOps right=Value)
+	 * </pre>
+	 */
+	protected void sequence_Arithmetic(ISerializationContext context, Arithmetic semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.ARITHMETIC__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.ARITHMETIC__LEFT));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.ARITHMETIC__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.ARITHMETIC__OP));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.ARITHMETIC__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.ARITHMETIC__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getArithmeticAccess().getLeftValueParserRuleCall_0_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getArithmeticAccess().getOpArithmOpsEnumRuleCall_1_0(), semanticObject.getOp());
+		feeder.accept(grammarAccess.getArithmeticAccess().getRightValueParserRuleCall_2_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Value returns AttributeValue
+	 *     AttributeValue returns AttributeValue
+	 *
+	 * Constraint:
+	 *     (class=EString attribute=EString)
+	 * </pre>
+	 */
+	protected void sequence_AttributeValue(ISerializationContext context, AttributeValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.ATTRIBUTE_VALUE__CLASS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.ATTRIBUTE_VALUE__CLASS));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.ATTRIBUTE_VALUE__ATTRIBUTE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAttributeValueAccess().getClassEStringParserRuleCall_0_0(), semanticObject.getClass_());
+		feeder.accept(grammarAccess.getAttributeValueAccess().getAttributeEStringParserRuleCall_2_0(), semanticObject.getAttribute());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * <pre>
@@ -75,6 +278,60 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Condition returns Binary
+	 *     LogicOp returns Binary
+	 *     Binary returns Binary
+	 *
+	 * Constraint:
+	 *     (left=Condition op=LogicOps right=Condition)
+	 * </pre>
+	 */
+	protected void sequence_Binary(ISerializationContext context, Binary semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.LOGIC_OP__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.LOGIC_OP__LEFT));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.BINARY__OP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.BINARY__OP));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.BINARY__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.BINARY__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBinaryAccess().getLeftConditionParserRuleCall_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getBinaryAccess().getOpLogicOpsEnumRuleCall_3_0(), semanticObject.getOp());
+		feeder.accept(grammarAccess.getBinaryAccess().getRightConditionParserRuleCall_5_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BitMasks returns BitMasks
+	 *
+	 * Constraint:
+	 *     (category=EInt collision=EInt contactTest=EInt)
+	 * </pre>
+	 */
+	protected void sequence_BitMasks(ISerializationContext context, BitMasks semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.BIT_MASKS__CATEGORY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.BIT_MASKS__CATEGORY));
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.BIT_MASKS__COLLISION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.BIT_MASKS__COLLISION));
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.BIT_MASKS__CONTACT_TEST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.BIT_MASKS__CONTACT_TEST));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBitMasksAccess().getCategoryEIntParserRuleCall_1_0(), semanticObject.getCategory());
+		feeder.accept(grammarAccess.getBitMasksAccess().getCollisionEIntParserRuleCall_3_0(), semanticObject.getCollision());
+		feeder.accept(grammarAccess.getBitMasksAccess().getContactTestEIntParserRuleCall_5_0(), semanticObject.getContactTest());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Class returns Class
 	 *
 	 * Constraint:
@@ -95,13 +352,365 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Collisions returns Collision
+	 *
+	 * Constraint:
+	 *     (classA=[Class|EString] classB=[Class|EString] action=[Trigger|EString])
+	 * </pre>
+	 */
+	protected void sequence_Collisions(ISerializationContext context, Collision semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.COLLISION__CLASS_A) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.COLLISION__CLASS_A));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.COLLISION__CLASS_B) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.COLLISION__CLASS_B));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.COLLISION__ACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.COLLISION__ACTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCollisionsAccess().getClassAClassEStringParserRuleCall_1_0_1(), semanticObject.eGet(GameloopPackage.Literals.COLLISION__CLASS_A, false));
+		feeder.accept(grammarAccess.getCollisionsAccess().getClassBClassEStringParserRuleCall_3_0_1(), semanticObject.eGet(GameloopPackage.Literals.COLLISION__CLASS_B, false));
+		feeder.accept(grammarAccess.getCollisionsAccess().getActionTriggerEStringParserRuleCall_5_0_1(), semanticObject.eGet(GameloopPackage.Literals.COLLISION__ACTION, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Value returns ConstantValue
+	 *     ConstantValue returns ConstantValue
+	 *
+	 * Constraint:
+	 *     value=EString
+	 * </pre>
+	 */
+	protected void sequence_ConstantValue(ISerializationContext context, ConstantValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.CONSTANT_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.CONSTANT_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConstantValueAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Constraints returns Constraints
+	 *
+	 * Constraint:
+	 *     (
+	 *         planes=Planes 
+	 *         overlapping?='overlaps' 
+	 *         sizeMin=EDouble 
+	 *         sizeMax=EDouble 
+	 *         xToOriginPos=EDouble 
+	 *         yToOriginPos=EDouble 
+	 *         zToOriginPos=EDouble 
+	 *         rotation=EInt
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Constraints(ISerializationContext context, Constraints semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__PLANES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__PLANES));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__OVERLAPPING) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__OVERLAPPING));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__SIZE_MIN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__SIZE_MIN));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__SIZE_MAX) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__SIZE_MAX));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__XTO_ORIGIN_POS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__XTO_ORIGIN_POS));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__YTO_ORIGIN_POS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__YTO_ORIGIN_POS));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__ZTO_ORIGIN_POS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__ZTO_ORIGIN_POS));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__ROTATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.CONSTRAINTS__ROTATION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getConstraintsAccess().getPlanesPlanesEnumRuleCall_1_0(), semanticObject.getPlanes());
+		feeder.accept(grammarAccess.getConstraintsAccess().getOverlappingOverlapsKeyword_2_0(), semanticObject.isOverlapping());
+		feeder.accept(grammarAccess.getConstraintsAccess().getSizeMinEDoubleParserRuleCall_4_0(), semanticObject.getSizeMin());
+		feeder.accept(grammarAccess.getConstraintsAccess().getSizeMaxEDoubleParserRuleCall_6_0(), semanticObject.getSizeMax());
+		feeder.accept(grammarAccess.getConstraintsAccess().getXToOriginPosEDoubleParserRuleCall_8_0(), semanticObject.getXToOriginPos());
+		feeder.accept(grammarAccess.getConstraintsAccess().getYToOriginPosEDoubleParserRuleCall_10_0(), semanticObject.getYToOriginPos());
+		feeder.accept(grammarAccess.getConstraintsAccess().getZToOriginPosEDoubleParserRuleCall_12_0(), semanticObject.getZToOriginPos());
+		feeder.accept(grammarAccess.getConstraintsAccess().getRotationEIntParserRuleCall_14_0(), semanticObject.getRotation());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Forces returns Force
+	 *
+	 * Constraint:
+	 *     (name=EString gesture=EString (xVector=EDouble yVector=EDouble zVector=EDouble)?)
+	 * </pre>
+	 */
+	protected void sequence_Forces(ISerializationContext context, Force semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GamePad returns GamePad
+	 *
+	 * Constraint:
+	 *     (name=EString trigger=[Trigger|EString])
+	 * </pre>
+	 */
+	protected void sequence_GamePad(ISerializationContext context, GamePad semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.GAME_PAD__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.GAME_PAD__NAME));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.GAME_PAD__TRIGGER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.GAME_PAD__TRIGGER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGamePadAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getGamePadAccess().getTriggerTriggerEStringParserRuleCall_2_0_1(), semanticObject.eGet(GameloopPackage.Literals.GAME_PAD__TRIGGER, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Gameloop returns Game
+	 *
+	 * Constraint:
+	 *     (
+	 *         start=EString 
+	 *         win=EString 
+	 *         lose=EString 
+	 *         score=Score 
+	 *         (actionsTriggers+=Actions actionsTriggers+=Actions*)? 
+	 *         (collisions+=Collisions collisions+=Collisions*)? 
+	 *         gamepad+=GamePad? 
+	 *         (objInit+=ObjInit objInit+=ObjInit*)?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Gameloop(ISerializationContext context, Game semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     GraphicClass returns GraphicClass
+	 *
+	 * Constraint:
+	 *     (ontoClass=[Class|EString] versions=Versions vname=VersionName constraints=Constraints)
+	 * </pre>
+	 */
+	protected void sequence_GraphicClass(ISerializationContext context, GraphicClass semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__ONTO_CLASS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__ONTO_CLASS));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__VERSIONS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__VERSIONS));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__VNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__VNAME));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__CONSTRAINTS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__CONSTRAINTS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGraphicClassAccess().getOntoClassClassEStringParserRuleCall_1_0_1(), semanticObject.eGet(GraphicsPackage.Literals.GRAPHIC_CLASS__ONTO_CLASS, false));
+		feeder.accept(grammarAccess.getGraphicClassAccess().getVersionsVersionsParserRuleCall_4_0(), semanticObject.getVersions());
+		feeder.accept(grammarAccess.getGraphicClassAccess().getVnameVersionNameParserRuleCall_8_0(), semanticObject.getVname());
+		feeder.accept(grammarAccess.getGraphicClassAccess().getConstraintsConstraintsParserRuleCall_12_0(), semanticObject.getConstraints());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Graphic returns Graphic
+	 *
+	 * Constraint:
+	 *     classes+=GraphicClass
+	 * </pre>
+	 */
+	protected void sequence_Graphic(ISerializationContext context, Graphic semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Condition returns Not
+	 *     LogicOp returns Not
+	 *     Not returns Not
+	 *
+	 * Constraint:
+	 *     left=Condition
+	 * </pre>
+	 */
+	protected void sequence_Not(ISerializationContext context, Not semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.LOGIC_OP__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.LOGIC_OP__LEFT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNotAccess().getLeftConditionParserRuleCall_1_0(), semanticObject.getLeft());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ObjInit returns ObjInit
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=EString 
+	 *         class=[Class|EString] 
+	 *         posX=EDouble 
+	 *         posY=EDouble 
+	 *         posZ=EDouble 
+	 *         (rules+=Rule rules+=Rule*)?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_ObjInit(ISerializationContext context, ObjInit semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Ontological returns Ontological
 	 *
 	 * Constraint:
-	 *     (name=EString URI=EString? classes+=Class classes+=Class*)
+	 *     (
+	 *         name=EString 
+	 *         URI=EString? 
+	 *         classes+=Class 
+	 *         classes+=Class* 
+	 *         graphic=Graphic 
+	 *         physic=Physics 
+	 *         gameloop=Gameloop
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Ontological(ISerializationContext context, Ontological semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PhysicBody returns PhysicBody
+	 *
+	 * Constraint:
+	 *     (
+	 *         mass=EDouble 
+	 *         bodyType=BodyType 
+	 *         charge=EDouble 
+	 *         friction=EDouble 
+	 *         rollingFriction=EDouble 
+	 *         restitution=EDouble 
+	 *         damping=EDouble 
+	 *         angularDamping=EDouble
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_PhysicBody(ISerializationContext context, PhysicBody semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__MASS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__MASS));
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__BODY_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__BODY_TYPE));
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__CHARGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__CHARGE));
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__FRICTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__FRICTION));
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__ROLLING_FRICTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__ROLLING_FRICTION));
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__RESTITUTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__RESTITUTION));
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__DAMPING) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__DAMPING));
+			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__ANGULAR_DAMPING) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.PHYSIC_BODY__ANGULAR_DAMPING));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPhysicBodyAccess().getMassEDoubleParserRuleCall_1_0(), semanticObject.getMass());
+		feeder.accept(grammarAccess.getPhysicBodyAccess().getBodyTypeBodyTypeEnumRuleCall_3_0(), semanticObject.getBodyType());
+		feeder.accept(grammarAccess.getPhysicBodyAccess().getChargeEDoubleParserRuleCall_5_0(), semanticObject.getCharge());
+		feeder.accept(grammarAccess.getPhysicBodyAccess().getFrictionEDoubleParserRuleCall_7_0(), semanticObject.getFriction());
+		feeder.accept(grammarAccess.getPhysicBodyAccess().getRollingFrictionEDoubleParserRuleCall_9_0(), semanticObject.getRollingFriction());
+		feeder.accept(grammarAccess.getPhysicBodyAccess().getRestitutionEDoubleParserRuleCall_11_0(), semanticObject.getRestitution());
+		feeder.accept(grammarAccess.getPhysicBodyAccess().getDampingEDoubleParserRuleCall_13_0(), semanticObject.getDamping());
+		feeder.accept(grammarAccess.getPhysicBodyAccess().getAngularDampingEDoubleParserRuleCall_15_0(), semanticObject.getAngularDamping());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PhysicChanges returns PhysicChange
+	 *
+	 * Constraint:
+	 *     (
+	 *         action=Action 
+	 *         class=[Class|EString] 
+	 *         object=EString 
+	 *         position=Position? 
+	 *         scale=EDouble? 
+	 *         attribute=EString? 
+	 *         changeValue=EInt? 
+	 *         force=[Force|EString]?
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_PhysicChanges(ISerializationContext context, PhysicChange semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     PhysicClass returns PhysicClass
+	 *
+	 * Constraint:
+	 *     (ontoClass=[Class|EString] physicBody=PhysicBody (forces+=Forces forces+=Forces*)? bitMasks=BitMasks)
+	 * </pre>
+	 */
+	protected void sequence_PhysicClass(ISerializationContext context, PhysicClass semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Physics returns Physic
+	 *
+	 * Constraint:
+	 *     classes+=PhysicClass
+	 * </pre>
+	 */
+	protected void sequence_Physics(ISerializationContext context, Physic semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -124,6 +733,107 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_Reference(ISerializationContext context, Reference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Rule returns Rule
+	 *
+	 * Constraint:
+	 *     (action=[Trigger|EString] condition=Condition)
+	 * </pre>
+	 */
+	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.RULE__ACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.RULE__ACTION));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.RULE__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.RULE__CONDITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRuleAccess().getActionTriggerEStringParserRuleCall_1_0_1(), semanticObject.eGet(GameloopPackage.Literals.RULE__ACTION, false));
+		feeder.accept(grammarAccess.getRuleAccess().getConditionConditionParserRuleCall_3_0(), semanticObject.getCondition());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Score returns ScoreSystem
+	 *
+	 * Constraint:
+	 *     (start=EInt finish=EInt lives=EInt)
+	 * </pre>
+	 */
+	protected void sequence_Score(ISerializationContext context, ScoreSystem semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.SCORE_SYSTEM__START) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.SCORE_SYSTEM__START));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.SCORE_SYSTEM__FINISH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.SCORE_SYSTEM__FINISH));
+			if (transientValues.isValueTransient(semanticObject, GameloopPackage.Literals.SCORE_SYSTEM__LIVES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GameloopPackage.Literals.SCORE_SYSTEM__LIVES));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getScoreAccess().getStartEIntParserRuleCall_1_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getScoreAccess().getFinishEIntParserRuleCall_3_0(), semanticObject.getFinish());
+		feeder.accept(grammarAccess.getScoreAccess().getLivesEIntParserRuleCall_5_0(), semanticObject.getLives());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VersionName returns VersionName
+	 *
+	 * Constraint:
+	 *     (v1=EString v2=EString v3=EString)
+	 * </pre>
+	 */
+	protected void sequence_VersionName(ISerializationContext context, VersionName semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V1));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V2) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V2));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V3) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V3));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVersionNameAccess().getV1EStringParserRuleCall_2_0(), semanticObject.getV1());
+		feeder.accept(grammarAccess.getVersionNameAccess().getV2EStringParserRuleCall_5_0(), semanticObject.getV2());
+		feeder.accept(grammarAccess.getVersionNameAccess().getV3EStringParserRuleCall_8_0(), semanticObject.getV3());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Versions returns Versions
+	 *
+	 * Constraint:
+	 *     (v1=EString v2=EString v3=EString)
+	 * </pre>
+	 */
+	protected void sequence_Versions(ISerializationContext context, Versions semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSIONS__V1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSIONS__V1));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSIONS__V2) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSIONS__V2));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSIONS__V3) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSIONS__V3));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVersionsAccess().getV1EStringParserRuleCall_2_0(), semanticObject.getV1());
+		feeder.accept(grammarAccess.getVersionsAccess().getV2EStringParserRuleCall_5_0(), semanticObject.getV2());
+		feeder.accept(grammarAccess.getVersionsAccess().getV3EStringParserRuleCall_8_0(), semanticObject.getV3());
+		feeder.finish();
 	}
 	
 	

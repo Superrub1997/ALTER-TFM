@@ -4,7 +4,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Graphic">
     <eStructuralFeatures xsi:type="ecore:EReference" name="classes" lowerBound="1"
         upperBound="-1" eType="#//GraphicClass" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ontoModel" eType="ecore:EClass /ALTER-EMF/model/Ontologicals.ecore#//Ontological"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GraphicClass">
     <eStructuralFeatures xsi:type="ecore:EReference" name="versions" lowerBound="1"
@@ -20,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="materialAttributes" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ontoClass" lowerBound="1"
-        eType="ecore:EClass /ALTER-EMF/model/Ontologicals.ecore#//Class"/>
+        eType="ecore:EClass Ontologicals.ecore#//Class"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Versions">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="v1" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

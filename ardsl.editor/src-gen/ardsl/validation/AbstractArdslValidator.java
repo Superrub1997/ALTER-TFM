@@ -14,6 +14,9 @@ public abstract class AbstractArdslValidator extends AbstractDeclarativeValidato
 	protected List<EPackage> getEPackages() {
 		List<EPackage> result = new ArrayList<EPackage>();
 		result.add(EPackage.Registry.INSTANCE.getEPackage("http://ontologicals/1.0"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://graphics/1.0"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://physics/1.0"));
+		result.add(EPackage.Registry.INSTANCE.getEPackage("http://gameloop/1.0"));
 		return result;
 	}
 }

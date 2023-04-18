@@ -60,6 +60,7 @@ public class GameloopFactoryImpl extends EFactoryImpl implements GameloopFactory
 			case GameloopPackage.GAME: return createGame();
 			case GameloopPackage.GAME_PAD: return createGamePad();
 			case GameloopPackage.OBJ_INIT: return createObjInit();
+			case GameloopPackage.OBJ_ATTRIBUTE: return createObjAttribute();
 			case GameloopPackage.SCORE_SYSTEM: return createScoreSystem();
 			case GameloopPackage.TRIGGER: return createTrigger();
 			case GameloopPackage.COLLISION: return createCollision();
@@ -150,6 +151,16 @@ public class GameloopFactoryImpl extends EFactoryImpl implements GameloopFactory
 	public ObjInit createObjInit() {
 		ObjInitImpl objInit = new ObjInitImpl();
 		return objInit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ObjAttribute createObjAttribute() {
+		ObjAttributeImpl objAttribute = new ObjAttributeImpl();
+		return objAttribute;
 	}
 
 	/**

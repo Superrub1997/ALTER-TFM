@@ -49,6 +49,15 @@ public interface GameloopFactory extends EFactory {
 	ObjInit createObjInit();
 
 	/**
+	 * Returns a new object of class '<em>Obj Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Obj Attribute</em>'.
+	 * @generated
+	 */
+	ObjAttribute createObjAttribute();
+
+	/**
 	 * Returns a new object of class '<em>Score System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

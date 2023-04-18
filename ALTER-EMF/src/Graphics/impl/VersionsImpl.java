@@ -20,73 +20,52 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Graphics.impl.VersionsImpl#getV1 <em>V1</em>}</li>
- *   <li>{@link Graphics.impl.VersionsImpl#getV2 <em>V2</em>}</li>
- *   <li>{@link Graphics.impl.VersionsImpl#getV3 <em>V3</em>}</li>
+ *   <li>{@link Graphics.impl.VersionsImpl#getName <em>Name</em>}</li>
+ *   <li>{@link Graphics.impl.VersionsImpl#getURL <em>URL</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class VersionsImpl extends MinimalEObjectImpl.Container implements Versions {
 	/**
-	 * The default value of the '{@link #getV1() <em>V1</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getV1()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String V1_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getV1() <em>V1</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getV1()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String v1 = V1_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getV2() <em>V2</em>}' attribute.
+	 * The default value of the '{@link #getURL() <em>URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getV2()
+	 * @see #getURL()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String V2_EDEFAULT = null;
+	protected static final String URL_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getV2() <em>V2</em>}' attribute.
+	 * The cached value of the '{@link #getURL() <em>URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getV2()
+	 * @see #getURL()
 	 * @generated
 	 * @ordered
 	 */
-	protected String v2 = V2_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getV3() <em>V3</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getV3()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String V3_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getV3() <em>V3</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getV3()
-	 * @generated
-	 * @ordered
-	 */
-	protected String v3 = V3_EDEFAULT;
+	protected String url = URL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,8 +91,8 @@ public class VersionsImpl extends MinimalEObjectImpl.Container implements Versio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getV1() {
-		return v1;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -121,11 +100,11 @@ public class VersionsImpl extends MinimalEObjectImpl.Container implements Versio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setV1(String newV1) {
-		String oldV1 = v1;
-		v1 = newV1;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphicsPackage.VERSIONS__V1, oldV1, v1));
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphicsPackage.VERSIONS__NAME, oldName, name));
 	}
 
 	/**
@@ -133,8 +112,8 @@ public class VersionsImpl extends MinimalEObjectImpl.Container implements Versio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getV2() {
-		return v2;
+	public String getURL() {
+		return url;
 	}
 
 	/**
@@ -142,32 +121,11 @@ public class VersionsImpl extends MinimalEObjectImpl.Container implements Versio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setV2(String newV2) {
-		String oldV2 = v2;
-		v2 = newV2;
+	public void setURL(String newURL) {
+		String oldURL = url;
+		url = newURL;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphicsPackage.VERSIONS__V2, oldV2, v2));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getV3() {
-		return v3;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setV3(String newV3) {
-		String oldV3 = v3;
-		v3 = newV3;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphicsPackage.VERSIONS__V3, oldV3, v3));
+			eNotify(new ENotificationImpl(this, Notification.SET, GraphicsPackage.VERSIONS__URL, oldURL, url));
 	}
 
 	/**
@@ -178,12 +136,10 @@ public class VersionsImpl extends MinimalEObjectImpl.Container implements Versio
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case GraphicsPackage.VERSIONS__V1:
-				return getV1();
-			case GraphicsPackage.VERSIONS__V2:
-				return getV2();
-			case GraphicsPackage.VERSIONS__V3:
-				return getV3();
+			case GraphicsPackage.VERSIONS__NAME:
+				return getName();
+			case GraphicsPackage.VERSIONS__URL:
+				return getURL();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -196,14 +152,11 @@ public class VersionsImpl extends MinimalEObjectImpl.Container implements Versio
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case GraphicsPackage.VERSIONS__V1:
-				setV1((String)newValue);
+			case GraphicsPackage.VERSIONS__NAME:
+				setName((String)newValue);
 				return;
-			case GraphicsPackage.VERSIONS__V2:
-				setV2((String)newValue);
-				return;
-			case GraphicsPackage.VERSIONS__V3:
-				setV3((String)newValue);
+			case GraphicsPackage.VERSIONS__URL:
+				setURL((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -217,14 +170,11 @@ public class VersionsImpl extends MinimalEObjectImpl.Container implements Versio
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case GraphicsPackage.VERSIONS__V1:
-				setV1(V1_EDEFAULT);
+			case GraphicsPackage.VERSIONS__NAME:
+				setName(NAME_EDEFAULT);
 				return;
-			case GraphicsPackage.VERSIONS__V2:
-				setV2(V2_EDEFAULT);
-				return;
-			case GraphicsPackage.VERSIONS__V3:
-				setV3(V3_EDEFAULT);
+			case GraphicsPackage.VERSIONS__URL:
+				setURL(URL_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -238,12 +188,10 @@ public class VersionsImpl extends MinimalEObjectImpl.Container implements Versio
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GraphicsPackage.VERSIONS__V1:
-				return V1_EDEFAULT == null ? v1 != null : !V1_EDEFAULT.equals(v1);
-			case GraphicsPackage.VERSIONS__V2:
-				return V2_EDEFAULT == null ? v2 != null : !V2_EDEFAULT.equals(v2);
-			case GraphicsPackage.VERSIONS__V3:
-				return V3_EDEFAULT == null ? v3 != null : !V3_EDEFAULT.equals(v3);
+			case GraphicsPackage.VERSIONS__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case GraphicsPackage.VERSIONS__URL:
+				return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -258,12 +206,10 @@ public class VersionsImpl extends MinimalEObjectImpl.Container implements Versio
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (v1: ");
-		result.append(v1);
-		result.append(", v2: ");
-		result.append(v2);
-		result.append(", v3: ");
-		result.append(v3);
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", URL: ");
+		result.append(url);
 		result.append(')');
 		return result.toString();
 	}

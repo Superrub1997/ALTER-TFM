@@ -46,7 +46,7 @@ Class returns Ontologicals::Class:
 Attribute returns Ontologicals::Attribute:
 	
 	
-	name=EString ':' type=EString '[' min=EString ',' max=EString ']' '=' default=EString
+	name=EString ':' type=EString '[' min=EInt ',' max=EInt ']' '=' default=EString
 	
 	(isParam?='isParam')?
 	(isKey?='isKey')?
@@ -55,34 +55,25 @@ Attribute returns Ontologicals::Attribute:
 Reference returns Ontologicals::Reference:
 	name=EString
 		('containtment' containtment=EString)?
-		'min' min=EString
-		'max' max=EString
+		'min' min=EInt
+		'max' max=EInt
 		'target' target=EString
 		('opposite' opposite=EString)?;
 
 Graphic returns Graphics::Graphic:
 	'Graphic''{'
-	classes+=GraphicClass
+	classes+=GraphicClass ( "," classes+=GraphicClass)*
 	'}'
 ;
 
 GraphicClass returns Graphics::GraphicClass:
 	'element' ontoClass=[Ontologicals::Class|EString]
-	'versions' '{' versions=Versions '}'
-	'versionsName' '{' vname=VersionName '}'
+	'versions' '{' versions+=Versions ( "," versions+=Versions)* '}'
 	'constraints' '{' constraints=Constraints '}'
 	
 ;
 Versions returns Graphics::Versions: 
-	'v1' '->' v1=EString
-	'v2' '->' v2=EString
-	'v3' '->' v3=EString
-;
-
-VersionName returns Graphics::VersionName: 
-	'v1' '->' v1=EString
-	'v2' '->' v2=EString
-	'v3' '->' v3=EString
+	name=EString '=' URL=EString
 ;
 
 
@@ -99,7 +90,7 @@ Constraints returns Graphics::Constraints:
 
 Physics returns Physics::Physic:
 	'Physics''{'
-	classes+=PhysicClass
+	classes+=PhysicClass ( "," classes+=PhysicClass)*
 	'}'
 ;
 
@@ -127,9 +118,8 @@ Forces returns Physics::Force:
 ;
 
 BitMasks returns Physics::BitMasks:
-	'id' category=EInt
-	'collision' collision=EInt
-	'contact' contactTest=EInt
+	'collision' collision+=[Ontologicals::Class|EString] ( "," collision+=[Ontologicals::Class|EString])*
+	'contact' contact+=[Ontologicals::Class|EString] ( "," contact+=[Ontologicals::Class|EString])*
 ;
 
 Gameloop returns Gameloop::Game:
@@ -188,8 +178,14 @@ GamePad returns Gameloop::GamePad:
 
 ObjInit returns Gameloop::ObjInit:
 	name=EString class=[Ontologicals::Class|EString] '[' posX=EDouble ',' posY=EDouble ',' posZ=EDouble ']'
+	('attributes' '{' attribute+=ObjAttribute (',' attribute+=ObjAttribute)* '}')?
 	('rules' '{' rules+=Rule (',' rules+=Rule)* '}')?
 ;
+
+ObjAttribute returns Gameloop::ObjAttribute: 
+	attribute=[Ontologicals::Attribute|EString] 'value' value=EString
+;
+
 
 Rule returns Gameloop::Rule:
 	'do' action=[Gameloop::Trigger|EString] 'if(' condition=Condition ')'

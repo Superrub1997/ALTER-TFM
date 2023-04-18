@@ -79,7 +79,7 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MIN_EDEFAULT = null;
+	protected static final int MIN_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
@@ -89,7 +89,7 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	 * @generated
 	 * @ordered
 	 */
-	protected String min = MIN_EDEFAULT;
+	protected int min = MIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
@@ -99,7 +99,7 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MAX_EDEFAULT = null;
+	protected static final int MAX_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
@@ -109,7 +109,7 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	 * @generated
 	 * @ordered
 	 */
-	protected String max = MAX_EDEFAULT;
+	protected int max = MAX_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
@@ -217,7 +217,7 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMin() {
+	public int getMin() {
 		return min;
 	}
 
@@ -226,8 +226,8 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMin(String newMin) {
-		String oldMin = min;
+	public void setMin(int newMin) {
+		int oldMin = min;
 		min = newMin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OntologicalsPackage.REFERENCE__MIN, oldMin, min));
@@ -238,7 +238,7 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMax() {
+	public int getMax() {
 		return max;
 	}
 
@@ -247,8 +247,8 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMax(String newMax) {
-		String oldMax = max;
+	public void setMax(int newMax) {
+		int oldMax = max;
 		max = newMax;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OntologicalsPackage.REFERENCE__MAX, oldMax, max));
@@ -335,10 +335,10 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 				setContaintment((String)newValue);
 				return;
 			case OntologicalsPackage.REFERENCE__MIN:
-				setMin((String)newValue);
+				setMin((Integer)newValue);
 				return;
 			case OntologicalsPackage.REFERENCE__MAX:
-				setMax((String)newValue);
+				setMax((Integer)newValue);
 				return;
 			case OntologicalsPackage.REFERENCE__TARGET:
 				setTarget((String)newValue);
@@ -393,9 +393,9 @@ public class ReferenceImpl extends MinimalEObjectImpl.Container implements Refer
 			case OntologicalsPackage.REFERENCE__CONTAINTMENT:
 				return CONTAINTMENT_EDEFAULT == null ? containtment != null : !CONTAINTMENT_EDEFAULT.equals(containtment);
 			case OntologicalsPackage.REFERENCE__MIN:
-				return MIN_EDEFAULT == null ? min != null : !MIN_EDEFAULT.equals(min);
+				return min != MIN_EDEFAULT;
 			case OntologicalsPackage.REFERENCE__MAX:
-				return MAX_EDEFAULT == null ? max != null : !MAX_EDEFAULT.equals(max);
+				return max != MAX_EDEFAULT;
 			case OntologicalsPackage.REFERENCE__TARGET:
 				return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
 			case OntologicalsPackage.REFERENCE__OPPOSITE:

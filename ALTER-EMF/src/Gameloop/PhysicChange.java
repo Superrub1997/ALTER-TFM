@@ -3,6 +3,7 @@
 package Gameloop;
 
 import Physics.Force;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -29,6 +30,28 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface PhysicChange extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Scale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scale</em>' attribute.
+	 * @see #setScale(double)
+	 * @see Gameloop.GameloopPackage#getPhysicChange_Scale()
+	 * @model
+	 * @generated
+	 */
+	double getScale();
+
+	/**
+	 * Sets the value of the '{@link Gameloop.PhysicChange#getScale <em>Scale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Scale</em>' attribute.
+	 * @see #getScale()
+	 * @generated
+	 */
+	void setScale(double value);
+
 	/**
 	 * Returns the value of the '<em><b>Attribute</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -188,27 +211,5 @@ public interface PhysicChange extends EObject {
 	 * @generated
 	 */
 	void setClass(Ontologicals.Class value);
-
-	/**
-	 * Returns the value of the '<em><b>Scale</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Scale</em>' attribute.
-	 * @see #setScale(double)
-	 * @see Gameloop.GameloopPackage#getPhysicChange_Scale()
-	 * @model
-	 * @generated
-	 */
-	double getScale();
-
-	/**
-	 * Sets the value of the '{@link Gameloop.PhysicChange#getScale <em>Scale</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Scale</em>' attribute.
-	 * @see #getScale()
-	 * @generated
-	 */
-	void setScale(double value);
 
 } // PhysicChange

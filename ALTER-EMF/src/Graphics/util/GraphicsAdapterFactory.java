@@ -80,10 +80,6 @@ public class GraphicsAdapterFactory extends AdapterFactoryImpl {
 				return createVersionsAdapter();
 			}
 			@Override
-			public Adapter caseVersionName(VersionName object) {
-				return createVersionNameAdapter();
-			}
-			@Override
 			public Adapter caseConstraints(Constraints object) {
 				return createConstraintsAdapter();
 			}
@@ -150,20 +146,6 @@ public class GraphicsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVersionsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Graphics.VersionName <em>Version Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Graphics.VersionName
-	 * @generated
-	 */
-	public Adapter createVersionNameAdapter() {
 		return null;
 	}
 

@@ -80,6 +80,10 @@ public class GameloopAdapterFactory extends AdapterFactoryImpl {
 				return createObjInitAdapter();
 			}
 			@Override
+			public Adapter caseObjAttribute(ObjAttribute object) {
+				return createObjAttributeAdapter();
+			}
+			@Override
 			public Adapter caseScoreSystem(ScoreSystem object) {
 				return createScoreSystemAdapter();
 			}
@@ -194,6 +198,20 @@ public class GameloopAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createObjInitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Gameloop.ObjAttribute <em>Obj Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Gameloop.ObjAttribute
+	 * @generated
+	 */
+	public Adapter createObjAttributeAdapter() {
 		return null;
 	}
 

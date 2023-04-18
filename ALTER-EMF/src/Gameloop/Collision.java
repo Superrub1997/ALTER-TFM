@@ -24,6 +24,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Collision extends EObject {
 	/**
+	 * Returns the value of the '<em><b>Action</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action</em>' reference.
+	 * @see #setAction(Trigger)
+	 * @see Gameloop.GameloopPackage#getCollision_Action()
+	 * @model required="true"
+	 * @generated
+	 */
+	Trigger getAction();
+
+	/**
+	 * Sets the value of the '{@link Gameloop.Collision#getAction <em>Action</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Action</em>' reference.
+	 * @see #getAction()
+	 * @generated
+	 */
+	void setAction(Trigger value);
+
+	/**
 	 * Returns the value of the '<em><b>Class A</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,27 +88,5 @@ public interface Collision extends EObject {
 	 * @generated
 	 */
 	void setClassB(Ontologicals.Class value);
-
-	/**
-	 * Returns the value of the '<em><b>Action</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action</em>' reference.
-	 * @see #setAction(Trigger)
-	 * @see Gameloop.GameloopPackage#getCollision_Action()
-	 * @model required="true"
-	 * @generated
-	 */
-	Trigger getAction();
-
-	/**
-	 * Sets the value of the '{@link Gameloop.Collision#getAction <em>Action</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action</em>' reference.
-	 * @see #getAction()
-	 * @generated
-	 */
-	void setAction(Trigger value);
 
 } // Collision

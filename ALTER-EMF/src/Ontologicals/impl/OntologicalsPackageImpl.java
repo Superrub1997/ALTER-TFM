@@ -3,16 +3,23 @@
 package Ontologicals.impl;
 
 import Gameloop.GameloopPackage;
+
 import Gameloop.impl.GameloopPackageImpl;
+
 import Graphics.GraphicsPackage;
+
 import Graphics.impl.GraphicsPackageImpl;
+
 import Ontologicals.Attribute;
 import Ontologicals.Ontological;
 import Ontologicals.OntologicalsFactory;
 import Ontologicals.OntologicalsPackage;
 import Ontologicals.Reference;
+
 import Physics.PhysicsPackage;
+
 import Physics.impl.PhysicsPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -104,22 +111,22 @@ public class OntologicalsPackageImpl extends EPackageImpl implements Ontological
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GameloopPackage.eNS_URI);
 		GameloopPackageImpl theGameloopPackage = (GameloopPackageImpl)(registeredPackage instanceof GameloopPackageImpl ? registeredPackage : GameloopPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PhysicsPackage.eNS_URI);
-		PhysicsPackageImpl thePhysicsPackage = (PhysicsPackageImpl)(registeredPackage instanceof PhysicsPackageImpl ? registeredPackage : PhysicsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GraphicsPackage.eNS_URI);
 		GraphicsPackageImpl theGraphicsPackage = (GraphicsPackageImpl)(registeredPackage instanceof GraphicsPackageImpl ? registeredPackage : GraphicsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PhysicsPackage.eNS_URI);
+		PhysicsPackageImpl thePhysicsPackage = (PhysicsPackageImpl)(registeredPackage instanceof PhysicsPackageImpl ? registeredPackage : PhysicsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theOntologicalsPackage.createPackageContents();
 		theGameloopPackage.createPackageContents();
-		thePhysicsPackage.createPackageContents();
 		theGraphicsPackage.createPackageContents();
+		thePhysicsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theOntologicalsPackage.initializePackageContents();
 		theGameloopPackage.initializePackageContents();
-		thePhysicsPackage.initializePackageContents();
 		theGraphicsPackage.initializePackageContents();
+		thePhysicsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theOntologicalsPackage.freeze();
@@ -538,7 +545,7 @@ public class OntologicalsPackageImpl extends EPackageImpl implements Ontological
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ontologicalEClass, Ontological.class, "Ontological", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOntological_Name(), ecorePackage.getEString(), "name", null, 1, 1, Ontological.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOntological_Name(), ecorePackage.getEString(), "name", null, 0, 1, Ontological.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOntological_URI(), ecorePackage.getEString(), "URI", null, 0, 1, Ontological.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOntological_External(), ecorePackage.getEBoolean(), "external", null, 0, 1, Ontological.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOntological_OnlyCodes(), ecorePackage.getEBoolean(), "onlyCodes", null, 0, 1, Ontological.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -560,8 +567,8 @@ public class OntologicalsPackageImpl extends EPackageImpl implements Ontological
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Type(), ecorePackage.getEString(), "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAttribute_Min(), ecorePackage.getEString(), "min", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAttribute_Max(), ecorePackage.getEString(), "max", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Min(), ecorePackage.getEInt(), "min", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Max(), ecorePackage.getEInt(), "max", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Default(), ecorePackage.getEString(), "default", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_IsParam(), ecorePackage.getEBoolean(), "isParam", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_IsKey(), ecorePackage.getEBoolean(), "isKey", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -570,8 +577,8 @@ public class OntologicalsPackageImpl extends EPackageImpl implements Ontological
 		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReference_Name(), ecorePackage.getEString(), "name", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReference_Containtment(), ecorePackage.getEString(), "containtment", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReference_Min(), ecorePackage.getEString(), "min", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getReference_Max(), ecorePackage.getEString(), "max", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReference_Min(), ecorePackage.getEInt(), "min", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReference_Max(), ecorePackage.getEInt(), "max", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReference_Target(), ecorePackage.getEString(), "target", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getReference_Opposite(), ecorePackage.getEString(), "opposite", null, 0, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -342,31 +342,22 @@ public interface PhysicsPackage extends EPackage {
 	int BIT_MASKS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Category</b></em>' attribute.
+	 * The feature id for the '<em><b>Collision</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BIT_MASKS__CATEGORY = 0;
+	int BIT_MASKS__COLLISION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Collision</b></em>' attribute.
+	 * The feature id for the '<em><b>Contact</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BIT_MASKS__COLLISION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Contact Test</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIT_MASKS__CONTACT_TEST = 2;
+	int BIT_MASKS__CONTACT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Bit Masks</em>' class.
@@ -375,7 +366,7 @@ public interface PhysicsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIT_MASKS_FEATURE_COUNT = 3;
+	int BIT_MASKS_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Bit Masks</em>' class.
@@ -385,7 +376,6 @@ public interface PhysicsPackage extends EPackage {
 	 * @ordered
 	 */
 	int BIT_MASKS_OPERATION_COUNT = 0;
-
 
 	/**
 	 * The meta object id for the '{@link Physics.BodyType <em>Body Type</em>}' enum.
@@ -647,37 +637,26 @@ public interface PhysicsPackage extends EPackage {
 	EClass getBitMasks();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Physics.BitMasks#getCategory <em>Category</em>}'.
+	 * Returns the meta object for the reference list '{@link Physics.BitMasks#getCollision <em>Collision</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Category</em>'.
-	 * @see Physics.BitMasks#getCategory()
-	 * @see #getBitMasks()
-	 * @generated
-	 */
-	EAttribute getBitMasks_Category();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Physics.BitMasks#getCollision <em>Collision</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Collision</em>'.
+	 * @return the meta object for the reference list '<em>Collision</em>'.
 	 * @see Physics.BitMasks#getCollision()
 	 * @see #getBitMasks()
 	 * @generated
 	 */
-	EAttribute getBitMasks_Collision();
+	EReference getBitMasks_Collision();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Physics.BitMasks#getContactTest <em>Contact Test</em>}'.
+	 * Returns the meta object for the reference list '{@link Physics.BitMasks#getContact <em>Contact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Contact Test</em>'.
-	 * @see Physics.BitMasks#getContactTest()
+	 * @return the meta object for the reference list '<em>Contact</em>'.
+	 * @see Physics.BitMasks#getContact()
 	 * @see #getBitMasks()
 	 * @generated
 	 */
-	EAttribute getBitMasks_ContactTest();
+	EReference getBitMasks_Contact();
 
 	/**
 	 * Returns the meta object for enum '{@link Physics.BodyType <em>Body Type</em>}'.
@@ -907,28 +886,20 @@ public interface PhysicsPackage extends EPackage {
 		EClass BIT_MASKS = eINSTANCE.getBitMasks();
 
 		/**
-		 * The meta object literal for the '<em><b>Category</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Collision</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BIT_MASKS__CATEGORY = eINSTANCE.getBitMasks_Category();
+		EReference BIT_MASKS__COLLISION = eINSTANCE.getBitMasks_Collision();
 
 		/**
-		 * The meta object literal for the '<em><b>Collision</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Contact</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BIT_MASKS__COLLISION = eINSTANCE.getBitMasks_Collision();
-
-		/**
-		 * The meta object literal for the '<em><b>Contact Test</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BIT_MASKS__CONTACT_TEST = eINSTANCE.getBitMasks_ContactTest();
+		EReference BIT_MASKS__CONTACT = eINSTANCE.getBitMasks_Contact();
 
 		/**
 		 * The meta object literal for the '{@link Physics.BodyType <em>Body Type</em>}' enum.

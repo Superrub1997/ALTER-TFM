@@ -4,16 +4,5 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:Ontologicals="http://ontologicals/1.0"
-    xsi:schemaLocation="http://ontologicals/1.0 /ALTER-EMF/model/Ontologicals.ecore">
-  <classes name="bullet"/>
-  <classes name="target"/>
-  <classes name="player"
-      noSCN="true">
-    <attributes
-        name="ammo"
-        type="Int"
-        min="1"
-        max="1"
-        default="6"/>
-  </classes>
-</Ontologicals:Ontological>
+    xsi:schemaLocation="http://ontologicals/1.0 /ALTER-EMF/model/Ontologicals.ecore"
+    name="Skeet"/>

@@ -3,8 +3,11 @@
 package Ontologicals;
 
 import Gameloop.Game;
+
 import Graphics.Graphic;
+
 import Physics.Physic;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -42,7 +45,7 @@ public interface Ontological extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see Ontologicals.OntologicalsPackage#getOntological_Name()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getName();

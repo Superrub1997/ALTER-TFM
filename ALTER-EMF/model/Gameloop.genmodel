@@ -2,7 +2,8 @@
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ALTER-EMF/src" modelPluginID="ALTER-EMF" modelName="Gameloop"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="Graphics.genmodel#//Graphics Ontologicals.genmodel#//Ontologicals Physics.genmodel#//Physics"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>Gameloop.ecore</foreignModel>
   <genPackages prefix="Gameloop" disposableProviderFactory="true" ecorePackage="Gameloop.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Gameloop.ecore#//BasicActions">
@@ -52,6 +53,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ObjInit/posZ"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//ObjInit/rules"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gameloop.ecore#//ObjInit/class"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gameloop.ecore#//ObjInit/attribute"/>
+    </genClasses>
+    <genClasses ecoreClass="Gameloop.ecore#//ObjAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Gameloop.ecore#//ObjAttribute/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ObjAttribute/value"/>
     </genClasses>
     <genClasses ecoreClass="Gameloop.ecore#//ScoreSystem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//ScoreSystem/start"/>
@@ -109,138 +115,6 @@
     <genClasses ecoreClass="Gameloop.ecore#//Binary">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Gameloop.ecore#//Binary/op"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Gameloop.ecore#//Binary/right"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Ontologicals" ecorePackage="Ontologicals.ecore#/">
-    <genClasses ecoreClass="Ontologicals.ecore#//Ontological">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/URI"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/external"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/onlyCodes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/bluetooth"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Ontological/firebase"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Ontological/classes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Ontological/graphic"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Ontological/physic"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Ontological/gameloop"/>
-    </genClasses>
-    <genClasses ecoreClass="Ontologicals.ecore#//Class">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Class/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Class/abstract"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Class/noSCN"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Class/attributes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Class/references"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ontologicals.ecore#//Class/superclasses"/>
-    </genClasses>
-    <genClasses ecoreClass="Ontologicals.ecore#//Attribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/min"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/max"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/default"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/isParam"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/isKey"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Attribute/readOnly"/>
-    </genClasses>
-    <genClasses ecoreClass="Ontologicals.ecore#//Reference">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/containtment"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/min"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/max"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/target"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ontologicals.ecore#//Reference/opposite"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Physics" ecorePackage="Physics.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Physics.ecore#//BodyType">
-      <genEnumLiterals ecoreEnumLiteral="Physics.ecore#//BodyType/static"/>
-      <genEnumLiterals ecoreEnumLiteral="Physics.ecore#//BodyType/dynamic"/>
-      <genEnumLiterals ecoreEnumLiteral="Physics.ecore#//BodyType/kinematic"/>
-    </genEnums>
-    <genClasses ecoreClass="Physics.ecore#//Physic">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Physics.ecore#//Physic/classes"/>
-    </genClasses>
-    <genClasses ecoreClass="Physics.ecore#//PhysicClass">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Physics.ecore#//PhysicClass/physicBody"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Physics.ecore#//PhysicClass/bitMasks"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Physics.ecore#//PhysicClass/forces"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Physics.ecore#//PhysicClass/ontoClass"/>
-    </genClasses>
-    <genClasses ecoreClass="Physics.ecore#//PhysicBody">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/mass"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/bodyType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/charge"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/friction"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/rollingFriction"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/restitution"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/damping"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//PhysicBody/angularDamping"/>
-    </genClasses>
-    <genClasses ecoreClass="Physics.ecore#//Force">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Force/xVector"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Force/yVector"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Force/zVector"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Force/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//Force/gesture"/>
-    </genClasses>
-    <genClasses ecoreClass="Physics.ecore#//BitMasks">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//BitMasks/category"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//BitMasks/collision"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Physics.ecore#//BitMasks/contactTest"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Graphics" ecorePackage="Graphics.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Graphics.ecore#//Planes">
-      <genEnumLiterals ecoreEnumLiteral="Graphics.ecore#//Planes/any"/>
-      <genEnumLiterals ecoreEnumLiteral="Graphics.ecore#//Planes/horizontal"/>
-      <genEnumLiterals ecoreEnumLiteral="Graphics.ecore#//Planes/vertical"/>
-    </genEnums>
-    <genClasses ecoreClass="Graphics.ecore#//Graphic">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Graphics.ecore#//Graphic/classes"/>
-    </genClasses>
-    <genClasses ecoreClass="Graphics.ecore#//GraphicClass">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Graphics.ecore#//GraphicClass/versions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Graphics.ecore#//GraphicClass/vname"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Graphics.ecore#//GraphicClass/constraints"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Graphics.ecore#//GraphicClass/connections"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//GraphicClass/showAttributes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//GraphicClass/materialAttributes"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Graphics.ecore#//GraphicClass/ontoClass"/>
-    </genClasses>
-    <genClasses ecoreClass="Graphics.ecore#//Versions">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Versions/v1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Versions/v2"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Versions/v3"/>
-    </genClasses>
-    <genClasses ecoreClass="Graphics.ecore#//VersionName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//VersionName/v1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//VersionName/v2"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//VersionName/v3"/>
-    </genClasses>
-    <genClasses ecoreClass="Graphics.ecore#//Constraints">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/planes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/ilumination"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/sizeMax"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/sizeMin"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/sizeInit"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/overlapping"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/xToOriginPos"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/yToOriginPos"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/zToOriginPos"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/rotation"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/text"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Constraints/textColor"/>
-    </genClasses>
-    <genClasses ecoreClass="Graphics.ecore#//Connection">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/color"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/textColor"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/decorator"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/decoratorPos"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/pattern"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/width"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Graphics.ecore#//Connection/position"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

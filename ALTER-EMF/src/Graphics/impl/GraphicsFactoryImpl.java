@@ -60,7 +60,6 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 			case GraphicsPackage.GRAPHIC: return createGraphic();
 			case GraphicsPackage.GRAPHIC_CLASS: return createGraphicClass();
 			case GraphicsPackage.VERSIONS: return createVersions();
-			case GraphicsPackage.VERSION_NAME: return createVersionName();
 			case GraphicsPackage.CONSTRAINTS: return createConstraints();
 			case GraphicsPackage.CONNECTION: return createConnection();
 			default:
@@ -126,16 +125,6 @@ public class GraphicsFactoryImpl extends EFactoryImpl implements GraphicsFactory
 	public Versions createVersions() {
 		VersionsImpl versions = new VersionsImpl();
 		return versions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VersionName createVersionName() {
-		VersionNameImpl versionName = new VersionNameImpl();
-		return versionName;
 	}
 
 	/**

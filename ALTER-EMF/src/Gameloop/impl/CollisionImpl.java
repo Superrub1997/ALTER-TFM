@@ -4,13 +4,13 @@ package Gameloop.impl;
 
 import Gameloop.Collision;
 import Gameloop.GameloopPackage;
-
 import Gameloop.Trigger;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -77,6 +77,44 @@ public class CollisionImpl extends MinimalEObjectImpl.Container implements Colli
 	@Override
 	protected EClass eStaticClass() {
 		return GameloopPackage.Literals.COLLISION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Trigger getAction() {
+		if (action != null && action.eIsProxy()) {
+			InternalEObject oldAction = (InternalEObject)action;
+			action = (Trigger)eResolveProxy(oldAction);
+			if (action != oldAction) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GameloopPackage.COLLISION__ACTION, oldAction, action));
+			}
+		}
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Trigger basicGetAction() {
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAction(Trigger newAction) {
+		Trigger oldAction = action;
+		action = newAction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GameloopPackage.COLLISION__ACTION, oldAction, action));
 	}
 
 	/**
@@ -153,44 +191,6 @@ public class CollisionImpl extends MinimalEObjectImpl.Container implements Colli
 		classB = newClassB;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GameloopPackage.COLLISION__CLASS_B, oldClassB, classB));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Trigger getAction() {
-		if (action != null && action.eIsProxy()) {
-			InternalEObject oldAction = (InternalEObject)action;
-			action = (Trigger)eResolveProxy(oldAction);
-			if (action != oldAction) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GameloopPackage.COLLISION__ACTION, oldAction, action));
-			}
-		}
-		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Trigger basicGetAction() {
-		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAction(Trigger newAction) {
-		Trigger oldAction = action;
-		action = newAction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GameloopPackage.COLLISION__ACTION, oldAction, action));
 	}
 
 	/**

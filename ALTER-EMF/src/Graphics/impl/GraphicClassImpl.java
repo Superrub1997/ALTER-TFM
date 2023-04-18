@@ -6,7 +6,6 @@ import Graphics.Connection;
 import Graphics.Constraints;
 import Graphics.GraphicClass;
 import Graphics.GraphicsPackage;
-import Graphics.VersionName;
 import Graphics.Versions;
 
 import java.util.Collection;
@@ -35,7 +34,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link Graphics.impl.GraphicClassImpl#getVersions <em>Versions</em>}</li>
- *   <li>{@link Graphics.impl.GraphicClassImpl#getVname <em>Vname</em>}</li>
  *   <li>{@link Graphics.impl.GraphicClassImpl#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link Graphics.impl.GraphicClassImpl#getConnections <em>Connections</em>}</li>
  *   <li>{@link Graphics.impl.GraphicClassImpl#getShowAttributes <em>Show Attributes</em>}</li>
@@ -47,24 +45,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class GraphicClassImpl extends MinimalEObjectImpl.Container implements GraphicClass {
 	/**
-	 * The cached value of the '{@link #getVersions() <em>Versions</em>}' containment reference.
+	 * The cached value of the '{@link #getVersions() <em>Versions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getVersions()
 	 * @generated
 	 * @ordered
 	 */
-	protected Versions versions;
-
-	/**
-	 * The cached value of the '{@link #getVname() <em>Vname</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVname()
-	 * @generated
-	 * @ordered
-	 */
-	protected VersionName vname;
+	protected EList<Versions> versions;
 
 	/**
 	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference.
@@ -140,85 +128,11 @@ public class GraphicClassImpl extends MinimalEObjectImpl.Container implements Gr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Versions getVersions() {
+	public EList<Versions> getVersions() {
+		if (versions == null) {
+			versions = new EObjectContainmentEList<Versions>(Versions.class, this, GraphicsPackage.GRAPHIC_CLASS__VERSIONS);
+		}
 		return versions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetVersions(Versions newVersions, NotificationChain msgs) {
-		Versions oldVersions = versions;
-		versions = newVersions;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphicsPackage.GRAPHIC_CLASS__VERSIONS, oldVersions, newVersions);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setVersions(Versions newVersions) {
-		if (newVersions != versions) {
-			NotificationChain msgs = null;
-			if (versions != null)
-				msgs = ((InternalEObject)versions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphicsPackage.GRAPHIC_CLASS__VERSIONS, null, msgs);
-			if (newVersions != null)
-				msgs = ((InternalEObject)newVersions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphicsPackage.GRAPHIC_CLASS__VERSIONS, null, msgs);
-			msgs = basicSetVersions(newVersions, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphicsPackage.GRAPHIC_CLASS__VERSIONS, newVersions, newVersions));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VersionName getVname() {
-		return vname;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetVname(VersionName newVname, NotificationChain msgs) {
-		VersionName oldVname = vname;
-		vname = newVname;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GraphicsPackage.GRAPHIC_CLASS__VNAME, oldVname, newVname);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setVname(VersionName newVname) {
-		if (newVname != vname) {
-			NotificationChain msgs = null;
-			if (vname != null)
-				msgs = ((InternalEObject)vname).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GraphicsPackage.GRAPHIC_CLASS__VNAME, null, msgs);
-			if (newVname != null)
-				msgs = ((InternalEObject)newVname).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GraphicsPackage.GRAPHIC_CLASS__VNAME, null, msgs);
-			msgs = basicSetVname(newVname, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GraphicsPackage.GRAPHIC_CLASS__VNAME, newVname, newVname));
 	}
 
 	/**
@@ -347,9 +261,7 @@ public class GraphicClassImpl extends MinimalEObjectImpl.Container implements Gr
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case GraphicsPackage.GRAPHIC_CLASS__VERSIONS:
-				return basicSetVersions(null, msgs);
-			case GraphicsPackage.GRAPHIC_CLASS__VNAME:
-				return basicSetVname(null, msgs);
+				return ((InternalEList<?>)getVersions()).basicRemove(otherEnd, msgs);
 			case GraphicsPackage.GRAPHIC_CLASS__CONSTRAINTS:
 				return basicSetConstraints(null, msgs);
 			case GraphicsPackage.GRAPHIC_CLASS__CONNECTIONS:
@@ -368,8 +280,6 @@ public class GraphicClassImpl extends MinimalEObjectImpl.Container implements Gr
 		switch (featureID) {
 			case GraphicsPackage.GRAPHIC_CLASS__VERSIONS:
 				return getVersions();
-			case GraphicsPackage.GRAPHIC_CLASS__VNAME:
-				return getVname();
 			case GraphicsPackage.GRAPHIC_CLASS__CONSTRAINTS:
 				return getConstraints();
 			case GraphicsPackage.GRAPHIC_CLASS__CONNECTIONS:
@@ -395,10 +305,8 @@ public class GraphicClassImpl extends MinimalEObjectImpl.Container implements Gr
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case GraphicsPackage.GRAPHIC_CLASS__VERSIONS:
-				setVersions((Versions)newValue);
-				return;
-			case GraphicsPackage.GRAPHIC_CLASS__VNAME:
-				setVname((VersionName)newValue);
+				getVersions().clear();
+				getVersions().addAll((Collection<? extends Versions>)newValue);
 				return;
 			case GraphicsPackage.GRAPHIC_CLASS__CONSTRAINTS:
 				setConstraints((Constraints)newValue);
@@ -431,10 +339,7 @@ public class GraphicClassImpl extends MinimalEObjectImpl.Container implements Gr
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case GraphicsPackage.GRAPHIC_CLASS__VERSIONS:
-				setVersions((Versions)null);
-				return;
-			case GraphicsPackage.GRAPHIC_CLASS__VNAME:
-				setVname((VersionName)null);
+				getVersions().clear();
 				return;
 			case GraphicsPackage.GRAPHIC_CLASS__CONSTRAINTS:
 				setConstraints((Constraints)null);
@@ -464,9 +369,7 @@ public class GraphicClassImpl extends MinimalEObjectImpl.Container implements Gr
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case GraphicsPackage.GRAPHIC_CLASS__VERSIONS:
-				return versions != null;
-			case GraphicsPackage.GRAPHIC_CLASS__VNAME:
-				return vname != null;
+				return versions != null && !versions.isEmpty();
 			case GraphicsPackage.GRAPHIC_CLASS__CONSTRAINTS:
 				return constraints != null;
 			case GraphicsPackage.GRAPHIC_CLASS__CONNECTIONS:

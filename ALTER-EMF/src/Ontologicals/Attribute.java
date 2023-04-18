@@ -77,12 +77,12 @@ public interface Attribute extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Min</em>' attribute.
-	 * @see #setMin(String)
+	 * @see #setMin(int)
 	 * @see Ontologicals.OntologicalsPackage#getAttribute_Min()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getMin();
+	int getMin();
 
 	/**
 	 * Sets the value of the '{@link Ontologicals.Attribute#getMin <em>Min</em>}' attribute.
@@ -92,19 +92,19 @@ public interface Attribute extends EObject {
 	 * @see #getMin()
 	 * @generated
 	 */
-	void setMin(String value);
+	void setMin(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Max</em>' attribute.
-	 * @see #setMax(String)
+	 * @see #setMax(int)
 	 * @see Ontologicals.OntologicalsPackage#getAttribute_Max()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getMax();
+	int getMax();
 
 	/**
 	 * Sets the value of the '{@link Ontologicals.Attribute#getMax <em>Max</em>}' attribute.
@@ -114,7 +114,7 @@ public interface Attribute extends EObject {
 	 * @see #getMax()
 	 * @generated
 	 */
-	void setMax(String value);
+	void setMax(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Default</b></em>' attribute.

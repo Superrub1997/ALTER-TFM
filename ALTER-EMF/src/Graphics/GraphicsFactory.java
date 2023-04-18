@@ -49,15 +49,6 @@ public interface GraphicsFactory extends EFactory {
 	Versions createVersions();
 
 	/**
-	 * Returns a new object of class '<em>Version Name</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Version Name</em>'.
-	 * @generated
-	 */
-	VersionName createVersionName();
-
-	/**
 	 * Returns a new object of class '<em>Constraints</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

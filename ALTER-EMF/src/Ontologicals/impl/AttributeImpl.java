@@ -81,7 +81,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MIN_EDEFAULT = null;
+	protected static final int MIN_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
@@ -91,7 +91,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * @generated
 	 * @ordered
 	 */
-	protected String min = MIN_EDEFAULT;
+	protected int min = MIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
@@ -101,7 +101,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MAX_EDEFAULT = null;
+	protected static final int MAX_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
@@ -111,7 +111,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * @generated
 	 * @ordered
 	 */
-	protected String max = MAX_EDEFAULT;
+	protected int max = MAX_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDefault() <em>Default</em>}' attribute.
@@ -259,7 +259,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMin() {
+	public int getMin() {
 		return min;
 	}
 
@@ -268,8 +268,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMin(String newMin) {
-		String oldMin = min;
+	public void setMin(int newMin) {
+		int oldMin = min;
 		min = newMin;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OntologicalsPackage.ATTRIBUTE__MIN, oldMin, min));
@@ -280,7 +280,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getMax() {
+	public int getMax() {
 		return max;
 	}
 
@@ -289,8 +289,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMax(String newMax) {
-		String oldMax = max;
+	public void setMax(int newMax) {
+		int oldMax = max;
 		max = newMax;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, OntologicalsPackage.ATTRIBUTE__MAX, oldMax, max));
@@ -423,10 +423,10 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 				setType((String)newValue);
 				return;
 			case OntologicalsPackage.ATTRIBUTE__MIN:
-				setMin((String)newValue);
+				setMin((Integer)newValue);
 				return;
 			case OntologicalsPackage.ATTRIBUTE__MAX:
-				setMax((String)newValue);
+				setMax((Integer)newValue);
 				return;
 			case OntologicalsPackage.ATTRIBUTE__DEFAULT:
 				setDefault((String)newValue);
@@ -493,9 +493,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
 			case OntologicalsPackage.ATTRIBUTE__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case OntologicalsPackage.ATTRIBUTE__MIN:
-				return MIN_EDEFAULT == null ? min != null : !MIN_EDEFAULT.equals(min);
+				return min != MIN_EDEFAULT;
 			case OntologicalsPackage.ATTRIBUTE__MAX:
-				return MAX_EDEFAULT == null ? max != null : !MAX_EDEFAULT.equals(max);
+				return max != MAX_EDEFAULT;
 			case OntologicalsPackage.ATTRIBUTE__DEFAULT:
 				return DEFAULT_EDEFAULT == null ? default_ != null : !DEFAULT_EDEFAULT.equals(default_);
 			case OntologicalsPackage.ATTRIBUTE__IS_PARAM:

@@ -1,0 +1,35 @@
+[comment encoding = UTF-8 /]
+[module generate('http://graphics/1.0')]
+
+
+[template public generateElement(aGraphic : Graphic, name: String)]
+
+[file ('graphic.json', false, 'UTF-8')]
+{
+	"name": [name /],
+	"classes": [ '[' /] 
+	[for (class: GraphicClass | aGraphic.classes)]
+		"name": "[class.ontoClass.name /]",
+		"versions":,
+		"showAttributes":[ '[' /] [ ']' /],
+		"constraints":{
+			"planes":"[class.constraints.planes /]",
+			"ilumination":"[class.constraints.ilumination /]",
+			"sizeMin":"[class.constraints.sizeMin /]",
+			"sizeMax":"[class.constraints.sizeMax /]",
+			"sizeInit":"[class.constraints.sizeInit /]",
+			"overlapping":"[class.constraints.overlapping /]",
+			"xToOriginPos":"[class.constraints.xToOriginPos /]",
+			"yToOriginPos":"[class.constraints.yToOriginPos /]",
+			"zToOriginPos":"[class.constraints.zToOriginPos /]",
+			"rotation":"[class.constraints.rotation /]",
+			"text":"[class.constraints.text /]"
+		}
+		"connections":{
+			"[class.ontoClass.name /]s"[ '[' /] [ ']' /]
+		}
+	[/for]
+	[ ']' /] 
+}
+[/file]
+[/template]

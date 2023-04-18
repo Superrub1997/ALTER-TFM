@@ -22,7 +22,6 @@ import Graphics.Constraints;
 import Graphics.Graphic;
 import Graphics.GraphicClass;
 import Graphics.GraphicsPackage;
-import Graphics.VersionName;
 import Graphics.Versions;
 import Ontologicals.Attribute;
 import Ontologicals.Ontological;
@@ -114,9 +113,6 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case GraphicsPackage.GRAPHIC_CLASS:
 				sequence_GraphicClass(context, (GraphicClass) semanticObject); 
-				return; 
-			case GraphicsPackage.VERSION_NAME:
-				sequence_VersionName(context, (VersionName) semanticObject); 
 				return; 
 			case GraphicsPackage.VERSIONS:
 				sequence_Versions(context, (Versions) semanticObject); 
@@ -261,8 +257,8 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         name=EString 
 	 *         type=EString 
-	 *         min=EString 
-	 *         max=EString 
+	 *         min=EInt 
+	 *         max=EInt 
 	 *         default=EString 
 	 *         isParam?='isParam'? 
 	 *         isKey?='isKey'? 
@@ -309,23 +305,11 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     BitMasks returns BitMasks
 	 *
 	 * Constraint:
-	 *     (category=EInt collision=EInt contactTest=EInt)
+	 *     (collision+=[Class|EString] collision+=[Class|EString]* contact+=[Class|EString] contact+=[Class|EString]*)
 	 * </pre>
 	 */
 	protected void sequence_BitMasks(ISerializationContext context, BitMasks semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.BIT_MASKS__CATEGORY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.BIT_MASKS__CATEGORY));
-			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.BIT_MASKS__COLLISION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.BIT_MASKS__COLLISION));
-			if (transientValues.isValueTransient(semanticObject, PhysicsPackage.Literals.BIT_MASKS__CONTACT_TEST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PhysicsPackage.Literals.BIT_MASKS__CONTACT_TEST));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBitMasksAccess().getCategoryEIntParserRuleCall_1_0(), semanticObject.getCategory());
-		feeder.accept(grammarAccess.getBitMasksAccess().getCollisionEIntParserRuleCall_3_0(), semanticObject.getCollision());
-		feeder.accept(grammarAccess.getBitMasksAccess().getContactTestEIntParserRuleCall_5_0(), semanticObject.getContactTest());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -512,26 +496,11 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     GraphicClass returns GraphicClass
 	 *
 	 * Constraint:
-	 *     (ontoClass=[Class|EString] versions=Versions vname=VersionName constraints=Constraints)
+	 *     (ontoClass=[Class|EString] versions+=Versions versions+=Versions* constraints=Constraints)
 	 * </pre>
 	 */
 	protected void sequence_GraphicClass(ISerializationContext context, GraphicClass semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__ONTO_CLASS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__ONTO_CLASS));
-			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__VERSIONS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__VERSIONS));
-			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__VNAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__VNAME));
-			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__CONSTRAINTS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.GRAPHIC_CLASS__CONSTRAINTS));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGraphicClassAccess().getOntoClassClassEStringParserRuleCall_1_0_1(), semanticObject.eGet(GraphicsPackage.Literals.GRAPHIC_CLASS__ONTO_CLASS, false));
-		feeder.accept(grammarAccess.getGraphicClassAccess().getVersionsVersionsParserRuleCall_4_0(), semanticObject.getVersions());
-		feeder.accept(grammarAccess.getGraphicClassAccess().getVnameVersionNameParserRuleCall_8_0(), semanticObject.getVname());
-		feeder.accept(grammarAccess.getGraphicClassAccess().getConstraintsConstraintsParserRuleCall_12_0(), semanticObject.getConstraints());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -541,7 +510,7 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Graphic returns Graphic
 	 *
 	 * Constraint:
-	 *     classes+=GraphicClass
+	 *     (classes+=GraphicClass classes+=GraphicClass*)
 	 * </pre>
 	 */
 	protected void sequence_Graphic(ISerializationContext context, Graphic semanticObject) {
@@ -707,7 +676,7 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Physics returns Physic
 	 *
 	 * Constraint:
-	 *     classes+=PhysicClass
+	 *     (classes+=PhysicClass classes+=PhysicClass*)
 	 * </pre>
 	 */
 	protected void sequence_Physics(ISerializationContext context, Physic semanticObject) {
@@ -724,8 +693,8 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (
 	 *         name=EString 
 	 *         containtment=EString? 
-	 *         min=EString 
-	 *         max=EString 
+	 *         min=EInt 
+	 *         max=EInt 
 	 *         target=EString 
 	 *         opposite=EString?
 	 *     )
@@ -788,51 +757,22 @@ public class ArdslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     VersionName returns VersionName
-	 *
-	 * Constraint:
-	 *     (v1=EString v2=EString v3=EString)
-	 * </pre>
-	 */
-	protected void sequence_VersionName(ISerializationContext context, VersionName semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V1) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V1));
-			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V2) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V2));
-			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V3) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSION_NAME__V3));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVersionNameAccess().getV1EStringParserRuleCall_2_0(), semanticObject.getV1());
-		feeder.accept(grammarAccess.getVersionNameAccess().getV2EStringParserRuleCall_5_0(), semanticObject.getV2());
-		feeder.accept(grammarAccess.getVersionNameAccess().getV3EStringParserRuleCall_8_0(), semanticObject.getV3());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     Versions returns Versions
 	 *
 	 * Constraint:
-	 *     (v1=EString v2=EString v3=EString)
+	 *     (name=EString URL=EString)
 	 * </pre>
 	 */
 	protected void sequence_Versions(ISerializationContext context, Versions semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSIONS__V1) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSIONS__V1));
-			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSIONS__V2) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSIONS__V2));
-			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSIONS__V3) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSIONS__V3));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSIONS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSIONS__NAME));
+			if (transientValues.isValueTransient(semanticObject, GraphicsPackage.Literals.VERSIONS__URL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, GraphicsPackage.Literals.VERSIONS__URL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVersionsAccess().getV1EStringParserRuleCall_2_0(), semanticObject.getV1());
-		feeder.accept(grammarAccess.getVersionsAccess().getV2EStringParserRuleCall_5_0(), semanticObject.getV2());
-		feeder.accept(grammarAccess.getVersionsAccess().getV3EStringParserRuleCall_8_0(), semanticObject.getV3());
+		feeder.accept(grammarAccess.getVersionsAccess().getNameEStringParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVersionsAccess().getURLEStringParserRuleCall_2_0(), semanticObject.getURL());
 		feeder.finish();
 	}
 	

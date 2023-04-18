@@ -392,10 +392,10 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cTypeEStringParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cMinAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMinEStringParserRuleCall_4_0 = (RuleCall)cMinAssignment_4.eContents().get(0);
+		private final RuleCall cMinEIntParserRuleCall_4_0 = (RuleCall)cMinAssignment_4.eContents().get(0);
 		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cMaxAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cMaxEStringParserRuleCall_6_0 = (RuleCall)cMaxAssignment_6.eContents().get(0);
+		private final RuleCall cMaxEIntParserRuleCall_6_0 = (RuleCall)cMaxAssignment_6.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Keyword cEqualsSignKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cDefaultAssignment_9 = (Assignment)cGroup.eContents().get(9);
@@ -408,13 +408,13 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cReadOnlyReadOnlyKeyword_12_0 = (Keyword)cReadOnlyAssignment_12.eContents().get(0);
 		
 		//Attribute returns Ontologicals::Attribute:
-		//    name=EString ':' type=EString '[' min=EString ',' max=EString ']' '=' default=EString
+		//    name=EString ':' type=EString '[' min=EInt ',' max=EInt ']' '=' default=EString
 		//    (isParam?='isParam')?
 		//    (isKey?='isKey')?
 		//    (readOnly?='readOnly')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=EString ':' type=EString '[' min=EString ',' max=EString ']' '=' default=EString
+		//name=EString ':' type=EString '[' min=EInt ',' max=EInt ']' '=' default=EString
 		//(isParam?='isParam')?
 		//(isKey?='isKey')?
 		//(readOnly?='readOnly')?
@@ -438,20 +438,20 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'['
 		public Keyword getLeftSquareBracketKeyword_3() { return cLeftSquareBracketKeyword_3; }
 		
-		//min=EString
+		//min=EInt
 		public Assignment getMinAssignment_4() { return cMinAssignment_4; }
 		
-		//EString
-		public RuleCall getMinEStringParserRuleCall_4_0() { return cMinEStringParserRuleCall_4_0; }
+		//EInt
+		public RuleCall getMinEIntParserRuleCall_4_0() { return cMinEIntParserRuleCall_4_0; }
 		
 		//','
 		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
-		//max=EString
+		//max=EInt
 		public Assignment getMaxAssignment_6() { return cMaxAssignment_6; }
 		
-		//EString
-		public RuleCall getMaxEStringParserRuleCall_6_0() { return cMaxEStringParserRuleCall_6_0; }
+		//EInt
+		public RuleCall getMaxEIntParserRuleCall_6_0() { return cMaxEIntParserRuleCall_6_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_7() { return cRightSquareBracketKeyword_7; }
@@ -494,10 +494,10 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final RuleCall cContaintmentEStringParserRuleCall_1_1_0 = (RuleCall)cContaintmentAssignment_1_1.eContents().get(0);
 		private final Keyword cMinKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cMinAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cMinEStringParserRuleCall_3_0 = (RuleCall)cMinAssignment_3.eContents().get(0);
+		private final RuleCall cMinEIntParserRuleCall_3_0 = (RuleCall)cMinAssignment_3.eContents().get(0);
 		private final Keyword cMaxKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cMaxAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cMaxEStringParserRuleCall_5_0 = (RuleCall)cMaxAssignment_5.eContents().get(0);
+		private final RuleCall cMaxEIntParserRuleCall_5_0 = (RuleCall)cMaxAssignment_5.eContents().get(0);
 		private final Keyword cTargetKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cTargetAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cTargetEStringParserRuleCall_7_0 = (RuleCall)cTargetAssignment_7.eContents().get(0);
@@ -509,16 +509,16 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//Reference returns Ontologicals::Reference:
 		//    name=EString
 		//        ('containtment' containtment=EString)?
-		//        'min' min=EString
-		//        'max' max=EString
+		//        'min' min=EInt
+		//        'max' max=EInt
 		//        'target' target=EString
 		//        ('opposite' opposite=EString)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name=EString
 		//    ('containtment' containtment=EString)?
-		//    'min' min=EString
-		//    'max' max=EString
+		//    'min' min=EInt
+		//    'max' max=EInt
 		//    'target' target=EString
 		//    ('opposite' opposite=EString)?
 		public Group getGroup() { return cGroup; }
@@ -544,20 +544,20 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'min'
 		public Keyword getMinKeyword_2() { return cMinKeyword_2; }
 		
-		//min=EString
+		//min=EInt
 		public Assignment getMinAssignment_3() { return cMinAssignment_3; }
 		
-		//EString
-		public RuleCall getMinEStringParserRuleCall_3_0() { return cMinEStringParserRuleCall_3_0; }
+		//EInt
+		public RuleCall getMinEIntParserRuleCall_3_0() { return cMinEIntParserRuleCall_3_0; }
 		
 		//'max'
 		public Keyword getMaxKeyword_4() { return cMaxKeyword_4; }
 		
-		//max=EString
+		//max=EInt
 		public Assignment getMaxAssignment_5() { return cMaxAssignment_5; }
 		
-		//EString
-		public RuleCall getMaxEStringParserRuleCall_5_0() { return cMaxEStringParserRuleCall_5_0; }
+		//EInt
+		public RuleCall getMaxEIntParserRuleCall_5_0() { return cMaxEIntParserRuleCall_5_0; }
 		
 		//'target'
 		public Keyword getTargetKeyword_6() { return cTargetKeyword_6; }
@@ -587,17 +587,21 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cClassesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cClassesGraphicClassParserRuleCall_2_0 = (RuleCall)cClassesAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cClassesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cClassesGraphicClassParserRuleCall_3_1_0 = (RuleCall)cClassesAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Graphic returns Graphics::Graphic:
 		//    'Graphic''{'
-		//    classes+=GraphicClass
+		//    classes+=GraphicClass ( "," classes+=GraphicClass)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Graphic''{'
-		//classes+=GraphicClass
+		//classes+=GraphicClass ( "," classes+=GraphicClass)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -613,8 +617,20 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//GraphicClass
 		public RuleCall getClassesGraphicClassParserRuleCall_2_0() { return cClassesGraphicClassParserRuleCall_2_0; }
 		
+		//( "," classes+=GraphicClass)*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		
+		//classes+=GraphicClass
+		public Assignment getClassesAssignment_3_1() { return cClassesAssignment_3_1; }
+		
+		//GraphicClass
+		public RuleCall getClassesGraphicClassParserRuleCall_3_1_0() { return cClassesGraphicClassParserRuleCall_3_1_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class GraphicClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ardsl.Ardsl.GraphicClass");
@@ -627,29 +643,26 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cVersionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cVersionsVersionsParserRuleCall_4_0 = (RuleCall)cVersionsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cVersionsNameKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cVnameAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cVnameVersionNameParserRuleCall_8_0 = (RuleCall)cVnameAssignment_8.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cConstraintsKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cLeftCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cConstraintsAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cConstraintsConstraintsParserRuleCall_12_0 = (RuleCall)cConstraintsAssignment_12.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cVersionsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cVersionsVersionsParserRuleCall_5_1_0 = (RuleCall)cVersionsAssignment_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cConstraintsKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cConstraintsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cConstraintsConstraintsParserRuleCall_9_0 = (RuleCall)cConstraintsAssignment_9.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//GraphicClass returns Graphics::GraphicClass:
 		//    'element' ontoClass=[Ontologicals::Class|EString]
-		//    'versions' '{' versions=Versions '}'
-		//    'versionsName' '{' vname=VersionName '}'
+		//    'versions' '{' versions+=Versions ( "," versions+=Versions)* '}'
 		//    'constraints' '{' constraints=Constraints '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'element' ontoClass=[Ontologicals::Class|EString]
-		//'versions' '{' versions=Versions '}'
-		//'versionsName' '{' vname=VersionName '}'
+		//'versions' '{' versions+=Versions ( "," versions+=Versions)* '}'
 		//'constraints' '{' constraints=Constraints '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -671,172 +684,73 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//versions=Versions
+		//versions+=Versions
 		public Assignment getVersionsAssignment_4() { return cVersionsAssignment_4; }
 		
 		//Versions
 		public RuleCall getVersionsVersionsParserRuleCall_4_0() { return cVersionsVersionsParserRuleCall_4_0; }
 		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		//( "," versions+=Versions)*
+		public Group getGroup_5() { return cGroup_5; }
 		
-		//'versionsName'
-		public Keyword getVersionsNameKeyword_6() { return cVersionsNameKeyword_6; }
+		//","
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
+		//versions+=Versions
+		public Assignment getVersionsAssignment_5_1() { return cVersionsAssignment_5_1; }
 		
-		//vname=VersionName
-		public Assignment getVnameAssignment_8() { return cVnameAssignment_8; }
-		
-		//VersionName
-		public RuleCall getVnameVersionNameParserRuleCall_8_0() { return cVnameVersionNameParserRuleCall_8_0; }
+		//Versions
+		public RuleCall getVersionsVersionsParserRuleCall_5_1_0() { return cVersionsVersionsParserRuleCall_5_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 		
 		//'constraints'
-		public Keyword getConstraintsKeyword_10() { return cConstraintsKeyword_10; }
+		public Keyword getConstraintsKeyword_7() { return cConstraintsKeyword_7; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_11() { return cLeftCurlyBracketKeyword_11; }
+		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
 		
 		//constraints=Constraints
-		public Assignment getConstraintsAssignment_12() { return cConstraintsAssignment_12; }
+		public Assignment getConstraintsAssignment_9() { return cConstraintsAssignment_9; }
 		
 		//Constraints
-		public RuleCall getConstraintsConstraintsParserRuleCall_12_0() { return cConstraintsConstraintsParserRuleCall_12_0; }
+		public RuleCall getConstraintsConstraintsParserRuleCall_9_0() { return cConstraintsConstraintsParserRuleCall_9_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 	public class VersionsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ardsl.Ardsl.Versions");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cV1Keyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cV1Assignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cV1EStringParserRuleCall_2_0 = (RuleCall)cV1Assignment_2.eContents().get(0);
-		private final Keyword cV2Keyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cV2Assignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cV2EStringParserRuleCall_5_0 = (RuleCall)cV2Assignment_5.eContents().get(0);
-		private final Keyword cV3Keyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cV3Assignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cV3EStringParserRuleCall_8_0 = (RuleCall)cV3Assignment_8.eContents().get(0);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameEStringParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cURLAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cURLEStringParserRuleCall_2_0 = (RuleCall)cURLAssignment_2.eContents().get(0);
 		
 		//Versions returns Graphics::Versions:
-		//    'v1' '->' v1=EString
-		//    'v2' '->' v2=EString
-		//    'v3' '->' v3=EString
+		//    name=EString '=' URL=EString
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'v1' '->' v1=EString
-		//'v2' '->' v2=EString
-		//'v3' '->' v3=EString
+		//name=EString '=' URL=EString
 		public Group getGroup() { return cGroup; }
 		
-		//'v1'
-		public Keyword getV1Keyword_0() { return cV1Keyword_0; }
-		
-		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
-		
-		//v1=EString
-		public Assignment getV1Assignment_2() { return cV1Assignment_2; }
+		//name=EString
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//EString
-		public RuleCall getV1EStringParserRuleCall_2_0() { return cV1EStringParserRuleCall_2_0; }
+		public RuleCall getNameEStringParserRuleCall_0_0() { return cNameEStringParserRuleCall_0_0; }
 		
-		//'v2'
-		public Keyword getV2Keyword_3() { return cV2Keyword_3; }
+		//'='
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
-		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_4() { return cHyphenMinusGreaterThanSignKeyword_4; }
-		
-		//v2=EString
-		public Assignment getV2Assignment_5() { return cV2Assignment_5; }
+		//URL=EString
+		public Assignment getURLAssignment_2() { return cURLAssignment_2; }
 		
 		//EString
-		public RuleCall getV2EStringParserRuleCall_5_0() { return cV2EStringParserRuleCall_5_0; }
-		
-		//'v3'
-		public Keyword getV3Keyword_6() { return cV3Keyword_6; }
-		
-		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_7() { return cHyphenMinusGreaterThanSignKeyword_7; }
-		
-		//v3=EString
-		public Assignment getV3Assignment_8() { return cV3Assignment_8; }
-		
-		//EString
-		public RuleCall getV3EStringParserRuleCall_8_0() { return cV3EStringParserRuleCall_8_0; }
-	}
-	public class VersionNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ardsl.Ardsl.VersionName");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cV1Keyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cV1Assignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cV1EStringParserRuleCall_2_0 = (RuleCall)cV1Assignment_2.eContents().get(0);
-		private final Keyword cV2Keyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cV2Assignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cV2EStringParserRuleCall_5_0 = (RuleCall)cV2Assignment_5.eContents().get(0);
-		private final Keyword cV3Keyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cV3Assignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cV3EStringParserRuleCall_8_0 = (RuleCall)cV3Assignment_8.eContents().get(0);
-		
-		//VersionName returns Graphics::VersionName:
-		//    'v1' '->' v1=EString
-		//    'v2' '->' v2=EString
-		//    'v3' '->' v3=EString
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'v1' '->' v1=EString
-		//'v2' '->' v2=EString
-		//'v3' '->' v3=EString
-		public Group getGroup() { return cGroup; }
-		
-		//'v1'
-		public Keyword getV1Keyword_0() { return cV1Keyword_0; }
-		
-		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
-		
-		//v1=EString
-		public Assignment getV1Assignment_2() { return cV1Assignment_2; }
-		
-		//EString
-		public RuleCall getV1EStringParserRuleCall_2_0() { return cV1EStringParserRuleCall_2_0; }
-		
-		//'v2'
-		public Keyword getV2Keyword_3() { return cV2Keyword_3; }
-		
-		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_4() { return cHyphenMinusGreaterThanSignKeyword_4; }
-		
-		//v2=EString
-		public Assignment getV2Assignment_5() { return cV2Assignment_5; }
-		
-		//EString
-		public RuleCall getV2EStringParserRuleCall_5_0() { return cV2EStringParserRuleCall_5_0; }
-		
-		//'v3'
-		public Keyword getV3Keyword_6() { return cV3Keyword_6; }
-		
-		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_7() { return cHyphenMinusGreaterThanSignKeyword_7; }
-		
-		//v3=EString
-		public Assignment getV3Assignment_8() { return cV3Assignment_8; }
-		
-		//EString
-		public RuleCall getV3EStringParserRuleCall_8_0() { return cV3EStringParserRuleCall_8_0; }
+		public RuleCall getURLEStringParserRuleCall_2_0() { return cURLEStringParserRuleCall_2_0; }
 	}
 	public class ConstraintsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ardsl.Ardsl.Constraints");
@@ -963,17 +877,21 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cClassesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cClassesPhysicClassParserRuleCall_2_0 = (RuleCall)cClassesAssignment_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cClassesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cClassesPhysicClassParserRuleCall_3_1_0 = (RuleCall)cClassesAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Physics returns Physics::Physic:
 		//    'Physics''{'
-		//    classes+=PhysicClass
+		//    classes+=PhysicClass ( "," classes+=PhysicClass)*
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Physics''{'
-		//classes+=PhysicClass
+		//classes+=PhysicClass ( "," classes+=PhysicClass)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -989,8 +907,20 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		//PhysicClass
 		public RuleCall getClassesPhysicClassParserRuleCall_2_0() { return cClassesPhysicClassParserRuleCall_2_0; }
 		
+		//( "," classes+=PhysicClass)*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		
+		//classes+=PhysicClass
+		public Assignment getClassesAssignment_3_1() { return cClassesAssignment_3_1; }
+		
+		//PhysicClass
+		public RuleCall getClassesPhysicClassParserRuleCall_3_1_0() { return cClassesPhysicClassParserRuleCall_3_1_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class PhysicClassElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ardsl.Ardsl.PhysicClass");
@@ -1313,54 +1243,88 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	public class BitMasksElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ardsl.Ardsl.BitMasks");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIdKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCategoryAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCategoryEIntParserRuleCall_1_0 = (RuleCall)cCategoryAssignment_1.eContents().get(0);
-		private final Keyword cCollisionKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cCollisionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCollisionEIntParserRuleCall_3_0 = (RuleCall)cCollisionAssignment_3.eContents().get(0);
-		private final Keyword cContactKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cContactTestAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cContactTestEIntParserRuleCall_5_0 = (RuleCall)cContactTestAssignment_5.eContents().get(0);
+		private final Keyword cCollisionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cCollisionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cCollisionClassCrossReference_1_0 = (CrossReference)cCollisionAssignment_1.eContents().get(0);
+		private final RuleCall cCollisionClassEStringParserRuleCall_1_0_1 = (RuleCall)cCollisionClassCrossReference_1_0.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cCollisionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cCollisionClassCrossReference_2_1_0 = (CrossReference)cCollisionAssignment_2_1.eContents().get(0);
+		private final RuleCall cCollisionClassEStringParserRuleCall_2_1_0_1 = (RuleCall)cCollisionClassCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cContactKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cContactAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cContactClassCrossReference_4_0 = (CrossReference)cContactAssignment_4.eContents().get(0);
+		private final RuleCall cContactClassEStringParserRuleCall_4_0_1 = (RuleCall)cContactClassCrossReference_4_0.eContents().get(1);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cContactAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cContactClassCrossReference_5_1_0 = (CrossReference)cContactAssignment_5_1.eContents().get(0);
+		private final RuleCall cContactClassEStringParserRuleCall_5_1_0_1 = (RuleCall)cContactClassCrossReference_5_1_0.eContents().get(1);
 		
 		//BitMasks returns Physics::BitMasks:
-		//    'id' category=EInt
-		//    'collision' collision=EInt
-		//    'contact' contactTest=EInt
+		//    'collision' collision+=[Ontologicals::Class|EString] ( "," collision+=[Ontologicals::Class|EString])*
+		//    'contact' contact+=[Ontologicals::Class|EString] ( "," contact+=[Ontologicals::Class|EString])*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'id' category=EInt
-		//'collision' collision=EInt
-		//'contact' contactTest=EInt
+		//'collision' collision+=[Ontologicals::Class|EString] ( "," collision+=[Ontologicals::Class|EString])*
+		//'contact' contact+=[Ontologicals::Class|EString] ( "," contact+=[Ontologicals::Class|EString])*
 		public Group getGroup() { return cGroup; }
 		
-		//'id'
-		public Keyword getIdKeyword_0() { return cIdKeyword_0; }
-		
-		//category=EInt
-		public Assignment getCategoryAssignment_1() { return cCategoryAssignment_1; }
-		
-		//EInt
-		public RuleCall getCategoryEIntParserRuleCall_1_0() { return cCategoryEIntParserRuleCall_1_0; }
-		
 		//'collision'
-		public Keyword getCollisionKeyword_2() { return cCollisionKeyword_2; }
+		public Keyword getCollisionKeyword_0() { return cCollisionKeyword_0; }
 		
-		//collision=EInt
-		public Assignment getCollisionAssignment_3() { return cCollisionAssignment_3; }
+		//collision+=[Ontologicals::Class|EString]
+		public Assignment getCollisionAssignment_1() { return cCollisionAssignment_1; }
 		
-		//EInt
-		public RuleCall getCollisionEIntParserRuleCall_3_0() { return cCollisionEIntParserRuleCall_3_0; }
+		//[Ontologicals::Class|EString]
+		public CrossReference getCollisionClassCrossReference_1_0() { return cCollisionClassCrossReference_1_0; }
+		
+		//EString
+		public RuleCall getCollisionClassEStringParserRuleCall_1_0_1() { return cCollisionClassEStringParserRuleCall_1_0_1; }
+		
+		//( "," collision+=[Ontologicals::Class|EString])*
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+		
+		//collision+=[Ontologicals::Class|EString]
+		public Assignment getCollisionAssignment_2_1() { return cCollisionAssignment_2_1; }
+		
+		//[Ontologicals::Class|EString]
+		public CrossReference getCollisionClassCrossReference_2_1_0() { return cCollisionClassCrossReference_2_1_0; }
+		
+		//EString
+		public RuleCall getCollisionClassEStringParserRuleCall_2_1_0_1() { return cCollisionClassEStringParserRuleCall_2_1_0_1; }
 		
 		//'contact'
-		public Keyword getContactKeyword_4() { return cContactKeyword_4; }
+		public Keyword getContactKeyword_3() { return cContactKeyword_3; }
 		
-		//contactTest=EInt
-		public Assignment getContactTestAssignment_5() { return cContactTestAssignment_5; }
+		//contact+=[Ontologicals::Class|EString]
+		public Assignment getContactAssignment_4() { return cContactAssignment_4; }
 		
-		//EInt
-		public RuleCall getContactTestEIntParserRuleCall_5_0() { return cContactTestEIntParserRuleCall_5_0; }
+		//[Ontologicals::Class|EString]
+		public CrossReference getContactClassCrossReference_4_0() { return cContactClassCrossReference_4_0; }
+		
+		//EString
+		public RuleCall getContactClassEStringParserRuleCall_4_0_1() { return cContactClassEStringParserRuleCall_4_0_1; }
+		
+		//( "," contact+=[Ontologicals::Class|EString])*
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//","
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		
+		//contact+=[Ontologicals::Class|EString]
+		public Assignment getContactAssignment_5_1() { return cContactAssignment_5_1; }
+		
+		//[Ontologicals::Class|EString]
+		public CrossReference getContactClassCrossReference_5_1_0() { return cContactClassCrossReference_5_1_0; }
+		
+		//EString
+		public RuleCall getContactClassEStringParserRuleCall_5_1_0_1() { return cContactClassEStringParserRuleCall_5_1_0_1; }
 	}
 	public class GameloopElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ardsl.Ardsl.Gameloop");
@@ -2735,7 +2699,6 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	private final GraphicElements pGraphic;
 	private final GraphicClassElements pGraphicClass;
 	private final VersionsElements pVersions;
-	private final VersionNameElements pVersionName;
 	private final ConstraintsElements pConstraints;
 	private final PhysicsElements pPhysics;
 	private final PhysicClassElements pPhysicClass;
@@ -2787,7 +2750,6 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 		this.pGraphic = new GraphicElements();
 		this.pGraphicClass = new GraphicClassElements();
 		this.pVersions = new VersionsElements();
-		this.pVersionName = new VersionNameElements();
 		this.pConstraints = new ConstraintsElements();
 		this.pPhysics = new PhysicsElements();
 		this.pPhysicClass = new PhysicClassElements();
@@ -2925,7 +2887,7 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Attribute returns Ontologicals::Attribute:
-	//    name=EString ':' type=EString '[' min=EString ',' max=EString ']' '=' default=EString
+	//    name=EString ':' type=EString '[' min=EInt ',' max=EInt ']' '=' default=EString
 	//    (isParam?='isParam')?
 	//    (isKey?='isKey')?
 	//    (readOnly?='readOnly')?;
@@ -2940,8 +2902,8 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	//Reference returns Ontologicals::Reference:
 	//    name=EString
 	//        ('containtment' containtment=EString)?
-	//        'min' min=EString
-	//        'max' max=EString
+	//        'min' min=EInt
+	//        'max' max=EInt
 	//        'target' target=EString
 	//        ('opposite' opposite=EString)?;
 	public ReferenceElements getReferenceAccess() {
@@ -2954,7 +2916,7 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//Graphic returns Graphics::Graphic:
 	//    'Graphic''{'
-	//    classes+=GraphicClass
+	//    classes+=GraphicClass ( "," classes+=GraphicClass)*
 	//    '}'
 	//;
 	public GraphicElements getGraphicAccess() {
@@ -2967,8 +2929,7 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//GraphicClass returns Graphics::GraphicClass:
 	//    'element' ontoClass=[Ontologicals::Class|EString]
-	//    'versions' '{' versions=Versions '}'
-	//    'versionsName' '{' vname=VersionName '}'
+	//    'versions' '{' versions+=Versions ( "," versions+=Versions)* '}'
 	//    'constraints' '{' constraints=Constraints '}'
 	//;
 	public GraphicClassElements getGraphicClassAccess() {
@@ -2980,9 +2941,7 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//Versions returns Graphics::Versions:
-	//    'v1' '->' v1=EString
-	//    'v2' '->' v2=EString
-	//    'v3' '->' v3=EString
+	//    name=EString '=' URL=EString
 	//;
 	public VersionsElements getVersionsAccess() {
 		return pVersions;
@@ -2990,19 +2949,6 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	public ParserRule getVersionsRule() {
 		return getVersionsAccess().getRule();
-	}
-	
-	//VersionName returns Graphics::VersionName:
-	//    'v1' '->' v1=EString
-	//    'v2' '->' v2=EString
-	//    'v3' '->' v3=EString
-	//;
-	public VersionNameElements getVersionNameAccess() {
-		return pVersionName;
-	}
-	
-	public ParserRule getVersionNameRule() {
-		return getVersionNameAccess().getRule();
 	}
 	
 	//Constraints returns Graphics::Constraints:
@@ -3025,7 +2971,7 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	
 	//Physics returns Physics::Physic:
 	//    'Physics''{'
-	//    classes+=PhysicClass
+	//    classes+=PhysicClass ( "," classes+=PhysicClass)*
 	//    '}'
 	//;
 	public PhysicsElements getPhysicsAccess() {
@@ -3081,9 +3027,8 @@ public class ArdslGrammarAccess extends AbstractElementFinder.AbstractGrammarEle
 	}
 	
 	//BitMasks returns Physics::BitMasks:
-	//    'id' category=EInt
-	//    'collision' collision=EInt
-	//    'contact' contactTest=EInt
+	//    'collision' collision+=[Ontologicals::Class|EString] ( "," collision+=[Ontologicals::Class|EString])*
+	//    'contact' contact+=[Ontologicals::Class|EString] ( "," contact+=[Ontologicals::Class|EString])*
 	//;
 	public BitMasksElements getBitMasksAccess() {
 		return pBitMasks;

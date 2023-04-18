@@ -1,0 +1,90 @@
+[comment encoding = UTF-8 /]
+[module generate('http://gameloop/1.0')]
+[import ardsl::acceleo::game::generateRule /]
+
+[template public generateElement(aGame : Game, name : String)]
+
+[file ('gameloop.json', false, 'UTF-8')]
+{
+	"name": [name /],
+	"game": [ '[' /]{
+		"win": "[aGame.win /]",
+		"lose": "[aGame.lose /]",
+		"start": "[aGame.start /]",
+		"objInit": ['[' /][for (obj : ObjInit | aGame.objInit)]{
+			"name": "[obj.name /]",
+			"class": "[obj.class.name /]",
+			"posX": "[obj.posX /]",
+			"posY": "[obj.posY /]",
+			"posZ": "[obj.posZ /]",
+			"attributes": [ '[' /] [for (objattr : ObjAttribute | obj.attribute)]{
+ 				"name": "[objattr.attribute.name /]",
+				"value": "[objattr.value /]"
+ 			}[/for]
+			[ ']' /]
+			"rule": ['[' /][for (rule : Rule | obj.rules)]{
+				"condition":{
+					[rule.condition.generateElement()/]
+				},
+				"action":"[rule.action.name /]"
+			}[/for]
+			[ ']' /]
+		}[/for]
+		[ ']' /] ,
+		"name": "[name /]",
+		"actionsTriggers":[ '[' /][for (action : Trigger | aGame.actionsTriggers)]
+			"name":"[action.name /]",
+			[if (action.message.oclIsUndefined() = false)]
+			"message":"[action.message /]",
+			[/if]
+			[if (action.timeTrigger.oclIsUndefined() = false)]
+			"timeTrigger":"[action.timeTrigger /]",
+			[/if]
+			[if (action.scoreChange.oclIsUndefined() = false)]
+			"scoreChange":"[action.scoreChange /]",
+			[/if]
+			[if (action.action.oclIsUndefined() = false)]
+			"action":"[action.action /]",
+			[/if]
+			"sceneChanges"[ '[' /] [for (pc : PhysicChange | action.physicChanges)]{
+ 				"name": "[pc.object /]",
+				"class": "[pc.class.name /]",
+				"action": "[pc.action /]"[if (pc.changeValue.oclIsUndefined() = false)],
+				"changeValue":[pc.changeValue /]
+				[/if]
+				[if (pc.changeValue.oclIsUndefined() = false)],
+				"changeValue":[pc.changeValue /]
+				[/if]
+				[if (pc.scale.oclIsUndefined() = false)],
+				"scale":[pc.scale /]
+				[/if]
+				[if (pc.attribute.oclIsUndefined() = false)],
+				"attribute":[pc.attribute /]
+				[/if]
+				[if (pc.position.oclIsUndefined() = false)],
+				"position":[pc.position /]
+				[/if]
+ 			}[/for]
+			[ ']' /] 
+		[/for]
+		[ ']' /],
+		"collisions": [ '[' /][for (col : Collision | aGame.collisions)]{
+			"classA": [col.classA /],
+			"classB": [col.classB /],
+			"action": [col.action /]
+		}[/for] 
+		[ ']' /],
+		"scoreSystem": {
+			"start":[aGame.score.start /],
+			"finish":[aGame.score.finish /],
+			"lives":[aGame.score.lives /]
+		},
+		"gamePad":[ '[' /][for (gp : GamePad | aGame.gamepad)]{
+			"name":[gp.name /],
+			"trigger":[gp.trigger.name /]
+		}[/for]
+		[ ']' /]
+	}[ ']' /] 
+}
+[/file]
+[/template]

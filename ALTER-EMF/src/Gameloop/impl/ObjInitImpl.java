@@ -3,19 +3,23 @@
 package Gameloop.impl;
 
 import Gameloop.GameloopPackage;
+import Gameloop.ObjAttribute;
 import Gameloop.ObjInit;
-
 import Gameloop.Rule;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link Gameloop.impl.ObjInitImpl#getPosZ <em>Pos Z</em>}</li>
  *   <li>{@link Gameloop.impl.ObjInitImpl#getRules <em>Rules</em>}</li>
  *   <li>{@link Gameloop.impl.ObjInitImpl#getClass_ <em>Class</em>}</li>
+ *   <li>{@link Gameloop.impl.ObjInitImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
  *
  * @generated
@@ -137,6 +142,16 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 	 * @ordered
 	 */
 	protected Ontologicals.Class class_;
+
+	/**
+	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttribute()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ObjAttribute> attribute;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,11 +311,25 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ObjAttribute> getAttribute() {
+		if (attribute == null) {
+			attribute = new EObjectContainmentEList<ObjAttribute>(ObjAttribute.class, this, GameloopPackage.OBJ_INIT__ATTRIBUTE);
+		}
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case GameloopPackage.OBJ_INIT__RULES:
 				return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
+			case GameloopPackage.OBJ_INIT__ATTRIBUTE:
+				return ((InternalEList<?>)getAttribute()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -326,6 +355,8 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 			case GameloopPackage.OBJ_INIT__CLASS:
 				if (resolve) return getClass_();
 				return basicGetClass();
+			case GameloopPackage.OBJ_INIT__ATTRIBUTE:
+				return getAttribute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,6 +389,10 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 			case GameloopPackage.OBJ_INIT__CLASS:
 				setClass((Ontologicals.Class)newValue);
 				return;
+			case GameloopPackage.OBJ_INIT__ATTRIBUTE:
+				getAttribute().clear();
+				getAttribute().addAll((Collection<? extends ObjAttribute>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -388,6 +423,9 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 			case GameloopPackage.OBJ_INIT__CLASS:
 				setClass((Ontologicals.Class)null);
 				return;
+			case GameloopPackage.OBJ_INIT__ATTRIBUTE:
+				getAttribute().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -412,6 +450,8 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 				return rules != null && !rules.isEmpty();
 			case GameloopPackage.OBJ_INIT__CLASS:
 				return class_ != null;
+			case GameloopPackage.OBJ_INIT__ATTRIBUTE:
+				return attribute != null && !attribute.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

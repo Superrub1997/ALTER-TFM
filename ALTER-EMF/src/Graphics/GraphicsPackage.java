@@ -105,7 +105,7 @@ public interface GraphicsPackage extends EPackage {
 	int GRAPHIC_CLASS = 1;
 
 	/**
-	 * The feature id for the '<em><b>Versions</b></em>' containment reference.
+	 * The feature id for the '<em><b>Versions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,22 +114,13 @@ public interface GraphicsPackage extends EPackage {
 	int GRAPHIC_CLASS__VERSIONS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Vname</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPHIC_CLASS__VNAME = 1;
-
-	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPHIC_CLASS__CONSTRAINTS = 2;
+	int GRAPHIC_CLASS__CONSTRAINTS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Connections</b></em>' containment reference list.
@@ -138,7 +129,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPHIC_CLASS__CONNECTIONS = 3;
+	int GRAPHIC_CLASS__CONNECTIONS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Show Attributes</b></em>' attribute list.
@@ -147,7 +138,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPHIC_CLASS__SHOW_ATTRIBUTES = 4;
+	int GRAPHIC_CLASS__SHOW_ATTRIBUTES = 3;
 
 	/**
 	 * The feature id for the '<em><b>Material Attributes</b></em>' attribute list.
@@ -156,7 +147,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPHIC_CLASS__MATERIAL_ATTRIBUTES = 5;
+	int GRAPHIC_CLASS__MATERIAL_ATTRIBUTES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Onto Class</b></em>' reference.
@@ -165,7 +156,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPHIC_CLASS__ONTO_CLASS = 6;
+	int GRAPHIC_CLASS__ONTO_CLASS = 5;
 
 	/**
 	 * The number of structural features of the '<em>Graphic Class</em>' class.
@@ -174,7 +165,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPHIC_CLASS_FEATURE_COUNT = 7;
+	int GRAPHIC_CLASS_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Graphic Class</em>' class.
@@ -196,31 +187,22 @@ public interface GraphicsPackage extends EPackage {
 	int VERSIONS = 2;
 
 	/**
-	 * The feature id for the '<em><b>V1</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSIONS__V1 = 0;
+	int VERSIONS__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>V2</b></em>' attribute.
+	 * The feature id for the '<em><b>URL</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSIONS__V2 = 1;
-
-	/**
-	 * The feature id for the '<em><b>V3</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERSIONS__V3 = 2;
+	int VERSIONS__URL = 1;
 
 	/**
 	 * The number of structural features of the '<em>Versions</em>' class.
@@ -229,7 +211,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VERSIONS_FEATURE_COUNT = 3;
+	int VERSIONS_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Versions</em>' class.
@@ -241,61 +223,6 @@ public interface GraphicsPackage extends EPackage {
 	int VERSIONS_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link Graphics.impl.VersionNameImpl <em>Version Name</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Graphics.impl.VersionNameImpl
-	 * @see Graphics.impl.GraphicsPackageImpl#getVersionName()
-	 * @generated
-	 */
-	int VERSION_NAME = 3;
-
-	/**
-	 * The feature id for the '<em><b>V1</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERSION_NAME__V1 = 0;
-
-	/**
-	 * The feature id for the '<em><b>V2</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERSION_NAME__V2 = 1;
-
-	/**
-	 * The feature id for the '<em><b>V3</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERSION_NAME__V3 = 2;
-
-	/**
-	 * The number of structural features of the '<em>Version Name</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERSION_NAME_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Version Name</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VERSION_NAME_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link Graphics.impl.ConstraintsImpl <em>Constraints</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,7 +230,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @see Graphics.impl.GraphicsPackageImpl#getConstraints()
 	 * @generated
 	 */
-	int CONSTRAINTS = 4;
+	int CONSTRAINTS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Planes</b></em>' attribute.
@@ -439,7 +366,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @see Graphics.impl.GraphicsPackageImpl#getConnection()
 	 * @generated
 	 */
-	int CONNECTION = 5;
+	int CONNECTION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -548,7 +475,7 @@ public interface GraphicsPackage extends EPackage {
 	 * @see Graphics.impl.GraphicsPackageImpl#getPlanes()
 	 * @generated
 	 */
-	int PLANES = 6;
+	int PLANES = 5;
 
 
 	/**
@@ -583,26 +510,15 @@ public interface GraphicsPackage extends EPackage {
 	EClass getGraphicClass();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link Graphics.GraphicClass#getVersions <em>Versions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link Graphics.GraphicClass#getVersions <em>Versions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Versions</em>'.
+	 * @return the meta object for the containment reference list '<em>Versions</em>'.
 	 * @see Graphics.GraphicClass#getVersions()
 	 * @see #getGraphicClass()
 	 * @generated
 	 */
 	EReference getGraphicClass_Versions();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link Graphics.GraphicClass#getVname <em>Vname</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Vname</em>'.
-	 * @see Graphics.GraphicClass#getVname()
-	 * @see #getGraphicClass()
-	 * @generated
-	 */
-	EReference getGraphicClass_Vname();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link Graphics.GraphicClass#getConstraints <em>Constraints</em>}'.
@@ -670,80 +586,26 @@ public interface GraphicsPackage extends EPackage {
 	EClass getVersions();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Graphics.Versions#getV1 <em>V1</em>}'.
+	 * Returns the meta object for the attribute '{@link Graphics.Versions#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>V1</em>'.
-	 * @see Graphics.Versions#getV1()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see Graphics.Versions#getName()
 	 * @see #getVersions()
 	 * @generated
 	 */
-	EAttribute getVersions_V1();
+	EAttribute getVersions_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Graphics.Versions#getV2 <em>V2</em>}'.
+	 * Returns the meta object for the attribute '{@link Graphics.Versions#getURL <em>URL</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>V2</em>'.
-	 * @see Graphics.Versions#getV2()
+	 * @return the meta object for the attribute '<em>URL</em>'.
+	 * @see Graphics.Versions#getURL()
 	 * @see #getVersions()
 	 * @generated
 	 */
-	EAttribute getVersions_V2();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Graphics.Versions#getV3 <em>V3</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>V3</em>'.
-	 * @see Graphics.Versions#getV3()
-	 * @see #getVersions()
-	 * @generated
-	 */
-	EAttribute getVersions_V3();
-
-	/**
-	 * Returns the meta object for class '{@link Graphics.VersionName <em>Version Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Version Name</em>'.
-	 * @see Graphics.VersionName
-	 * @generated
-	 */
-	EClass getVersionName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Graphics.VersionName#getV1 <em>V1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>V1</em>'.
-	 * @see Graphics.VersionName#getV1()
-	 * @see #getVersionName()
-	 * @generated
-	 */
-	EAttribute getVersionName_V1();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Graphics.VersionName#getV2 <em>V2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>V2</em>'.
-	 * @see Graphics.VersionName#getV2()
-	 * @see #getVersionName()
-	 * @generated
-	 */
-	EAttribute getVersionName_V2();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Graphics.VersionName#getV3 <em>V3</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>V3</em>'.
-	 * @see Graphics.VersionName#getV3()
-	 * @see #getVersionName()
-	 * @generated
-	 */
-	EAttribute getVersionName_V3();
+	EAttribute getVersions_URL();
 
 	/**
 	 * Returns the meta object for class '{@link Graphics.Constraints <em>Constraints</em>}'.
@@ -1058,20 +920,12 @@ public interface GraphicsPackage extends EPackage {
 		EClass GRAPHIC_CLASS = eINSTANCE.getGraphicClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Versions</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Versions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference GRAPHIC_CLASS__VERSIONS = eINSTANCE.getGraphicClass_Versions();
-
-		/**
-		 * The meta object literal for the '<em><b>Vname</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GRAPHIC_CLASS__VNAME = eINSTANCE.getGraphicClass_Vname();
 
 		/**
 		 * The meta object literal for the '<em><b>Constraints</b></em>' containment reference feature.
@@ -1124,62 +978,20 @@ public interface GraphicsPackage extends EPackage {
 		EClass VERSIONS = eINSTANCE.getVersions();
 
 		/**
-		 * The meta object literal for the '<em><b>V1</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VERSIONS__V1 = eINSTANCE.getVersions_V1();
+		EAttribute VERSIONS__NAME = eINSTANCE.getVersions_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>V2</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>URL</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VERSIONS__V2 = eINSTANCE.getVersions_V2();
-
-		/**
-		 * The meta object literal for the '<em><b>V3</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VERSIONS__V3 = eINSTANCE.getVersions_V3();
-
-		/**
-		 * The meta object literal for the '{@link Graphics.impl.VersionNameImpl <em>Version Name</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Graphics.impl.VersionNameImpl
-		 * @see Graphics.impl.GraphicsPackageImpl#getVersionName()
-		 * @generated
-		 */
-		EClass VERSION_NAME = eINSTANCE.getVersionName();
-
-		/**
-		 * The meta object literal for the '<em><b>V1</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VERSION_NAME__V1 = eINSTANCE.getVersionName_V1();
-
-		/**
-		 * The meta object literal for the '<em><b>V2</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VERSION_NAME__V2 = eINSTANCE.getVersionName_V2();
-
-		/**
-		 * The meta object literal for the '<em><b>V3</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VERSION_NAME__V3 = eINSTANCE.getVersionName_V3();
+		EAttribute VERSIONS__URL = eINSTANCE.getVersions_URL();
 
 		/**
 		 * The meta object literal for the '{@link Graphics.impl.ConstraintsImpl <em>Constraints</em>}' class.

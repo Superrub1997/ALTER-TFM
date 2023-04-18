@@ -13,9 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link Graphics.Versions#getV1 <em>V1</em>}</li>
- *   <li>{@link Graphics.Versions#getV2 <em>V2</em>}</li>
- *   <li>{@link Graphics.Versions#getV3 <em>V3</em>}</li>
+ *   <li>{@link Graphics.Versions#getName <em>Name</em>}</li>
+ *   <li>{@link Graphics.Versions#getURL <em>URL</em>}</li>
  * </ul>
  *
  * @see Graphics.GraphicsPackage#getVersions()
@@ -24,69 +23,47 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Versions extends EObject {
 	/**
-	 * Returns the value of the '<em><b>V1</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>V1</em>' attribute.
-	 * @see #setV1(String)
-	 * @see Graphics.GraphicsPackage#getVersions_V1()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see Graphics.GraphicsPackage#getVersions_Name()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getV1();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link Graphics.Versions#getV1 <em>V1</em>}' attribute.
+	 * Sets the value of the '{@link Graphics.Versions#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>V1</em>' attribute.
-	 * @see #getV1()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setV1(String value);
+	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>V2</b></em>' attribute.
+	 * Returns the value of the '<em><b>URL</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>V2</em>' attribute.
-	 * @see #setV2(String)
-	 * @see Graphics.GraphicsPackage#getVersions_V2()
+	 * @return the value of the '<em>URL</em>' attribute.
+	 * @see #setURL(String)
+	 * @see Graphics.GraphicsPackage#getVersions_URL()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getV2();
+	String getURL();
 
 	/**
-	 * Sets the value of the '{@link Graphics.Versions#getV2 <em>V2</em>}' attribute.
+	 * Sets the value of the '{@link Graphics.Versions#getURL <em>URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>V2</em>' attribute.
-	 * @see #getV2()
+	 * @param value the new value of the '<em>URL</em>' attribute.
+	 * @see #getURL()
 	 * @generated
 	 */
-	void setV2(String value);
-
-	/**
-	 * Returns the value of the '<em><b>V3</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>V3</em>' attribute.
-	 * @see #setV3(String)
-	 * @see Graphics.GraphicsPackage#getVersions_V3()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getV3();
-
-	/**
-	 * Sets the value of the '{@link Graphics.Versions#getV3 <em>V3</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>V3</em>' attribute.
-	 * @see #getV3()
-	 * @generated
-	 */
-	void setV3(String value);
+	void setURL(String value);
 
 } // Versions

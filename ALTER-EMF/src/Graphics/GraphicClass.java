@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link Graphics.GraphicClass#getVersions <em>Versions</em>}</li>
- *   <li>{@link Graphics.GraphicClass#getVname <em>Vname</em>}</li>
  *   <li>{@link Graphics.GraphicClass#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link Graphics.GraphicClass#getConnections <em>Connections</em>}</li>
  *   <li>{@link Graphics.GraphicClass#getShowAttributes <em>Show Attributes</em>}</li>
@@ -30,48 +29,16 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface GraphicClass extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Versions</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Versions</b></em>' containment reference list.
+	 * The list contents are of type {@link Graphics.Versions}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Versions</em>' containment reference.
-	 * @see #setVersions(Versions)
+	 * @return the value of the '<em>Versions</em>' containment reference list.
 	 * @see Graphics.GraphicsPackage#getGraphicClass_Versions()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Versions getVersions();
-
-	/**
-	 * Sets the value of the '{@link Graphics.GraphicClass#getVersions <em>Versions</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Versions</em>' containment reference.
-	 * @see #getVersions()
-	 * @generated
-	 */
-	void setVersions(Versions value);
-
-	/**
-	 * Returns the value of the '<em><b>Vname</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Vname</em>' containment reference.
-	 * @see #setVname(VersionName)
-	 * @see Graphics.GraphicsPackage#getGraphicClass_Vname()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	VersionName getVname();
-
-	/**
-	 * Sets the value of the '{@link Graphics.GraphicClass#getVname <em>Vname</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Vname</em>' containment reference.
-	 * @see #getVname()
-	 * @generated
-	 */
-	void setVname(VersionName value);
+	EList<Versions> getVersions();
 
 	/**
 	 * Returns the value of the '<em><b>Constraints</b></em>' containment reference.

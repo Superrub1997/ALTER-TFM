@@ -3,9 +3,13 @@
 package Physics.impl;
 
 import Gameloop.GameloopPackage;
+
 import Gameloop.impl.GameloopPackageImpl;
+
 import Graphics.GraphicsPackage;
+
 import Graphics.impl.GraphicsPackageImpl;
+
 import Ontologicals.OntologicalsPackage;
 
 import Ontologicals.impl.OntologicalsPackageImpl;
@@ -125,22 +129,22 @@ public class PhysicsPackageImpl extends EPackageImpl implements PhysicsPackage {
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GameloopPackage.eNS_URI);
 		GameloopPackageImpl theGameloopPackage = (GameloopPackageImpl)(registeredPackage instanceof GameloopPackageImpl ? registeredPackage : GameloopPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OntologicalsPackage.eNS_URI);
-		OntologicalsPackageImpl theOntologicalsPackage = (OntologicalsPackageImpl)(registeredPackage instanceof OntologicalsPackageImpl ? registeredPackage : OntologicalsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GraphicsPackage.eNS_URI);
 		GraphicsPackageImpl theGraphicsPackage = (GraphicsPackageImpl)(registeredPackage instanceof GraphicsPackageImpl ? registeredPackage : GraphicsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OntologicalsPackage.eNS_URI);
+		OntologicalsPackageImpl theOntologicalsPackage = (OntologicalsPackageImpl)(registeredPackage instanceof OntologicalsPackageImpl ? registeredPackage : OntologicalsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thePhysicsPackage.createPackageContents();
 		theGameloopPackage.createPackageContents();
-		theOntologicalsPackage.createPackageContents();
 		theGraphicsPackage.createPackageContents();
+		theOntologicalsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		thePhysicsPackage.initializePackageContents();
 		theGameloopPackage.initializePackageContents();
-		theOntologicalsPackage.initializePackageContents();
 		theGraphicsPackage.initializePackageContents();
+		theOntologicalsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thePhysicsPackage.freeze();
@@ -362,8 +366,8 @@ public class PhysicsPackageImpl extends EPackageImpl implements PhysicsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBitMasks_Category() {
-		return (EAttribute)bitMasksEClass.getEStructuralFeatures().get(0);
+	public EReference getBitMasks_Collision() {
+		return (EReference)bitMasksEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -371,17 +375,8 @@ public class PhysicsPackageImpl extends EPackageImpl implements PhysicsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBitMasks_Collision() {
-		return (EAttribute)bitMasksEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBitMasks_ContactTest() {
-		return (EAttribute)bitMasksEClass.getEStructuralFeatures().get(2);
+	public EReference getBitMasks_Contact() {
+		return (EReference)bitMasksEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -448,9 +443,8 @@ public class PhysicsPackageImpl extends EPackageImpl implements PhysicsPackage {
 		createEAttribute(forceEClass, FORCE__GESTURE);
 
 		bitMasksEClass = createEClass(BIT_MASKS);
-		createEAttribute(bitMasksEClass, BIT_MASKS__CATEGORY);
-		createEAttribute(bitMasksEClass, BIT_MASKS__COLLISION);
-		createEAttribute(bitMasksEClass, BIT_MASKS__CONTACT_TEST);
+		createEReference(bitMasksEClass, BIT_MASKS__COLLISION);
+		createEReference(bitMasksEClass, BIT_MASKS__CONTACT);
 
 		// Create enums
 		bodyTypeEEnum = createEEnum(BODY_TYPE);
@@ -516,9 +510,8 @@ public class PhysicsPackageImpl extends EPackageImpl implements PhysicsPackage {
 		initEAttribute(getForce_Gesture(), ecorePackage.getEString(), "gesture", null, 1, 1, Force.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bitMasksEClass, BitMasks.class, "BitMasks", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBitMasks_Category(), ecorePackage.getEInt(), "category", null, 1, 1, BitMasks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBitMasks_Collision(), ecorePackage.getEInt(), "collision", null, 1, 1, BitMasks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBitMasks_ContactTest(), ecorePackage.getEInt(), "contactTest", null, 1, 1, BitMasks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBitMasks_Collision(), theOntologicalsPackage.getClass_(), null, "collision", null, 0, -1, BitMasks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBitMasks_Contact(), theOntologicalsPackage.getClass_(), null, "contact", null, 0, -1, BitMasks.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(bodyTypeEEnum, BodyType.class, "BodyType");

@@ -84,12 +84,6 @@ public class GraphicsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case GraphicsPackage.VERSION_NAME: {
-				VersionName versionName = (VersionName)theEObject;
-				T result = caseVersionName(versionName);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case GraphicsPackage.CONSTRAINTS: {
 				Constraints constraints = (Constraints)theEObject;
 				T result = caseConstraints(constraints);
@@ -148,21 +142,6 @@ public class GraphicsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVersions(Versions object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Version Name</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Version Name</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVersionName(VersionName object) {
 		return null;
 	}
 

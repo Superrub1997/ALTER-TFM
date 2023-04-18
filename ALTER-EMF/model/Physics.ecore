@@ -46,11 +46,9 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BitMasks">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collision" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contactTest" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="collision" upperBound="-1"
+        eType="ecore:EClass Ontologicals.ecore#//Class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contact" upperBound="-1"
+        eType="ecore:EClass Ontologicals.ecore#//Class"/>
   </eClassifiers>
 </ecore:EPackage>

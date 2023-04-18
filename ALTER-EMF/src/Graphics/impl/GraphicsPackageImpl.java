@@ -3,7 +3,9 @@
 package Graphics.impl;
 
 import Gameloop.GameloopPackage;
+
 import Gameloop.impl.GameloopPackageImpl;
+
 import Graphics.Connection;
 import Graphics.Constraints;
 import Graphics.Graphic;
@@ -11,13 +13,16 @@ import Graphics.GraphicClass;
 import Graphics.GraphicsFactory;
 import Graphics.GraphicsPackage;
 import Graphics.Planes;
-import Graphics.VersionName;
 import Graphics.Versions;
 
 import Ontologicals.OntologicalsPackage;
+
 import Ontologicals.impl.OntologicalsPackageImpl;
+
 import Physics.PhysicsPackage;
+
 import Physics.impl.PhysicsPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -53,13 +58,6 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * @generated
 	 */
 	private EClass versionsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass versionNameEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -197,7 +195,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGraphicClass_Vname() {
+	public EReference getGraphicClass_Constraints() {
 		return (EReference)graphicClassEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -206,7 +204,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGraphicClass_Constraints() {
+	public EReference getGraphicClass_Connections() {
 		return (EReference)graphicClassEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -215,17 +213,8 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGraphicClass_Connections() {
-		return (EReference)graphicClassEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getGraphicClass_ShowAttributes() {
-		return (EAttribute)graphicClassEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)graphicClassEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -234,7 +223,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * @generated
 	 */
 	public EAttribute getGraphicClass_MaterialAttributes() {
-		return (EAttribute)graphicClassEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)graphicClassEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -243,7 +232,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * @generated
 	 */
 	public EReference getGraphicClass_OntoClass() {
-		return (EReference)graphicClassEClass.getEStructuralFeatures().get(6);
+		return (EReference)graphicClassEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -260,7 +249,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVersions_V1() {
+	public EAttribute getVersions_Name() {
 		return (EAttribute)versionsEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -269,53 +258,8 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVersions_V2() {
+	public EAttribute getVersions_URL() {
 		return (EAttribute)versionsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVersions_V3() {
-		return (EAttribute)versionsEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVersionName() {
-		return versionNameEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVersionName_V1() {
-		return (EAttribute)versionNameEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVersionName_V2() {
-		return (EAttribute)versionNameEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVersionName_V3() {
-		return (EAttribute)versionNameEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -567,7 +511,6 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 
 		graphicClassEClass = createEClass(GRAPHIC_CLASS);
 		createEReference(graphicClassEClass, GRAPHIC_CLASS__VERSIONS);
-		createEReference(graphicClassEClass, GRAPHIC_CLASS__VNAME);
 		createEReference(graphicClassEClass, GRAPHIC_CLASS__CONSTRAINTS);
 		createEReference(graphicClassEClass, GRAPHIC_CLASS__CONNECTIONS);
 		createEAttribute(graphicClassEClass, GRAPHIC_CLASS__SHOW_ATTRIBUTES);
@@ -575,14 +518,8 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		createEReference(graphicClassEClass, GRAPHIC_CLASS__ONTO_CLASS);
 
 		versionsEClass = createEClass(VERSIONS);
-		createEAttribute(versionsEClass, VERSIONS__V1);
-		createEAttribute(versionsEClass, VERSIONS__V2);
-		createEAttribute(versionsEClass, VERSIONS__V3);
-
-		versionNameEClass = createEClass(VERSION_NAME);
-		createEAttribute(versionNameEClass, VERSION_NAME__V1);
-		createEAttribute(versionNameEClass, VERSION_NAME__V2);
-		createEAttribute(versionNameEClass, VERSION_NAME__V3);
+		createEAttribute(versionsEClass, VERSIONS__NAME);
+		createEAttribute(versionsEClass, VERSIONS__URL);
 
 		constraintsEClass = createEClass(CONSTRAINTS);
 		createEAttribute(constraintsEClass, CONSTRAINTS__PLANES);
@@ -650,8 +587,7 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		initEReference(getGraphic_Classes(), this.getGraphicClass(), null, "classes", null, 1, -1, Graphic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(graphicClassEClass, GraphicClass.class, "GraphicClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGraphicClass_Versions(), this.getVersions(), null, "versions", null, 1, 1, GraphicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGraphicClass_Vname(), this.getVersionName(), null, "vname", null, 1, 1, GraphicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGraphicClass_Versions(), this.getVersions(), null, "versions", null, 1, -1, GraphicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGraphicClass_Constraints(), this.getConstraints(), null, "constraints", null, 1, 1, GraphicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGraphicClass_Connections(), this.getConnection(), null, "connections", null, 0, -1, GraphicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGraphicClass_ShowAttributes(), ecorePackage.getEString(), "showAttributes", null, 0, -1, GraphicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -659,14 +595,8 @@ public class GraphicsPackageImpl extends EPackageImpl implements GraphicsPackage
 		initEReference(getGraphicClass_OntoClass(), theOntologicalsPackage.getClass_(), null, "ontoClass", null, 1, 1, GraphicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(versionsEClass, Versions.class, "Versions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVersions_V1(), ecorePackage.getEString(), "v1", null, 1, 1, Versions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVersions_V2(), ecorePackage.getEString(), "v2", null, 1, 1, Versions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVersions_V3(), ecorePackage.getEString(), "v3", null, 1, 1, Versions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(versionNameEClass, VersionName.class, "VersionName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVersionName_V1(), ecorePackage.getEString(), "v1", null, 1, 1, VersionName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVersionName_V2(), ecorePackage.getEString(), "v2", null, 1, 1, VersionName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVersionName_V3(), ecorePackage.getEString(), "v3", null, 1, 1, VersionName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVersions_Name(), ecorePackage.getEString(), "name", null, 1, 1, Versions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVersions_URL(), ecorePackage.getEString(), "URL", null, 1, 1, Versions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constraintsEClass, Constraints.class, "Constraints", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConstraints_Planes(), this.getPlanes(), "planes", null, 1, 1, Constraints.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

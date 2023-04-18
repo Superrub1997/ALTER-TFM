@@ -5,14 +5,15 @@ package Gameloop.impl;
 import Gameloop.Action;
 import Gameloop.GameloopPackage;
 import Gameloop.PhysicChange;
-
 import Gameloop.Position;
+
 import Physics.Force;
+
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -201,6 +202,27 @@ public class PhysicChangeImpl extends MinimalEObjectImpl.Container implements Ph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double getScale() {
+		return scale;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setScale(double newScale) {
+		double oldScale = scale;
+		scale = newScale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GameloopPackage.PHYSIC_CHANGE__SCALE, oldScale, scale));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getAttribute() {
 		return attribute;
 	}
@@ -375,27 +397,6 @@ public class PhysicChangeImpl extends MinimalEObjectImpl.Container implements Ph
 		class_ = newClass;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GameloopPackage.PHYSIC_CHANGE__CLASS, oldClass, class_));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public double getScale() {
-		return scale;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setScale(double newScale) {
-		double oldScale = scale;
-		scale = newScale;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GameloopPackage.PHYSIC_CHANGE__SCALE, oldScale, scale));
 	}
 
 	/**

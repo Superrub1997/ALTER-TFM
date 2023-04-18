@@ -7,9 +7,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GraphicClass">
     <eStructuralFeatures xsi:type="ecore:EReference" name="versions" lowerBound="1"
-        eType="#//Versions" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="vname" lowerBound="1" eType="#//VersionName"
-        containment="true"/>
+        upperBound="-1" eType="#//Versions" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" lowerBound="1"
         eType="#//Constraints" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="connections" upperBound="-1"
@@ -22,14 +20,8 @@
         eType="ecore:EClass Ontologicals.ecore#//Class"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Versions">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="v1" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="v2" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="v3" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VersionName">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="v1" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="v2" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="v3" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="URL" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraints">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="planes" lowerBound="1"

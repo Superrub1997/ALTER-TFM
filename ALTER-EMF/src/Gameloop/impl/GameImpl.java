@@ -9,6 +9,7 @@ import Gameloop.GameloopPackage;
 import Gameloop.ObjInit;
 import Gameloop.ScoreSystem;
 import Gameloop.Trigger;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

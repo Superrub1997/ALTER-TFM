@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Ontologicals:Ontological xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Gameloop="http://gameloop/1.0" xmlns:Ontologicals="http://ontologicals/1.0" name="skeet">
+  <classes name="bullet"/>
+  <classes name="target"/>
+  <classes name="player" noSCN="true">
+    <attributes name="ammo" type="Int" min="1" max="1" default="6"/>
+  </classes>
+  <graphic>
+    <classes ontoClass="//@classes.0">
+      <versions name="v1" URL="xxxV1"/>
+      <constraints sizeMax="1.0" sizeMin="0.5" overlapping="true"/>
+    </classes>
+  </graphic>
+  <physic>
+    <classes ontoClass="//@classes.0">
+      <physicBody mass="0.5" bodyType="dynamic" friction="0.1" restitution="0.5" damping="0.1" angularDamping="0.1"/>
+      <bitMasks collision="//@classes.1" contact="//@classes.1"/>
+      <forces zVector="5.0" name="shoot" gesture="touch"/>
+    </classes>
+  </physic>
+  <gameloop win="HIT" lose="MISS" start="START">
+    <objInit name="player" class="//@classes.2">
+      <rules action="//@gameloop/@actionsTriggers.1">
+        <condition xsi:type="Gameloop:Binary" op="And">
+          <left xsi:type="Gameloop:Arithmetic">
+            <left xsi:type="Gameloop:ConstantValue" value="ammo"/>
+            <right xsi:type="Gameloop:ConstantValue" value="0"/>
+          </left>
+          <right xsi:type="Gameloop:Arithmetic" op="greater">
+            <left xsi:type="Gameloop:AllInstances" type="target"/>
+            <right xsi:type="Gameloop:ConstantValue" value="0"/>
+          </right>
+        </condition>
+      </rules>
+    </objInit>
+    <objInit name="target" posY="0.3" posZ="0.2" class="//@classes.1"/>
+    <objInit name="target1" posX="0.2" posY="0.2" posZ="-0.3" class="//@classes.1"/>
+    <objInit name="target2" posX="-0.5" posY="0.4" posZ="1.0" class="//@classes.1"/>
+    <objInit name="target3" posX="-0.6" posY="0.2" posZ="-0.4" class="//@classes.1"/>
+    <objInit name="target4" posX="-1.0" posY="0.3" posZ="-0.3" class="//@classes.1"/>
+    <objInit name="target5" posY="0.4" posZ="-0.5" class="//@classes.1"/>
+    <score finish="-1" lives="3"/>
+    <collisions action="//@gameloop/@actionsTriggers.2" classA="//@classes.0" classB="//@classes.1"/>
+    <actionsTriggers name="shoot">
+      <physicChanges object="bullet" force="//@physic/@classes.0/@forces.0" class="//@classes.0"/>
+      <physicChanges attribute="ammo" changeValue="-1" action="edit" object="player" class="//@classes.2"/>
+    </actionsTriggers>
+    <actionsTriggers name="gameover" action="lose"/>
+    <actionsTriggers name="hit" scoreChange="1"/>
+    <gamepad name="shoot" trigger="//@gameloop/@actionsTriggers.0"/>
+  </gameloop>
+</Ontologicals:Ontological>

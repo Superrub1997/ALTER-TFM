@@ -19,6 +19,7 @@ import Gameloop.GameloopPackage;
 import Gameloop.LogicOp;
 import Gameloop.LogicOps;
 import Gameloop.Not;
+import Gameloop.ObjAttribute;
 import Gameloop.ObjInit;
 import Gameloop.PhysicChange;
 import Gameloop.Position;
@@ -28,11 +29,17 @@ import Gameloop.Trigger;
 import Gameloop.Value;
 
 import Graphics.GraphicsPackage;
+
 import Graphics.impl.GraphicsPackageImpl;
+
 import Ontologicals.OntologicalsPackage;
+
 import Ontologicals.impl.OntologicalsPackageImpl;
+
 import Physics.PhysicsPackage;
+
 import Physics.impl.PhysicsPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -68,6 +75,13 @@ public class GameloopPackageImpl extends EPackageImpl implements GameloopPackage
 	 * @generated
 	 */
 	private EClass objInitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass objAttributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,24 +263,24 @@ public class GameloopPackageImpl extends EPackageImpl implements GameloopPackage
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OntologicalsPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GraphicsPackage.eNS_URI);
+		GraphicsPackageImpl theGraphicsPackage = (GraphicsPackageImpl)(registeredPackage instanceof GraphicsPackageImpl ? registeredPackage : GraphicsPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OntologicalsPackage.eNS_URI);
 		OntologicalsPackageImpl theOntologicalsPackage = (OntologicalsPackageImpl)(registeredPackage instanceof OntologicalsPackageImpl ? registeredPackage : OntologicalsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PhysicsPackage.eNS_URI);
 		PhysicsPackageImpl thePhysicsPackage = (PhysicsPackageImpl)(registeredPackage instanceof PhysicsPackageImpl ? registeredPackage : PhysicsPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GraphicsPackage.eNS_URI);
-		GraphicsPackageImpl theGraphicsPackage = (GraphicsPackageImpl)(registeredPackage instanceof GraphicsPackageImpl ? registeredPackage : GraphicsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theGameloopPackage.createPackageContents();
+		theGraphicsPackage.createPackageContents();
 		theOntologicalsPackage.createPackageContents();
 		thePhysicsPackage.createPackageContents();
-		theGraphicsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theGameloopPackage.initializePackageContents();
+		theGraphicsPackage.initializePackageContents();
 		theOntologicalsPackage.initializePackageContents();
 		thePhysicsPackage.initializePackageContents();
-		theGraphicsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theGameloopPackage.freeze();
@@ -452,6 +466,42 @@ public class GameloopPackageImpl extends EPackageImpl implements GameloopPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getObjInit_Attribute() {
+		return (EReference)objInitEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getObjAttribute() {
+		return objAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getObjAttribute_Attribute() {
+		return (EReference)objAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getObjAttribute_Value() {
+		return (EAttribute)objAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getScoreSystem() {
 		return scoreSystemEClass;
 	}
@@ -560,6 +610,15 @@ public class GameloopPackageImpl extends EPackageImpl implements GameloopPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCollision_Action() {
+		return (EReference)collisionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getCollision_ClassA() {
 		return (EReference)collisionEClass.getEStructuralFeatures().get(1);
 	}
@@ -578,8 +637,8 @@ public class GameloopPackageImpl extends EPackageImpl implements GameloopPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCollision_Action() {
-		return (EReference)collisionEClass.getEStructuralFeatures().get(0);
+	public EClass getPhysicChange() {
+		return physicChangeEClass;
 	}
 
 	/**
@@ -587,8 +646,8 @@ public class GameloopPackageImpl extends EPackageImpl implements GameloopPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPhysicChange() {
-		return physicChangeEClass;
+	public EAttribute getPhysicChange_Scale() {
+		return (EAttribute)physicChangeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -652,15 +711,6 @@ public class GameloopPackageImpl extends EPackageImpl implements GameloopPackage
 	 */
 	public EReference getPhysicChange_Class() {
 		return (EReference)physicChangeEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPhysicChange_Scale() {
-		return (EAttribute)physicChangeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -955,6 +1005,11 @@ public class GameloopPackageImpl extends EPackageImpl implements GameloopPackage
 		createEAttribute(objInitEClass, OBJ_INIT__POS_Z);
 		createEReference(objInitEClass, OBJ_INIT__RULES);
 		createEReference(objInitEClass, OBJ_INIT__CLASS);
+		createEReference(objInitEClass, OBJ_INIT__ATTRIBUTE);
+
+		objAttributeEClass = createEClass(OBJ_ATTRIBUTE);
+		createEReference(objAttributeEClass, OBJ_ATTRIBUTE__ATTRIBUTE);
+		createEAttribute(objAttributeEClass, OBJ_ATTRIBUTE__VALUE);
 
 		scoreSystemEClass = createEClass(SCORE_SYSTEM);
 		createEAttribute(scoreSystemEClass, SCORE_SYSTEM__START);
@@ -1086,6 +1141,11 @@ public class GameloopPackageImpl extends EPackageImpl implements GameloopPackage
 		initEAttribute(getObjInit_PosZ(), ecorePackage.getEDouble(), "posZ", null, 1, 1, ObjInit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getObjInit_Rules(), this.getRule(), null, "rules", null, 0, -1, ObjInit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getObjInit_Class(), theOntologicalsPackage.getClass_(), null, "class", null, 1, 1, ObjInit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getObjInit_Attribute(), this.getObjAttribute(), null, "attribute", null, 0, -1, ObjInit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(objAttributeEClass, ObjAttribute.class, "ObjAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getObjAttribute_Attribute(), theOntologicalsPackage.getAttribute(), null, "attribute", null, 1, 1, ObjAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObjAttribute_Value(), ecorePackage.getEString(), "value", null, 1, 1, ObjAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scoreSystemEClass, ScoreSystem.class, "ScoreSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getScoreSystem_Start(), ecorePackage.getEInt(), "start", null, 1, 1, ScoreSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

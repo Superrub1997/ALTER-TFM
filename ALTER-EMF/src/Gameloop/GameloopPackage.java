@@ -268,13 +268,22 @@ public interface GameloopPackage extends EPackage {
 	int OBJ_INIT__CLASS = 5;
 
 	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJ_INIT__ATTRIBUTE = 6;
+
+	/**
 	 * The number of structural features of the '<em>Obj Init</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJ_INIT_FEATURE_COUNT = 6;
+	int OBJ_INIT_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Obj Init</em>' class.
@@ -286,6 +295,52 @@ public interface GameloopPackage extends EPackage {
 	int OBJ_INIT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link Gameloop.impl.ObjAttributeImpl <em>Obj Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Gameloop.impl.ObjAttributeImpl
+	 * @see Gameloop.impl.GameloopPackageImpl#getObjAttribute()
+	 * @generated
+	 */
+	int OBJ_ATTRIBUTE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJ_ATTRIBUTE__ATTRIBUTE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJ_ATTRIBUTE__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Obj Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJ_ATTRIBUTE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Obj Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJ_ATTRIBUTE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link Gameloop.impl.ScoreSystemImpl <em>Score System</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -293,7 +348,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getScoreSystem()
 	 * @generated
 	 */
-	int SCORE_SYSTEM = 3;
+	int SCORE_SYSTEM = 4;
 
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
@@ -348,7 +403,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getTrigger()
 	 * @generated
 	 */
-	int TRIGGER = 4;
+	int TRIGGER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -430,7 +485,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getCollision()
 	 * @generated
 	 */
-	int COLLISION = 5;
+	int COLLISION = 6;
 
 	/**
 	 * The feature id for the '<em><b>Action</b></em>' reference.
@@ -485,7 +540,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getPhysicChange()
 	 * @generated
 	 */
-	int PHYSIC_CHANGE = 6;
+	int PHYSIC_CHANGE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Scale</b></em>' attribute.
@@ -585,7 +640,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getCondition()
 	 * @generated
 	 */
-	int CONDITION = 7;
+	int CONDITION = 8;
 
 	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
@@ -613,7 +668,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getRule()
 	 * @generated
 	 */
-	int RULE = 8;
+	int RULE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -659,7 +714,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getLogicOp()
 	 * @generated
 	 */
-	int LOGIC_OP = 9;
+	int LOGIC_OP = 10;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -696,7 +751,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getNot()
 	 * @generated
 	 */
-	int NOT = 10;
+	int NOT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -733,7 +788,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getArithmetic()
 	 * @generated
 	 */
-	int ARITHMETIC = 11;
+	int ARITHMETIC = 12;
 
 	/**
 	 * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -788,7 +843,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getValue()
 	 * @generated
 	 */
-	int VALUE = 12;
+	int VALUE = 13;
 
 	/**
 	 * The number of structural features of the '<em>Value</em>' class.
@@ -816,7 +871,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getAllInstances()
 	 * @generated
 	 */
-	int ALL_INSTANCES = 13;
+	int ALL_INSTANCES = 14;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -853,7 +908,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getAttributeValue()
 	 * @generated
 	 */
-	int ATTRIBUTE_VALUE = 14;
+	int ATTRIBUTE_VALUE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -899,7 +954,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getConstantValue()
 	 * @generated
 	 */
-	int CONSTANT_VALUE = 15;
+	int CONSTANT_VALUE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -936,7 +991,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getBinary()
 	 * @generated
 	 */
-	int BINARY = 16;
+	int BINARY = 17;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -991,7 +1046,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getBasicActions()
 	 * @generated
 	 */
-	int BASIC_ACTIONS = 17;
+	int BASIC_ACTIONS = 18;
 
 	/**
 	 * The meta object id for the '{@link Gameloop.Action <em>Action</em>}' enum.
@@ -1001,7 +1056,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 18;
+	int ACTION = 19;
 
 	/**
 	 * The meta object id for the '{@link Gameloop.Position <em>Position</em>}' enum.
@@ -1011,7 +1066,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getPosition()
 	 * @generated
 	 */
-	int POSITION = 19;
+	int POSITION = 20;
 
 	/**
 	 * The meta object id for the '{@link Gameloop.LogicOps <em>Logic Ops</em>}' enum.
@@ -1021,7 +1076,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getLogicOps()
 	 * @generated
 	 */
-	int LOGIC_OPS = 20;
+	int LOGIC_OPS = 21;
 
 	/**
 	 * The meta object id for the '{@link Gameloop.ArithmOps <em>Arithm Ops</em>}' enum.
@@ -1031,7 +1086,7 @@ public interface GameloopPackage extends EPackage {
 	 * @see Gameloop.impl.GameloopPackageImpl#getArithmOps()
 	 * @generated
 	 */
-	int ARITHM_OPS = 21;
+	int ARITHM_OPS = 22;
 
 
 	/**
@@ -1241,6 +1296,49 @@ public interface GameloopPackage extends EPackage {
 	EReference getObjInit_Class();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link Gameloop.ObjInit#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Attribute</em>'.
+	 * @see Gameloop.ObjInit#getAttribute()
+	 * @see #getObjInit()
+	 * @generated
+	 */
+	EReference getObjInit_Attribute();
+
+	/**
+	 * Returns the meta object for class '{@link Gameloop.ObjAttribute <em>Obj Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Obj Attribute</em>'.
+	 * @see Gameloop.ObjAttribute
+	 * @generated
+	 */
+	EClass getObjAttribute();
+
+	/**
+	 * Returns the meta object for the reference '{@link Gameloop.ObjAttribute#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see Gameloop.ObjAttribute#getAttribute()
+	 * @see #getObjAttribute()
+	 * @generated
+	 */
+	EReference getObjAttribute_Attribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Gameloop.ObjAttribute#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see Gameloop.ObjAttribute#getValue()
+	 * @see #getObjAttribute()
+	 * @generated
+	 */
+	EAttribute getObjAttribute_Value();
+
+	/**
 	 * Returns the meta object for class '{@link Gameloop.ScoreSystem <em>Score System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1370,6 +1468,17 @@ public interface GameloopPackage extends EPackage {
 	EClass getCollision();
 
 	/**
+	 * Returns the meta object for the reference '{@link Gameloop.Collision#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Action</em>'.
+	 * @see Gameloop.Collision#getAction()
+	 * @see #getCollision()
+	 * @generated
+	 */
+	EReference getCollision_Action();
+
+	/**
 	 * Returns the meta object for the reference '{@link Gameloop.Collision#getClassA <em>Class A</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1392,17 +1501,6 @@ public interface GameloopPackage extends EPackage {
 	EReference getCollision_ClassB();
 
 	/**
-	 * Returns the meta object for the reference '{@link Gameloop.Collision#getAction <em>Action</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Action</em>'.
-	 * @see Gameloop.Collision#getAction()
-	 * @see #getCollision()
-	 * @generated
-	 */
-	EReference getCollision_Action();
-
-	/**
 	 * Returns the meta object for class '{@link Gameloop.PhysicChange <em>Physic Change</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1411,6 +1509,17 @@ public interface GameloopPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPhysicChange();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Gameloop.PhysicChange#getScale <em>Scale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Scale</em>'.
+	 * @see Gameloop.PhysicChange#getScale()
+	 * @see #getPhysicChange()
+	 * @generated
+	 */
+	EAttribute getPhysicChange_Scale();
 
 	/**
 	 * Returns the meta object for the attribute '{@link Gameloop.PhysicChange#getAttribute <em>Attribute</em>}'.
@@ -1488,17 +1597,6 @@ public interface GameloopPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPhysicChange_Class();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Gameloop.PhysicChange#getScale <em>Scale</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Scale</em>'.
-	 * @see Gameloop.PhysicChange#getScale()
-	 * @see #getPhysicChange()
-	 * @generated
-	 */
-	EAttribute getPhysicChange_Scale();
 
 	/**
 	 * Returns the meta object for class '{@link Gameloop.Condition <em>Condition</em>}'.
@@ -1964,6 +2062,40 @@ public interface GameloopPackage extends EPackage {
 		EReference OBJ_INIT__CLASS = eINSTANCE.getObjInit_Class();
 
 		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBJ_INIT__ATTRIBUTE = eINSTANCE.getObjInit_Attribute();
+
+		/**
+		 * The meta object literal for the '{@link Gameloop.impl.ObjAttributeImpl <em>Obj Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Gameloop.impl.ObjAttributeImpl
+		 * @see Gameloop.impl.GameloopPackageImpl#getObjAttribute()
+		 * @generated
+		 */
+		EClass OBJ_ATTRIBUTE = eINSTANCE.getObjAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OBJ_ATTRIBUTE__ATTRIBUTE = eINSTANCE.getObjAttribute_Attribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBJ_ATTRIBUTE__VALUE = eINSTANCE.getObjAttribute_Value();
+
+		/**
 		 * The meta object literal for the '{@link Gameloop.impl.ScoreSystemImpl <em>Score System</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2066,6 +2198,14 @@ public interface GameloopPackage extends EPackage {
 		EClass COLLISION = eINSTANCE.getCollision();
 
 		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COLLISION__ACTION = eINSTANCE.getCollision_Action();
+
+		/**
 		 * The meta object literal for the '<em><b>Class A</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2082,14 +2222,6 @@ public interface GameloopPackage extends EPackage {
 		EReference COLLISION__CLASS_B = eINSTANCE.getCollision_ClassB();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COLLISION__ACTION = eINSTANCE.getCollision_Action();
-
-		/**
 		 * The meta object literal for the '{@link Gameloop.impl.PhysicChangeImpl <em>Physic Change</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2098,6 +2230,14 @@ public interface GameloopPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PHYSIC_CHANGE = eINSTANCE.getPhysicChange();
+
+		/**
+		 * The meta object literal for the '<em><b>Scale</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PHYSIC_CHANGE__SCALE = eINSTANCE.getPhysicChange_Scale();
 
 		/**
 		 * The meta object literal for the '<em><b>Attribute</b></em>' attribute feature.
@@ -2154,14 +2294,6 @@ public interface GameloopPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PHYSIC_CHANGE__CLASS = eINSTANCE.getPhysicChange_Class();
-
-		/**
-		 * The meta object literal for the '<em><b>Scale</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PHYSIC_CHANGE__SCALE = eINSTANCE.getPhysicChange_Scale();
 
 		/**
 		 * The meta object literal for the '{@link Gameloop.impl.ConditionImpl <em>Condition</em>}' class.

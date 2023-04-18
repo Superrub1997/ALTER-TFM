@@ -2,6 +2,8 @@
  */
 package Physics;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,9 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link Physics.BitMasks#getCategory <em>Category</em>}</li>
  *   <li>{@link Physics.BitMasks#getCollision <em>Collision</em>}</li>
- *   <li>{@link Physics.BitMasks#getContactTest <em>Contact Test</em>}</li>
+ *   <li>{@link Physics.BitMasks#getContact <em>Contact</em>}</li>
  * </ul>
  *
  * @see Physics.PhysicsPackage#getBitMasks()
@@ -24,69 +25,27 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface BitMasks extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Category</b></em>' attribute.
+	 * Returns the value of the '<em><b>Collision</b></em>' reference list.
+	 * The list contents are of type {@link Ontologicals.Class}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Category</em>' attribute.
-	 * @see #setCategory(int)
-	 * @see Physics.PhysicsPackage#getBitMasks_Category()
-	 * @model required="true"
-	 * @generated
-	 */
-	int getCategory();
-
-	/**
-	 * Sets the value of the '{@link Physics.BitMasks#getCategory <em>Category</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Category</em>' attribute.
-	 * @see #getCategory()
-	 * @generated
-	 */
-	void setCategory(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Collision</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Collision</em>' attribute.
-	 * @see #setCollision(int)
+	 * @return the value of the '<em>Collision</em>' reference list.
 	 * @see Physics.PhysicsPackage#getBitMasks_Collision()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
-	int getCollision();
+	EList<Ontologicals.Class> getCollision();
 
 	/**
-	 * Sets the value of the '{@link Physics.BitMasks#getCollision <em>Collision</em>}' attribute.
+	 * Returns the value of the '<em><b>Contact</b></em>' reference list.
+	 * The list contents are of type {@link Ontologicals.Class}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Collision</em>' attribute.
-	 * @see #getCollision()
+	 * @return the value of the '<em>Contact</em>' reference list.
+	 * @see Physics.PhysicsPackage#getBitMasks_Contact()
+	 * @model
 	 * @generated
 	 */
-	void setCollision(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Contact Test</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contact Test</em>' attribute.
-	 * @see #setContactTest(int)
-	 * @see Physics.PhysicsPackage#getBitMasks_ContactTest()
-	 * @model required="true"
-	 * @generated
-	 */
-	int getContactTest();
-
-	/**
-	 * Sets the value of the '{@link Physics.BitMasks#getContactTest <em>Contact Test</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contact Test</em>' attribute.
-	 * @see #getContactTest()
-	 * @generated
-	 */
-	void setContactTest(int value);
+	EList<Ontologicals.Class> getContact();
 
 } // BitMasks

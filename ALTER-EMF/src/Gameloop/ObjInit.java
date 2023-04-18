@@ -3,6 +3,7 @@
 package Gameloop;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Gameloop.ObjInit#getPosZ <em>Pos Z</em>}</li>
  *   <li>{@link Gameloop.ObjInit#getRules <em>Rules</em>}</li>
  *   <li>{@link Gameloop.ObjInit#getClass_ <em>Class</em>}</li>
+ *   <li>{@link Gameloop.ObjInit#getAttribute <em>Attribute</em>}</li>
  * </ul>
  *
  * @see Gameloop.GameloopPackage#getObjInit()
@@ -148,5 +150,17 @@ public interface ObjInit extends EObject {
 	 * @generated
 	 */
 	void setClass(Ontologicals.Class value);
+
+	/**
+	 * Returns the value of the '<em><b>Attribute</b></em>' containment reference list.
+	 * The list contents are of type {@link Gameloop.ObjAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attribute</em>' containment reference list.
+	 * @see Gameloop.GameloopPackage#getObjInit_Attribute()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ObjAttribute> getAttribute();
 
 } // ObjInit

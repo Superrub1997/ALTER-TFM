@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module generateBit('http://ardsl/1.0')/]
+
+[query public getId(arg0 : Sequence(OclAny), arg1 : String) : Integer
+	= invoke('alterar.utils.Utils', 'getId(java.util.ArrayList, java.lang.String)', Sequence{arg0, arg1})
+/]
+
+[query public getCollisionContact(arg0 : Sequence(OclAny), arg1 : Sequence(OclAny)) : Integer
+	= invoke('alterar.utils.Utils', 'getCollisionContact(java.util.ArrayList, java.util.ArrayList)', Sequence{arg0, arg1})
+/]
+

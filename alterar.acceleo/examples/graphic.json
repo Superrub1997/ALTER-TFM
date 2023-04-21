@@ -1,0 +1,46 @@
+{
+	"name": "skeet",
+	"classes": [	
+	{
+		"name": "bullet",
+		"versions":,
+		"showAttributes":[],
+		"constraints":{
+			"planes":"any",
+			"ilumination":"",
+			"sizeMin":"0.5",
+			"sizeMax":"1.0",
+			"sizeInit":"0.0",
+			"overlapping":"true",
+			"xToOriginPos":"0.0",
+			"yToOriginPos":"0.0",
+			"zToOriginPos":"0.0",
+			"rotation":"0",
+			"text":"none"
+		}
+		"connections":{
+			"bullets": []
+		}
+	},	
+	{
+		"name": "target",
+		"versions":,
+		"showAttributes":[],
+		"constraints":{
+			"planes":"any",
+			"ilumination":"",
+			"sizeMin":"0.5",
+			"sizeMax":"1.0",
+			"sizeInit":"0.0",
+			"overlapping":"true",
+			"xToOriginPos":"0.0",
+			"yToOriginPos":"0.0",
+			"zToOriginPos":"0.0",
+			"rotation":"0",
+			"text":"none"
+		}
+		"connections":{
+			"targets": []
+		}
+	}] 
+}

@@ -38,4 +38,20 @@
             genModel="model/Graphics.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Core -->
+      <package
+            uri="http://core/1.0"
+            class="Core.CorePackage"
+            genModel="model/Core.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Ardsl -->
+      <package
+            uri="http://ardsl/1.0"
+            class="Ardsl.ArdslPackage"
+            genModel="model/Ardsl.genmodel"/>
+   </extension>
+
 </plugin>

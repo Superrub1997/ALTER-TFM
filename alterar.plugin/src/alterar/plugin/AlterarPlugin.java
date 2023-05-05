@@ -45,8 +45,8 @@ public class AlterarPlugin extends AbstractHandler {
 		 ArgStandaloneSetup.argToXmi(input, outputXmi);
 		 
 		 //Generating code with Acceleo	
-		 String inputXmi =  file.getLocation().toString().replaceAll(file.getLocation().lastSegment(), "")+file.getLocation().lastSegment().replaceAll(".rest", ".xmi");
-		 String output = file.getLocation().toString().replaceAll(file.getLocation().lastSegment(),"")+"code-gen/";
+		 String inputXmi =  file.getLocation().toString().replaceAll(file.getLocation().lastSegment(), "")+file.getLocation().lastSegment().replaceAll(".arg", ".xmi");
+		 String output = file.getLocation().toString().replaceAll(file.getLocation().lastSegment(),"")+file.getLocation().lastSegment().replaceAll(".arg", "");
 		 Generate generateAcceleo = new alterar.acceleo.main.Generate();
 		 generateAcceleo.doGeneratePlugin(inputXmi, output);
 		 

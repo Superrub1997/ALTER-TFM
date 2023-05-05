@@ -15,6 +15,11 @@
       <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//BodyType/dynamic"/>
       <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//BodyType/kinematic"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ardsl.ecore#//Gesture">
+      <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//Gesture/touch"/>
+      <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//Gesture/drag"/>
+      <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//Gesture/tilt"/>
+    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ardsl.ecore#//BasicActions">
       <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//BasicActions/none"/>
       <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//BasicActions/win"/>

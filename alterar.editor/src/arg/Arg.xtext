@@ -21,6 +21,11 @@ Condition returns Condition:
 Value returns Value:
 	AttributeValue | ConstantValue | AllInstances;
 
+enum Gesture returns Gesture:
+	drag="drag" | tilt="tilt" | touch="touch"
+;
+
+
 EString returns ecore::EString:
 	STRING | ID;
 
@@ -46,11 +51,12 @@ Physic returns Physic:
 
 Game returns Game:
 	'Gamelogic''{'
-	'Display'':'
+	'Display''{'
 	'start' start=EString
 	'win' win=EString
 	'lose' lose=EString
-	'score' '{' score=ScoreSystem '}' 
+	'score' '{' score=ScoreSystem '}'
+	'}' 
 	('Actions' '{' actionsTriggers+=Trigger ( "," actionsTriggers+=Trigger)* '}')?
 	('Collisions' '{' collisions+=Collision ( "," collisions+=Collision)* '}')?
 	('Buttons' '{' gamepad+=GamePad '}')?
@@ -62,12 +68,15 @@ EBoolean returns ecore::EBoolean:
 	'true' | 'false';
 
 Attribute returns Attribute:
-	name=EString ':' type=EString '[' min=EInt ',' max=EInt ']' '=' default=EString
-	
+	name=EString ':' type=EString '[' min=EInt '..' max=AttributeMax ']' '=' default=Constant
+
 	(isParam?='isParam')?
 	(isKey?='isKey')?
 	(readOnly?='readOnly')?;
-
+	
+AttributeMax returns ecore::EIntegerObject:
+    '*' | INT;
+    
 Reference returns Reference:
 	name=EString
 		('containtment' containtment=EString)?
@@ -81,7 +90,7 @@ EInt returns ecore::EInt:
 
 GraphicClass returns GraphicClass:
 	'element' ontoClass=[Class|EString]
-	'versions' '{' versions+=Versions ( "," versions+=Versions)* '}'
+	'versions' '{' versions+=Versions ( versions+=Versions)* '}'
 	'constraints' '{' constraints=Constraints '}'
 	
 ;
@@ -124,7 +133,7 @@ PhysicClass returns PhysicClass:
 	'element' ontoClass=[Class|EString]
 	'body' '{' physicBody=PhysicBody '}'
 	('forces' '{' forces+=Force ( "," forces+=Force)* '}')?
-	'contacts' '{' bitMasks=BitMasks '}'
+	('contacts' '{' bitMasks=BitMasks '}')?
 ;
 
 PhysicBody returns PhysicBody:
@@ -144,7 +153,7 @@ BitMasks returns BitMasks:
 ;
 
 Force returns Force:
-	name=EString ':' 'gesture' gesture=EString 
+	name=EString ':' 'gesture' gesture=Gesture
 	('[' xVector=EDouble ',' yVector=EDouble ',' zVector=EDouble ']')?
 ;
 
@@ -231,9 +240,13 @@ AttributeValue returns AttributeValue:
 ;
 
 ConstantValue returns ConstantValue:
-	value=EString
+	value=Constant
+;
+
+Constant returns ecore::EString:
+	EInt | EString
 ;
 
 AllInstances returns AllInstances:
-	"All" type=EString
+	"Number" type=EString
 ;

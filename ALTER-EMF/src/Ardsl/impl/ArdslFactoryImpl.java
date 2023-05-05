@@ -21,6 +21,7 @@ import Ardsl.Constraints;
 import Ardsl.Force;
 import Ardsl.Game;
 import Ardsl.GamePad;
+import Ardsl.Gesture;
 import Ardsl.Graphic;
 import Ardsl.GraphicClass;
 import Ardsl.LogicOps;
@@ -139,6 +140,8 @@ public class ArdslFactoryImpl extends EFactoryImpl implements ArdslFactory {
 				return createPlanesFromString(eDataType, initialValue);
 			case ArdslPackage.BODY_TYPE:
 				return createBodyTypeFromString(eDataType, initialValue);
+			case ArdslPackage.GESTURE:
+				return createGestureFromString(eDataType, initialValue);
 			case ArdslPackage.BASIC_ACTIONS:
 				return createBasicActionsFromString(eDataType, initialValue);
 			case ArdslPackage.ACTION:
@@ -166,6 +169,8 @@ public class ArdslFactoryImpl extends EFactoryImpl implements ArdslFactory {
 				return convertPlanesToString(eDataType, instanceValue);
 			case ArdslPackage.BODY_TYPE:
 				return convertBodyTypeToString(eDataType, instanceValue);
+			case ArdslPackage.GESTURE:
+				return convertGestureToString(eDataType, instanceValue);
 			case ArdslPackage.BASIC_ACTIONS:
 				return convertBasicActionsToString(eDataType, instanceValue);
 			case ArdslPackage.ACTION:
@@ -508,6 +513,26 @@ public class ArdslFactoryImpl extends EFactoryImpl implements ArdslFactory {
 	 * @generated
 	 */
 	public String convertBodyTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Gesture createGestureFromString(EDataType eDataType, String initialValue) {
+		Gesture result = Gesture.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertGestureToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

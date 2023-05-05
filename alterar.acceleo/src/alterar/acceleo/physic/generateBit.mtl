@@ -5,7 +5,10 @@
 	= invoke('alterar.utils.Utils', 'getId(java.util.ArrayList, java.lang.String)', Sequence{arg0, arg1})
 /]
 
-[query public getCollisionContact(arg0 : Sequence(OclAny), arg1 : Sequence(OclAny)) : Integer
-	= invoke('alterar.utils.Utils', 'getCollisionContact(java.util.ArrayList, java.util.ArrayList)', Sequence{arg0, arg1})
+[query public getCollisionContact(arg0 : Sequence(OclAny), arg1 : Sequence(OclAny), arg2 : String) : Integer
+	= invoke('alterar.utils.Utils', 'getCollisionContact(java.util.ArrayList, java.util.ArrayList, java.lang.String)', Sequence{arg0, arg1, arg2})
 /]
 
+[query public getReflexCollision(arg0 : String) : Integer
+	= invoke('alterar.utils.Utils', 'getReflexCollision(java.lang.String)', Sequence{arg0})
+/]

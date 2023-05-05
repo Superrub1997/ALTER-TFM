@@ -22,8 +22,8 @@
 		},
 		"bitMasks":{
 			"category": [getId(aPhysic.classes.oclAsSet(), class.ontoClass.name)/],
-			"collision": [getCollisionContact(aPhysic.classes.oclAsSet(), class.bitMasks.collision.oclAsSet())/],
-			"contactTest": [getCollisionContact(aPhysic.classes.oclAsSet(), class.bitMasks.contact.oclAsSet())/]:
+			"collision": [if(class.bitMasks.oclIsUndefined() = false)][getCollisionContact(aPhysic.classes.oclAsSet(), class.bitMasks.collision.oclAsSet(), class.ontoClass.name)/][/if][if(class.bitMasks.oclIsUndefined() = true)][getReflexCollision(class.ontoClass.name)/][/if],
+			"contactTest": [if(class.bitMasks.oclIsUndefined() = false)][getCollisionContact(aPhysic.classes.oclAsSet(), class.bitMasks.contact.oclAsSet(), class.ontoClass.name)/][/if][if(class.bitMasks.oclIsUndefined() = true)][getReflexCollision(class.ontoClass.name)/][/if]
 		},
 		"forces":[ '[' /][for (force : Force | class.forces) separator(',')]
 		

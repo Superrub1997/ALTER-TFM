@@ -49,25 +49,28 @@ public interface Force extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Gesture</b></em>' attribute.
+	 * The literals are from the enumeration {@link Ardsl.Gesture}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gesture</em>' attribute.
-	 * @see #setGesture(String)
+	 * @see Ardsl.Gesture
+	 * @see #setGesture(Gesture)
 	 * @see Ardsl.ArdslPackage#getForce_Gesture()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getGesture();
+	Gesture getGesture();
 
 	/**
 	 * Sets the value of the '{@link Ardsl.Force#getGesture <em>Gesture</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Gesture</em>' attribute.
+	 * @see Ardsl.Gesture
 	 * @see #getGesture()
 	 * @generated
 	 */
-	void setGesture(String value);
+	void setGesture(Gesture value);
 
 	/**
 	 * Returns the value of the '<em><b>XVector</b></em>' attribute.

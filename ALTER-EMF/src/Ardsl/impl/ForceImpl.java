@@ -5,6 +5,7 @@ package Ardsl.impl;
 import Ardsl.ArdslPackage;
 import Ardsl.Force;
 
+import Ardsl.Gesture;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -58,7 +59,7 @@ public class ForceImpl extends MinimalEObjectImpl.Container implements Force {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String GESTURE_EDEFAULT = null;
+	protected static final Gesture GESTURE_EDEFAULT = Gesture.TOUCH;
 
 	/**
 	 * The cached value of the '{@link #getGesture() <em>Gesture</em>}' attribute.
@@ -68,7 +69,7 @@ public class ForceImpl extends MinimalEObjectImpl.Container implements Force {
 	 * @generated
 	 * @ordered
 	 */
-	protected String gesture = GESTURE_EDEFAULT;
+	protected Gesture gesture = GESTURE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getXVector() <em>XVector</em>}' attribute.
@@ -175,7 +176,7 @@ public class ForceImpl extends MinimalEObjectImpl.Container implements Force {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getGesture() {
+	public Gesture getGesture() {
 		return gesture;
 	}
 
@@ -184,9 +185,9 @@ public class ForceImpl extends MinimalEObjectImpl.Container implements Force {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGesture(String newGesture) {
-		String oldGesture = gesture;
-		gesture = newGesture;
+	public void setGesture(Gesture newGesture) {
+		Gesture oldGesture = gesture;
+		gesture = newGesture == null ? GESTURE_EDEFAULT : newGesture;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ArdslPackage.FORCE__GESTURE, oldGesture, gesture));
 	}
@@ -288,7 +289,7 @@ public class ForceImpl extends MinimalEObjectImpl.Container implements Force {
 				setName((String)newValue);
 				return;
 			case ArdslPackage.FORCE__GESTURE:
-				setGesture((String)newValue);
+				setGesture((Gesture)newValue);
 				return;
 			case ArdslPackage.FORCE__XVECTOR:
 				setXVector((Double)newValue);
@@ -341,7 +342,7 @@ public class ForceImpl extends MinimalEObjectImpl.Container implements Force {
 			case ArdslPackage.FORCE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ArdslPackage.FORCE__GESTURE:
-				return GESTURE_EDEFAULT == null ? gesture != null : !GESTURE_EDEFAULT.equals(gesture);
+				return gesture != GESTURE_EDEFAULT;
 			case ArdslPackage.FORCE__XVECTOR:
 				return xVector != XVECTOR_EDEFAULT;
 			case ArdslPackage.FORCE__YVECTOR:

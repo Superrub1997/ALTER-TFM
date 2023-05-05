@@ -2108,6 +2108,16 @@ public interface ArdslPackage extends EPackage {
 	int BODY_TYPE = 33;
 
 	/**
+	 * The meta object id for the '{@link Ardsl.Gesture <em>Gesture</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Ardsl.Gesture
+	 * @see Ardsl.impl.ArdslPackageImpl#getGesture()
+	 * @generated
+	 */
+	int GESTURE = 34;
+
+	/**
 	 * The meta object id for the '{@link Ardsl.BasicActions <em>Basic Actions</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2115,7 +2125,7 @@ public interface ArdslPackage extends EPackage {
 	 * @see Ardsl.impl.ArdslPackageImpl#getBasicActions()
 	 * @generated
 	 */
-	int BASIC_ACTIONS = 34;
+	int BASIC_ACTIONS = 35;
 
 	/**
 	 * The meta object id for the '{@link Ardsl.Action <em>Action</em>}' enum.
@@ -2125,7 +2135,7 @@ public interface ArdslPackage extends EPackage {
 	 * @see Ardsl.impl.ArdslPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 35;
+	int ACTION = 36;
 
 	/**
 	 * The meta object id for the '{@link Ardsl.Position <em>Position</em>}' enum.
@@ -2135,7 +2145,7 @@ public interface ArdslPackage extends EPackage {
 	 * @see Ardsl.impl.ArdslPackageImpl#getPosition()
 	 * @generated
 	 */
-	int POSITION = 36;
+	int POSITION = 37;
 
 	/**
 	 * The meta object id for the '{@link Ardsl.LogicOps <em>Logic Ops</em>}' enum.
@@ -2145,7 +2155,7 @@ public interface ArdslPackage extends EPackage {
 	 * @see Ardsl.impl.ArdslPackageImpl#getLogicOps()
 	 * @generated
 	 */
-	int LOGIC_OPS = 37;
+	int LOGIC_OPS = 38;
 
 	/**
 	 * The meta object id for the '{@link Ardsl.ArithmOps <em>Arithm Ops</em>}' enum.
@@ -2155,7 +2165,7 @@ public interface ArdslPackage extends EPackage {
 	 * @see Ardsl.impl.ArdslPackageImpl#getArithmOps()
 	 * @generated
 	 */
-	int ARITHM_OPS = 38;
+	int ARITHM_OPS = 39;
 
 
 	/**
@@ -3863,6 +3873,16 @@ public interface ArdslPackage extends EPackage {
 	EEnum getBodyType();
 
 	/**
+	 * Returns the meta object for enum '{@link Ardsl.Gesture <em>Gesture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Gesture</em>'.
+	 * @see Ardsl.Gesture
+	 * @generated
+	 */
+	EEnum getGesture();
+
+	/**
 	 * Returns the meta object for enum '{@link Ardsl.BasicActions <em>Basic Actions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5266,6 +5286,16 @@ public interface ArdslPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum BODY_TYPE = eINSTANCE.getBodyType();
+
+		/**
+		 * The meta object literal for the '{@link Ardsl.Gesture <em>Gesture</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Ardsl.Gesture
+		 * @see Ardsl.impl.ArdslPackageImpl#getGesture()
+		 * @generated
+		 */
+		EEnum GESTURE = eINSTANCE.getGesture();
 
 		/**
 		 * The meta object literal for the '{@link Ardsl.BasicActions <em>Basic Actions</em>}' enum.

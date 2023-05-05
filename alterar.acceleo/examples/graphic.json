@@ -3,7 +3,12 @@
 	"classes": [	
 	{
 		"name": "bullet",
-		"versions":,
+		"versions": {
+			v1: xxxV1
+		},
+		"vname": {
+			v1: v1
+		},
 		"showAttributes":[],
 		"constraints":{
 			"planes":"any",
@@ -24,7 +29,12 @@
 	},	
 	{
 		"name": "target",
-		"versions":,
+		"versions": {
+			v1: xxxV1
+		},
+		"vname": {
+			v1: v1
+		},
 		"showAttributes":[],
 		"constraints":{
 			"planes":"any",

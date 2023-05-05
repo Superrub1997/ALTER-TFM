@@ -22,6 +22,7 @@ import Ardsl.Constraints;
 import Ardsl.Force;
 import Ardsl.Game;
 import Ardsl.GamePad;
+import Ardsl.Gesture;
 import Ardsl.Graphic;
 import Ardsl.GraphicClass;
 import Ardsl.LogicOp;
@@ -295,6 +296,13 @@ public class ArdslPackageImpl extends EPackageImpl implements ArdslPackage {
 	 * @generated
 	 */
 	private EEnum bodyTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum gestureEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1818,6 +1826,15 @@ public class ArdslPackageImpl extends EPackageImpl implements ArdslPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getGesture() {
+		return gestureEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getBasicActions() {
 		return basicActionsEEnum;
 	}
@@ -2077,6 +2094,7 @@ public class ArdslPackageImpl extends EPackageImpl implements ArdslPackage {
 		// Create enums
 		planesEEnum = createEEnum(PLANES);
 		bodyTypeEEnum = createEEnum(BODY_TYPE);
+		gestureEEnum = createEEnum(GESTURE);
 		basicActionsEEnum = createEEnum(BASIC_ACTIONS);
 		actionEEnum = createEEnum(ACTION);
 		positionEEnum = createEEnum(POSITION);
@@ -2211,7 +2229,7 @@ public class ArdslPackageImpl extends EPackageImpl implements ArdslPackage {
 
 		initEClass(physicClassEClass, PhysicClass.class, "PhysicClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPhysicClass_PhysicBody(), this.getPhysicBody(), null, "physicBody", null, 1, 1, PhysicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPhysicClass_BitMasks(), this.getBitMasks(), null, "bitMasks", null, 1, 1, PhysicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPhysicClass_BitMasks(), this.getBitMasks(), null, "bitMasks", null, 0, 1, PhysicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPhysicClass_OntoClass(), this.getClass_(), null, "ontoClass", null, 1, 1, PhysicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPhysicClass_Forces(), this.getForce(), null, "forces", null, 0, -1, PhysicClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2231,7 +2249,7 @@ public class ArdslPackageImpl extends EPackageImpl implements ArdslPackage {
 
 		initEClass(forceEClass, Force.class, "Force", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getForce_Name(), ecorePackage.getEString(), "name", null, 1, 1, Force.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getForce_Gesture(), ecorePackage.getEString(), "gesture", null, 1, 1, Force.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForce_Gesture(), this.getGesture(), "gesture", null, 1, 1, Force.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getForce_XVector(), ecorePackage.getEDouble(), "xVector", null, 0, 1, Force.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getForce_YVector(), ecorePackage.getEDouble(), "yVector", null, 0, 1, Force.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getForce_ZVector(), ecorePackage.getEDouble(), "zVector", null, 0, 1, Force.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2319,6 +2337,11 @@ public class ArdslPackageImpl extends EPackageImpl implements ArdslPackage {
 		addEEnumLiteral(bodyTypeEEnum, BodyType.STATIC);
 		addEEnumLiteral(bodyTypeEEnum, BodyType.DYNAMIC);
 		addEEnumLiteral(bodyTypeEEnum, BodyType.KINEMATIC);
+
+		initEEnum(gestureEEnum, Gesture.class, "Gesture");
+		addEEnumLiteral(gestureEEnum, Gesture.TOUCH);
+		addEEnumLiteral(gestureEEnum, Gesture.DRAG);
+		addEEnumLiteral(gestureEEnum, Gesture.TILT);
 
 		initEEnum(basicActionsEEnum, BasicActions.class, "BasicActions");
 		addEEnumLiteral(basicActionsEEnum, BasicActions.NONE);

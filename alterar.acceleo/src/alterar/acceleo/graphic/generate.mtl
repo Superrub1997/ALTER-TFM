@@ -11,7 +11,16 @@
 	
 	{
 		"name": "[class.ontoClass.name /]",
-		"versions":,
+		"versions": {
+		[for(version : Versions | class.versions) separator(',')]
+			"v[i/]": [version.URL/]
+		[/for]
+		},
+		"vname": {
+		[for(version : Versions | class.versions) separator(',')]
+			"v[i/]": "[version.name/]"
+		[/for]
+		},
 		"showAttributes":[ '[' /][ ']' /],
 		"constraints":{
 			"planes":"[class.constraints.planes /]",
@@ -27,7 +36,7 @@
 			"text":"[if (class.constraints.text.oclIsUndefined() <> true)]
 [class.constraints.text /][/if][if (class.constraints.text.oclIsUndefined())]
 none[/if]"
-		}
+		},
 		"connections":{
 			"[class.ontoClass.name /]s": [ '[' /][ ']' /]
 		}

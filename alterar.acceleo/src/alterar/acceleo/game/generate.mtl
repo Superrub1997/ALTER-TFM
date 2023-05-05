@@ -11,7 +11,7 @@
 		"win": "[aGame.win /]",
 		"lose": "[aGame.lose /]",
 		"start": "[aGame.start /]",
-		"objInit": ['[' /][for (obj : ObjInit | aGame.objInit)]{
+		"objInit": ['[' /][for (obj : ObjInit | aGame.objInit) separator(',')]{
 			"name": "[obj.name /]",
 			"class": "[obj.class.name /]",
 			"posX": "[obj.posX /]",
@@ -45,7 +45,7 @@
 			[if (action.action.oclIsUndefined() = false)]
 			"action":"[action.action /]",
 			[/if]
-			"sceneChanges"[ '[' /] [for (pc : PhysicChange | action.physicChanges) separator(',')]
+			"sceneChanges":[ '[' /] [for (pc : PhysicChange | action.physicChanges) separator(',')]
 			
 			{
  				"name": "[pc.object /]",

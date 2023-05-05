@@ -233,8 +233,8 @@ public class ArgSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         name=EString 
 	 *         type=EString 
 	 *         min=EInt 
-	 *         max=EInt 
-	 *         default=EString 
+	 *         max=AttributeMax 
+	 *         default=Constant 
 	 *         isParam?='isParam'? 
 	 *         isKey?='isKey'? 
 	 *         readOnly?='readOnly'?
@@ -394,7 +394,7 @@ public class ArgSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ConstantValue returns ConstantValue
 	 *
 	 * Constraint:
-	 *     value=EString
+	 *     value=Constant
 	 * </pre>
 	 */
 	protected void sequence_ConstantValue(ISerializationContext context, ConstantValue semanticObject) {
@@ -403,7 +403,7 @@ public class ArgSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArdslPackage.Literals.CONSTANT_VALUE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConstantValueAccess().getValueEStringParserRuleCall_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getConstantValueAccess().getValueConstantParserRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -464,7 +464,7 @@ public class ArgSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Force returns Force
 	 *
 	 * Constraint:
-	 *     (name=EString gesture=EString (xVector=EDouble yVector=EDouble zVector=EDouble)?)
+	 *     (name=EString gesture=Gesture (xVector=EDouble yVector=EDouble zVector=EDouble)?)
 	 * </pre>
 	 */
 	protected void sequence_Force(ISerializationContext context, Force semanticObject) {
@@ -712,7 +712,7 @@ public class ArgSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     PhysicClass returns PhysicClass
 	 *
 	 * Constraint:
-	 *     (ontoClass=[Class|EString] physicBody=PhysicBody (forces+=Force forces+=Force*)? bitMasks=BitMasks)
+	 *     (ontoClass=[Class|EString] physicBody=PhysicBody (forces+=Force forces+=Force*)? bitMasks=BitMasks?)
 	 * </pre>
 	 */
 	protected void sequence_PhysicClass(ISerializationContext context, PhysicClass semanticObject) {

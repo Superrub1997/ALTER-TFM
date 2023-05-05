@@ -428,7 +428,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cGamelogicKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cDisplayKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cStartKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cStartAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cStartEStringParserRuleCall_5_0 = (RuleCall)cStartAssignment_5.eContents().get(0);
@@ -443,51 +443,53 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cScoreAssignment_12 = (Assignment)cGroup.eContents().get(12);
 		private final RuleCall cScoreScoreSystemParserRuleCall_12_0 = (RuleCall)cScoreAssignment_12.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
-		private final Keyword cActionsKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Assignment cActionsTriggersAssignment_14_2 = (Assignment)cGroup_14.eContents().get(2);
-		private final RuleCall cActionsTriggersTriggerParserRuleCall_14_2_0 = (RuleCall)cActionsTriggersAssignment_14_2.eContents().get(0);
-		private final Group cGroup_14_3 = (Group)cGroup_14.eContents().get(3);
-		private final Keyword cCommaKeyword_14_3_0 = (Keyword)cGroup_14_3.eContents().get(0);
-		private final Assignment cActionsTriggersAssignment_14_3_1 = (Assignment)cGroup_14_3.eContents().get(1);
-		private final RuleCall cActionsTriggersTriggerParserRuleCall_14_3_1_0 = (RuleCall)cActionsTriggersAssignment_14_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14_4 = (Keyword)cGroup_14.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
-		private final Keyword cCollisionsKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
+		private final Keyword cActionsKeyword_15_0 = (Keyword)cGroup_15.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
-		private final Assignment cCollisionsAssignment_15_2 = (Assignment)cGroup_15.eContents().get(2);
-		private final RuleCall cCollisionsCollisionParserRuleCall_15_2_0 = (RuleCall)cCollisionsAssignment_15_2.eContents().get(0);
+		private final Assignment cActionsTriggersAssignment_15_2 = (Assignment)cGroup_15.eContents().get(2);
+		private final RuleCall cActionsTriggersTriggerParserRuleCall_15_2_0 = (RuleCall)cActionsTriggersAssignment_15_2.eContents().get(0);
 		private final Group cGroup_15_3 = (Group)cGroup_15.eContents().get(3);
 		private final Keyword cCommaKeyword_15_3_0 = (Keyword)cGroup_15_3.eContents().get(0);
-		private final Assignment cCollisionsAssignment_15_3_1 = (Assignment)cGroup_15_3.eContents().get(1);
-		private final RuleCall cCollisionsCollisionParserRuleCall_15_3_1_0 = (RuleCall)cCollisionsAssignment_15_3_1.eContents().get(0);
+		private final Assignment cActionsTriggersAssignment_15_3_1 = (Assignment)cGroup_15_3.eContents().get(1);
+		private final RuleCall cActionsTriggersTriggerParserRuleCall_15_3_1_0 = (RuleCall)cActionsTriggersAssignment_15_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_15_4 = (Keyword)cGroup_15.eContents().get(4);
 		private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
-		private final Keyword cButtonsKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
+		private final Keyword cCollisionsKeyword_16_0 = (Keyword)cGroup_16.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
-		private final Assignment cGamepadAssignment_16_2 = (Assignment)cGroup_16.eContents().get(2);
-		private final RuleCall cGamepadGamePadParserRuleCall_16_2_0 = (RuleCall)cGamepadAssignment_16_2.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_16_3 = (Keyword)cGroup_16.eContents().get(3);
+		private final Assignment cCollisionsAssignment_16_2 = (Assignment)cGroup_16.eContents().get(2);
+		private final RuleCall cCollisionsCollisionParserRuleCall_16_2_0 = (RuleCall)cCollisionsAssignment_16_2.eContents().get(0);
+		private final Group cGroup_16_3 = (Group)cGroup_16.eContents().get(3);
+		private final Keyword cCommaKeyword_16_3_0 = (Keyword)cGroup_16_3.eContents().get(0);
+		private final Assignment cCollisionsAssignment_16_3_1 = (Assignment)cGroup_16_3.eContents().get(1);
+		private final RuleCall cCollisionsCollisionParserRuleCall_16_3_1_0 = (RuleCall)cCollisionsAssignment_16_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_16_4 = (Keyword)cGroup_16.eContents().get(4);
 		private final Group cGroup_17 = (Group)cGroup.eContents().get(17);
-		private final Keyword cElementsKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
+		private final Keyword cButtonsKeyword_17_0 = (Keyword)cGroup_17.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_17_1 = (Keyword)cGroup_17.eContents().get(1);
-		private final Assignment cObjInitAssignment_17_2 = (Assignment)cGroup_17.eContents().get(2);
-		private final RuleCall cObjInitObjInitParserRuleCall_17_2_0 = (RuleCall)cObjInitAssignment_17_2.eContents().get(0);
-		private final Group cGroup_17_3 = (Group)cGroup_17.eContents().get(3);
-		private final Keyword cCommaKeyword_17_3_0 = (Keyword)cGroup_17_3.eContents().get(0);
-		private final Assignment cObjInitAssignment_17_3_1 = (Assignment)cGroup_17_3.eContents().get(1);
-		private final RuleCall cObjInitObjInitParserRuleCall_17_3_1_0 = (RuleCall)cObjInitAssignment_17_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_17_4 = (Keyword)cGroup_17.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Assignment cGamepadAssignment_17_2 = (Assignment)cGroup_17.eContents().get(2);
+		private final RuleCall cGamepadGamePadParserRuleCall_17_2_0 = (RuleCall)cGamepadAssignment_17_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_17_3 = (Keyword)cGroup_17.eContents().get(3);
+		private final Group cGroup_18 = (Group)cGroup.eContents().get(18);
+		private final Keyword cElementsKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
+		private final Assignment cObjInitAssignment_18_2 = (Assignment)cGroup_18.eContents().get(2);
+		private final RuleCall cObjInitObjInitParserRuleCall_18_2_0 = (RuleCall)cObjInitAssignment_18_2.eContents().get(0);
+		private final Group cGroup_18_3 = (Group)cGroup_18.eContents().get(3);
+		private final Keyword cCommaKeyword_18_3_0 = (Keyword)cGroup_18_3.eContents().get(0);
+		private final Assignment cObjInitAssignment_18_3_1 = (Assignment)cGroup_18_3.eContents().get(1);
+		private final RuleCall cObjInitObjInitParserRuleCall_18_3_1_0 = (RuleCall)cObjInitAssignment_18_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_18_4 = (Keyword)cGroup_18.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		
 		//Game returns Game:
 		//    'Gamelogic''{'
-		//    'Display'':'
+		//    'Display''{'
 		//    'start' start=EString
 		//    'win' win=EString
 		//    'lose' lose=EString
 		//    'score' '{' score=ScoreSystem '}'
+		//    '}'
 		//    ('Actions' '{' actionsTriggers+=Trigger ( "," actionsTriggers+=Trigger)* '}')?
 		//    ('Collisions' '{' collisions+=Collision ( "," collisions+=Collision)* '}')?
 		//    ('Buttons' '{' gamepad+=GamePad '}')?
@@ -497,11 +499,12 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'Gamelogic''{'
-		//'Display'':'
+		//'Display''{'
 		//'start' start=EString
 		//'win' win=EString
 		//'lose' lose=EString
 		//'score' '{' score=ScoreSystem '}'
+		//'}'
 		//('Actions' '{' actionsTriggers+=Trigger ( "," actionsTriggers+=Trigger)* '}')?
 		//('Collisions' '{' collisions+=Collision ( "," collisions+=Collision)* '}')?
 		//('Buttons' '{' gamepad+=GamePad '}')?
@@ -518,8 +521,8 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'Display'
 		public Keyword getDisplayKeyword_2() { return cDisplayKeyword_2; }
 		
-		//':'
-		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//'start'
 		public Keyword getStartKeyword_4() { return cStartKeyword_4; }
@@ -563,116 +566,119 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
 		
-		//('Actions' '{' actionsTriggers+=Trigger ( "," actionsTriggers+=Trigger)* '}')?
-		public Group getGroup_14() { return cGroup_14; }
-		
-		//'Actions'
-		public Keyword getActionsKeyword_14_0() { return cActionsKeyword_14_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_14_1() { return cLeftCurlyBracketKeyword_14_1; }
-		
-		//actionsTriggers+=Trigger
-		public Assignment getActionsTriggersAssignment_14_2() { return cActionsTriggersAssignment_14_2; }
-		
-		//Trigger
-		public RuleCall getActionsTriggersTriggerParserRuleCall_14_2_0() { return cActionsTriggersTriggerParserRuleCall_14_2_0; }
-		
-		//( "," actionsTriggers+=Trigger)*
-		public Group getGroup_14_3() { return cGroup_14_3; }
-		
-		//","
-		public Keyword getCommaKeyword_14_3_0() { return cCommaKeyword_14_3_0; }
-		
-		//actionsTriggers+=Trigger
-		public Assignment getActionsTriggersAssignment_14_3_1() { return cActionsTriggersAssignment_14_3_1; }
-		
-		//Trigger
-		public RuleCall getActionsTriggersTriggerParserRuleCall_14_3_1_0() { return cActionsTriggersTriggerParserRuleCall_14_3_1_0; }
-		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_14_4() { return cRightCurlyBracketKeyword_14_4; }
+		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
 		
-		//('Collisions' '{' collisions+=Collision ( "," collisions+=Collision)* '}')?
+		//('Actions' '{' actionsTriggers+=Trigger ( "," actionsTriggers+=Trigger)* '}')?
 		public Group getGroup_15() { return cGroup_15; }
 		
-		//'Collisions'
-		public Keyword getCollisionsKeyword_15_0() { return cCollisionsKeyword_15_0; }
+		//'Actions'
+		public Keyword getActionsKeyword_15_0() { return cActionsKeyword_15_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_15_1() { return cLeftCurlyBracketKeyword_15_1; }
 		
-		//collisions+=Collision
-		public Assignment getCollisionsAssignment_15_2() { return cCollisionsAssignment_15_2; }
+		//actionsTriggers+=Trigger
+		public Assignment getActionsTriggersAssignment_15_2() { return cActionsTriggersAssignment_15_2; }
 		
-		//Collision
-		public RuleCall getCollisionsCollisionParserRuleCall_15_2_0() { return cCollisionsCollisionParserRuleCall_15_2_0; }
+		//Trigger
+		public RuleCall getActionsTriggersTriggerParserRuleCall_15_2_0() { return cActionsTriggersTriggerParserRuleCall_15_2_0; }
 		
-		//( "," collisions+=Collision)*
+		//( "," actionsTriggers+=Trigger)*
 		public Group getGroup_15_3() { return cGroup_15_3; }
 		
 		//","
 		public Keyword getCommaKeyword_15_3_0() { return cCommaKeyword_15_3_0; }
 		
-		//collisions+=Collision
-		public Assignment getCollisionsAssignment_15_3_1() { return cCollisionsAssignment_15_3_1; }
+		//actionsTriggers+=Trigger
+		public Assignment getActionsTriggersAssignment_15_3_1() { return cActionsTriggersAssignment_15_3_1; }
 		
-		//Collision
-		public RuleCall getCollisionsCollisionParserRuleCall_15_3_1_0() { return cCollisionsCollisionParserRuleCall_15_3_1_0; }
+		//Trigger
+		public RuleCall getActionsTriggersTriggerParserRuleCall_15_3_1_0() { return cActionsTriggersTriggerParserRuleCall_15_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_15_4() { return cRightCurlyBracketKeyword_15_4; }
 		
-		//('Buttons' '{' gamepad+=GamePad '}')?
+		//('Collisions' '{' collisions+=Collision ( "," collisions+=Collision)* '}')?
 		public Group getGroup_16() { return cGroup_16; }
 		
-		//'Buttons'
-		public Keyword getButtonsKeyword_16_0() { return cButtonsKeyword_16_0; }
+		//'Collisions'
+		public Keyword getCollisionsKeyword_16_0() { return cCollisionsKeyword_16_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_16_1() { return cLeftCurlyBracketKeyword_16_1; }
 		
-		//gamepad+=GamePad
-		public Assignment getGamepadAssignment_16_2() { return cGamepadAssignment_16_2; }
+		//collisions+=Collision
+		public Assignment getCollisionsAssignment_16_2() { return cCollisionsAssignment_16_2; }
 		
-		//GamePad
-		public RuleCall getGamepadGamePadParserRuleCall_16_2_0() { return cGamepadGamePadParserRuleCall_16_2_0; }
+		//Collision
+		public RuleCall getCollisionsCollisionParserRuleCall_16_2_0() { return cCollisionsCollisionParserRuleCall_16_2_0; }
+		
+		//( "," collisions+=Collision)*
+		public Group getGroup_16_3() { return cGroup_16_3; }
+		
+		//","
+		public Keyword getCommaKeyword_16_3_0() { return cCommaKeyword_16_3_0; }
+		
+		//collisions+=Collision
+		public Assignment getCollisionsAssignment_16_3_1() { return cCollisionsAssignment_16_3_1; }
+		
+		//Collision
+		public RuleCall getCollisionsCollisionParserRuleCall_16_3_1_0() { return cCollisionsCollisionParserRuleCall_16_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_16_3() { return cRightCurlyBracketKeyword_16_3; }
+		public Keyword getRightCurlyBracketKeyword_16_4() { return cRightCurlyBracketKeyword_16_4; }
 		
-		//('Elements' '{' objInit+=ObjInit ("," objInit+=ObjInit)* '}')?
+		//('Buttons' '{' gamepad+=GamePad '}')?
 		public Group getGroup_17() { return cGroup_17; }
 		
-		//'Elements'
-		public Keyword getElementsKeyword_17_0() { return cElementsKeyword_17_0; }
+		//'Buttons'
+		public Keyword getButtonsKeyword_17_0() { return cButtonsKeyword_17_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_17_1() { return cLeftCurlyBracketKeyword_17_1; }
 		
+		//gamepad+=GamePad
+		public Assignment getGamepadAssignment_17_2() { return cGamepadAssignment_17_2; }
+		
+		//GamePad
+		public RuleCall getGamepadGamePadParserRuleCall_17_2_0() { return cGamepadGamePadParserRuleCall_17_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_17_3() { return cRightCurlyBracketKeyword_17_3; }
+		
+		//('Elements' '{' objInit+=ObjInit ("," objInit+=ObjInit)* '}')?
+		public Group getGroup_18() { return cGroup_18; }
+		
+		//'Elements'
+		public Keyword getElementsKeyword_18_0() { return cElementsKeyword_18_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_18_1() { return cLeftCurlyBracketKeyword_18_1; }
+		
 		//objInit+=ObjInit
-		public Assignment getObjInitAssignment_17_2() { return cObjInitAssignment_17_2; }
+		public Assignment getObjInitAssignment_18_2() { return cObjInitAssignment_18_2; }
 		
 		//ObjInit
-		public RuleCall getObjInitObjInitParserRuleCall_17_2_0() { return cObjInitObjInitParserRuleCall_17_2_0; }
+		public RuleCall getObjInitObjInitParserRuleCall_18_2_0() { return cObjInitObjInitParserRuleCall_18_2_0; }
 		
 		//("," objInit+=ObjInit)*
-		public Group getGroup_17_3() { return cGroup_17_3; }
+		public Group getGroup_18_3() { return cGroup_18_3; }
 		
 		//","
-		public Keyword getCommaKeyword_17_3_0() { return cCommaKeyword_17_3_0; }
+		public Keyword getCommaKeyword_18_3_0() { return cCommaKeyword_18_3_0; }
 		
 		//objInit+=ObjInit
-		public Assignment getObjInitAssignment_17_3_1() { return cObjInitAssignment_17_3_1; }
+		public Assignment getObjInitAssignment_18_3_1() { return cObjInitAssignment_18_3_1; }
 		
 		//ObjInit
-		public RuleCall getObjInitObjInitParserRuleCall_17_3_1_0() { return cObjInitObjInitParserRuleCall_17_3_1_0; }
+		public RuleCall getObjInitObjInitParserRuleCall_18_3_1_0() { return cObjInitObjInitParserRuleCall_18_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_17_4() { return cRightCurlyBracketKeyword_17_4; }
+		public Keyword getRightCurlyBracketKeyword_18_4() { return cRightCurlyBracketKeyword_18_4; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_18() { return cRightCurlyBracketKeyword_18; }
+		public Keyword getRightCurlyBracketKeyword_19() { return cRightCurlyBracketKeyword_19; }
 	}
 	public class EBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "arg.Arg.EBoolean");
@@ -704,13 +710,13 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cMinAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cMinEIntParserRuleCall_4_0 = (RuleCall)cMinAssignment_4.eContents().get(0);
-		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cFullStopFullStopKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cMaxAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cMaxEIntParserRuleCall_6_0 = (RuleCall)cMaxAssignment_6.eContents().get(0);
+		private final RuleCall cMaxAttributeMaxParserRuleCall_6_0 = (RuleCall)cMaxAssignment_6.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Keyword cEqualsSignKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cDefaultAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cDefaultEStringParserRuleCall_9_0 = (RuleCall)cDefaultAssignment_9.eContents().get(0);
+		private final RuleCall cDefaultConstantParserRuleCall_9_0 = (RuleCall)cDefaultAssignment_9.eContents().get(0);
 		private final Assignment cIsParamAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final Keyword cIsParamIsParamKeyword_10_0 = (Keyword)cIsParamAssignment_10.eContents().get(0);
 		private final Assignment cIsKeyAssignment_11 = (Assignment)cGroup.eContents().get(11);
@@ -719,13 +725,13 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cReadOnlyReadOnlyKeyword_12_0 = (Keyword)cReadOnlyAssignment_12.eContents().get(0);
 		
 		//Attribute returns Attribute:
-		//    name=EString ':' type=EString '[' min=EInt ',' max=EInt ']' '=' default=EString
+		//    name=EString ':' type=EString '[' min=EInt '..' max=AttributeMax ']' '=' default=Constant
 		//    (isParam?='isParam')?
 		//    (isKey?='isKey')?
 		//    (readOnly?='readOnly')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=EString ':' type=EString '[' min=EInt ',' max=EInt ']' '=' default=EString
+		//name=EString ':' type=EString '[' min=EInt '..' max=AttributeMax ']' '=' default=Constant
 		//(isParam?='isParam')?
 		//(isKey?='isKey')?
 		//(readOnly?='readOnly')?
@@ -755,14 +761,14 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//EInt
 		public RuleCall getMinEIntParserRuleCall_4_0() { return cMinEIntParserRuleCall_4_0; }
 		
-		//','
-		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+		//'..'
+		public Keyword getFullStopFullStopKeyword_5() { return cFullStopFullStopKeyword_5; }
 		
-		//max=EInt
+		//max=AttributeMax
 		public Assignment getMaxAssignment_6() { return cMaxAssignment_6; }
 		
-		//EInt
-		public RuleCall getMaxEIntParserRuleCall_6_0() { return cMaxEIntParserRuleCall_6_0; }
+		//AttributeMax
+		public RuleCall getMaxAttributeMaxParserRuleCall_6_0() { return cMaxAttributeMaxParserRuleCall_6_0; }
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_7() { return cRightSquareBracketKeyword_7; }
@@ -770,11 +776,11 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'='
 		public Keyword getEqualsSignKeyword_8() { return cEqualsSignKeyword_8; }
 		
-		//default=EString
+		//default=Constant
 		public Assignment getDefaultAssignment_9() { return cDefaultAssignment_9; }
 		
-		//EString
-		public RuleCall getDefaultEStringParserRuleCall_9_0() { return cDefaultEStringParserRuleCall_9_0; }
+		//Constant
+		public RuleCall getDefaultConstantParserRuleCall_9_0() { return cDefaultConstantParserRuleCall_9_0; }
 		
 		//(isParam?='isParam')?
 		public Assignment getIsParamAssignment_10() { return cIsParamAssignment_10; }
@@ -793,6 +799,25 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//'readOnly'
 		public Keyword getReadOnlyReadOnlyKeyword_12_0() { return cReadOnlyReadOnlyKeyword_12_0; }
+	}
+	public class AttributeMaxElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "arg.Arg.AttributeMax");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cAsteriskKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//AttributeMax returns ecore::EIntegerObject:
+		//    '*' | INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'*' | INT
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'*'
+		public Keyword getAsteriskKeyword_0() { return cAsteriskKeyword_0; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
 	}
 	public class ReferenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "arg.Arg.Reference");
@@ -921,10 +946,8 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cVersionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cVersionsVersionsParserRuleCall_4_0 = (RuleCall)cVersionsAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cVersionsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cVersionsVersionsParserRuleCall_5_1_0 = (RuleCall)cVersionsAssignment_5_1.eContents().get(0);
+		private final Assignment cVersionsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cVersionsVersionsParserRuleCall_5_0 = (RuleCall)cVersionsAssignment_5.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cConstraintsKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
@@ -934,13 +957,13 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//GraphicClass returns GraphicClass:
 		//    'element' ontoClass=[Class|EString]
-		//    'versions' '{' versions+=Versions ( "," versions+=Versions)* '}'
+		//    'versions' '{' versions+=Versions ( versions+=Versions)* '}'
 		//    'constraints' '{' constraints=Constraints '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'element' ontoClass=[Class|EString]
-		//'versions' '{' versions+=Versions ( "," versions+=Versions)* '}'
+		//'versions' '{' versions+=Versions ( versions+=Versions)* '}'
 		//'constraints' '{' constraints=Constraints '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -968,17 +991,11 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//Versions
 		public RuleCall getVersionsVersionsParserRuleCall_4_0() { return cVersionsVersionsParserRuleCall_4_0; }
 		
-		//( "," versions+=Versions)*
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//","
-		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
-		
-		//versions+=Versions
-		public Assignment getVersionsAssignment_5_1() { return cVersionsAssignment_5_1; }
+		//( versions+=Versions)*
+		public Assignment getVersionsAssignment_5() { return cVersionsAssignment_5; }
 		
 		//Versions
-		public RuleCall getVersionsVersionsParserRuleCall_5_1_0() { return cVersionsVersionsParserRuleCall_5_1_0; }
+		public RuleCall getVersionsVersionsParserRuleCall_5_0() { return cVersionsVersionsParserRuleCall_5_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
@@ -1369,24 +1386,25 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cForcesAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
 		private final RuleCall cForcesForceParserRuleCall_6_3_1_0 = (RuleCall)cForcesAssignment_6_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
-		private final Keyword cContactsKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cBitMasksAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cBitMasksBitMasksParserRuleCall_9_0 = (RuleCall)cBitMasksAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cContactsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Assignment cBitMasksAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
+		private final RuleCall cBitMasksBitMasksParserRuleCall_7_2_0 = (RuleCall)cBitMasksAssignment_7_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
 		
 		//PhysicClass returns PhysicClass:
 		//    'element' ontoClass=[Class|EString]
 		//    'body' '{' physicBody=PhysicBody '}'
 		//    ('forces' '{' forces+=Force ( "," forces+=Force)* '}')?
-		//    'contacts' '{' bitMasks=BitMasks '}'
+		//    ('contacts' '{' bitMasks=BitMasks '}')?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'element' ontoClass=[Class|EString]
 		//'body' '{' physicBody=PhysicBody '}'
 		//('forces' '{' forces+=Force ( "," forces+=Force)* '}')?
-		//'contacts' '{' bitMasks=BitMasks '}'
+		//('contacts' '{' bitMasks=BitMasks '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'element'
@@ -1446,20 +1464,23 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
 		
+		//('contacts' '{' bitMasks=BitMasks '}')?
+		public Group getGroup_7() { return cGroup_7; }
+		
 		//'contacts'
-		public Keyword getContactsKeyword_7() { return cContactsKeyword_7; }
+		public Keyword getContactsKeyword_7_0() { return cContactsKeyword_7_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
+		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
 		
 		//bitMasks=BitMasks
-		public Assignment getBitMasksAssignment_9() { return cBitMasksAssignment_9; }
+		public Assignment getBitMasksAssignment_7_2() { return cBitMasksAssignment_7_2; }
 		
 		//BitMasks
-		public RuleCall getBitMasksBitMasksParserRuleCall_9_0() { return cBitMasksBitMasksParserRuleCall_9_0; }
+		public RuleCall getBitMasksBitMasksParserRuleCall_7_2_0() { return cBitMasksBitMasksParserRuleCall_7_2_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		public Keyword getRightCurlyBracketKeyword_7_3() { return cRightCurlyBracketKeyword_7_3; }
 	}
 	public class PhysicBodyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "arg.Arg.PhysicBody");
@@ -1677,7 +1698,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cGestureKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cGestureAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cGestureEStringParserRuleCall_3_0 = (RuleCall)cGestureAssignment_3.eContents().get(0);
+		private final RuleCall cGestureGestureEnumRuleCall_3_0 = (RuleCall)cGestureAssignment_3.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cLeftSquareBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cXVectorAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
@@ -1691,12 +1712,12 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cRightSquareBracketKeyword_4_6 = (Keyword)cGroup_4.eContents().get(6);
 		
 		//Force returns Force:
-		//    name=EString ':' 'gesture' gesture=EString
+		//    name=EString ':' 'gesture' gesture=Gesture
 		//    ('[' xVector=EDouble ',' yVector=EDouble ',' zVector=EDouble ']')?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=EString ':' 'gesture' gesture=EString
+		//name=EString ':' 'gesture' gesture=Gesture
 		//('[' xVector=EDouble ',' yVector=EDouble ',' zVector=EDouble ']')?
 		public Group getGroup() { return cGroup; }
 		
@@ -1712,11 +1733,11 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'gesture'
 		public Keyword getGestureKeyword_2() { return cGestureKeyword_2; }
 		
-		//gesture=EString
+		//gesture=Gesture
 		public Assignment getGestureAssignment_3() { return cGestureAssignment_3; }
 		
-		//EString
-		public RuleCall getGestureEStringParserRuleCall_3_0() { return cGestureEStringParserRuleCall_3_0; }
+		//Gesture
+		public RuleCall getGestureGestureEnumRuleCall_3_0() { return cGestureGestureEnumRuleCall_3_0; }
 		
 		//('[' xVector=EDouble ',' yVector=EDouble ',' zVector=EDouble ']')?
 		public Group getGroup_4() { return cGroup_4; }
@@ -2576,36 +2597,56 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	public class ConstantValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "arg.Arg.ConstantValue");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueEStringParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		private final RuleCall cValueConstantParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
 		
 		//ConstantValue returns ConstantValue:
-		//    value=EString
+		//    value=Constant
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=EString
+		//value=Constant
 		public Assignment getValueAssignment() { return cValueAssignment; }
 		
+		//Constant
+		public RuleCall getValueConstantParserRuleCall_0() { return cValueConstantParserRuleCall_0; }
+	}
+	public class ConstantElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "arg.Arg.Constant");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cEIntParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cEStringParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Constant returns ecore::EString:
+		//    EInt | EString
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//EInt | EString
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//EInt
+		public RuleCall getEIntParserRuleCall_0() { return cEIntParserRuleCall_0; }
+		
 		//EString
-		public RuleCall getValueEStringParserRuleCall_0() { return cValueEStringParserRuleCall_0; }
+		public RuleCall getEStringParserRuleCall_1() { return cEStringParserRuleCall_1; }
 	}
 	public class AllInstancesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "arg.Arg.AllInstances");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAllKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cNumberKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTypeEStringParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
 		
 		//AllInstances returns AllInstances:
-		//    "All" type=EString
+		//    "Number" type=EString
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"All" type=EString
+		//"Number" type=EString
 		public Group getGroup() { return cGroup; }
 		
-		//"All"
-		public Keyword getAllKeyword_0() { return cAllKeyword_0; }
+		//"Number"
+		public Keyword getNumberKeyword_0() { return cNumberKeyword_0; }
 		
 		//type=EString
 		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
@@ -2614,6 +2655,42 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		public RuleCall getTypeEStringParserRuleCall_1_0() { return cTypeEStringParserRuleCall_1_0; }
 	}
 	
+	public class GestureElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "arg.Arg.Gesture");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cDragEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cDragDragKeyword_0_0 = (Keyword)cDragEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cTiltEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cTiltTiltKeyword_1_0 = (Keyword)cTiltEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cTouchEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cTouchTouchKeyword_2_0 = (Keyword)cTouchEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum Gesture returns Gesture:
+		//    drag="drag" | tilt="tilt" | touch="touch"
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//drag="drag" | tilt="tilt" | touch="touch"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//drag="drag"
+		public EnumLiteralDeclaration getDragEnumLiteralDeclaration_0() { return cDragEnumLiteralDeclaration_0; }
+		
+		//"drag"
+		public Keyword getDragDragKeyword_0_0() { return cDragDragKeyword_0_0; }
+		
+		//tilt="tilt"
+		public EnumLiteralDeclaration getTiltEnumLiteralDeclaration_1() { return cTiltEnumLiteralDeclaration_1; }
+		
+		//"tilt"
+		public Keyword getTiltTiltKeyword_1_0() { return cTiltTiltKeyword_1_0; }
+		
+		//touch="touch"
+		public EnumLiteralDeclaration getTouchEnumLiteralDeclaration_2() { return cTouchEnumLiteralDeclaration_2; }
+		
+		//"touch"
+		public Keyword getTouchTouchKeyword_2_0() { return cTouchTouchKeyword_2_0; }
+	}
 	public class PlanesElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "arg.Arg.Planes");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -2880,6 +2957,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final OntologicalElements pOntological;
 	private final ConditionElements pCondition;
 	private final ValueElements pValue;
+	private final GestureElements eGesture;
 	private final EStringElements pEString;
 	private final ClassElements pClass;
 	private final GraphicElements pGraphic;
@@ -2887,6 +2965,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final GameElements pGame;
 	private final EBooleanElements pEBoolean;
 	private final AttributeElements pAttribute;
+	private final AttributeMaxElements pAttributeMax;
 	private final ReferenceElements pReference;
 	private final EIntElements pEInt;
 	private final GraphicClassElements pGraphicClass;
@@ -2918,6 +2997,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final ArithmOpsElements eArithmOps;
 	private final AttributeValueElements pAttributeValue;
 	private final ConstantValueElements pConstantValue;
+	private final ConstantElements pConstant;
 	private final AllInstancesElements pAllInstances;
 	
 	private final Grammar grammar;
@@ -2932,6 +3012,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pOntological = new OntologicalElements();
 		this.pCondition = new ConditionElements();
 		this.pValue = new ValueElements();
+		this.eGesture = new GestureElements();
 		this.pEString = new EStringElements();
 		this.pClass = new ClassElements();
 		this.pGraphic = new GraphicElements();
@@ -2939,6 +3020,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pGame = new GameElements();
 		this.pEBoolean = new EBooleanElements();
 		this.pAttribute = new AttributeElements();
+		this.pAttributeMax = new AttributeMaxElements();
 		this.pReference = new ReferenceElements();
 		this.pEInt = new EIntElements();
 		this.pGraphicClass = new GraphicClassElements();
@@ -2970,6 +3052,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.eArithmOps = new ArithmOpsElements();
 		this.pAttributeValue = new AttributeValueElements();
 		this.pConstantValue = new ConstantValueElements();
+		this.pConstant = new ConstantElements();
 		this.pAllInstances = new AllInstancesElements();
 	}
 	
@@ -3037,6 +3120,17 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getValueAccess().getRule();
 	}
 	
+	//enum Gesture returns Gesture:
+	//    drag="drag" | tilt="tilt" | touch="touch"
+	//;
+	public GestureElements getGestureAccess() {
+		return eGesture;
+	}
+	
+	public EnumRule getGestureRule() {
+		return getGestureAccess().getRule();
+	}
+	
 	//EString returns ecore::EString:
 	//    STRING | ID;
 	public EStringElements getEStringAccess() {
@@ -3091,11 +3185,12 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//Game returns Game:
 	//    'Gamelogic''{'
-	//    'Display'':'
+	//    'Display''{'
 	//    'start' start=EString
 	//    'win' win=EString
 	//    'lose' lose=EString
 	//    'score' '{' score=ScoreSystem '}'
+	//    '}'
 	//    ('Actions' '{' actionsTriggers+=Trigger ( "," actionsTriggers+=Trigger)* '}')?
 	//    ('Collisions' '{' collisions+=Collision ( "," collisions+=Collision)* '}')?
 	//    ('Buttons' '{' gamepad+=GamePad '}')?
@@ -3121,7 +3216,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Attribute returns Attribute:
-	//    name=EString ':' type=EString '[' min=EInt ',' max=EInt ']' '=' default=EString
+	//    name=EString ':' type=EString '[' min=EInt '..' max=AttributeMax ']' '=' default=Constant
 	//    (isParam?='isParam')?
 	//    (isKey?='isKey')?
 	//    (readOnly?='readOnly')?;
@@ -3131,6 +3226,16 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public ParserRule getAttributeRule() {
 		return getAttributeAccess().getRule();
+	}
+	
+	//AttributeMax returns ecore::EIntegerObject:
+	//    '*' | INT;
+	public AttributeMaxElements getAttributeMaxAccess() {
+		return pAttributeMax;
+	}
+	
+	public ParserRule getAttributeMaxRule() {
+		return getAttributeMaxAccess().getRule();
 	}
 	
 	//Reference returns Reference:
@@ -3160,7 +3265,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	//GraphicClass returns GraphicClass:
 	//    'element' ontoClass=[Class|EString]
-	//    'versions' '{' versions+=Versions ( "," versions+=Versions)* '}'
+	//    'versions' '{' versions+=Versions ( versions+=Versions)* '}'
 	//    'constraints' '{' constraints=Constraints '}'
 	//;
 	public GraphicClassElements getGraphicClassAccess() {
@@ -3244,7 +3349,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    'element' ontoClass=[Class|EString]
 	//    'body' '{' physicBody=PhysicBody '}'
 	//    ('forces' '{' forces+=Force ( "," forces+=Force)* '}')?
-	//    'contacts' '{' bitMasks=BitMasks '}'
+	//    ('contacts' '{' bitMasks=BitMasks '}')?
 	//;
 	public PhysicClassElements getPhysicClassAccess() {
 		return pPhysicClass;
@@ -3285,7 +3390,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Force returns Force:
-	//    name=EString ':' 'gesture' gesture=EString
+	//    name=EString ':' 'gesture' gesture=Gesture
 	//    ('[' xVector=EDouble ',' yVector=EDouble ',' zVector=EDouble ']')?
 	//;
 	public ForceElements getForceAccess() {
@@ -3507,7 +3612,7 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//ConstantValue returns ConstantValue:
-	//    value=EString
+	//    value=Constant
 	//;
 	public ConstantValueElements getConstantValueAccess() {
 		return pConstantValue;
@@ -3517,8 +3622,19 @@ public class ArgGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getConstantValueAccess().getRule();
 	}
 	
+	//Constant returns ecore::EString:
+	//    EInt | EString
+	//;
+	public ConstantElements getConstantAccess() {
+		return pConstant;
+	}
+	
+	public ParserRule getConstantRule() {
+		return getConstantAccess().getRule();
+	}
+	
 	//AllInstances returns AllInstances:
-	//    "All" type=EString
+	//    "Number" type=EString
 	//;
 	public AllInstancesElements getAllInstancesAccess() {
 		return pAllInstances;

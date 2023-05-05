@@ -16,7 +16,7 @@
 		"bitMasks":{
 			"category": 1,
 			"collision": 2,
-			"contactTest": 2:
+			"contactTest": 2
 		},
 		"forces":[		
 		{
@@ -43,7 +43,7 @@
 		"bitMasks":{
 			"category": 2,
 			"collision": 1,
-			"contactTest": 1:
+			"contactTest": 1
 		},
 		"forces":[]
 	}]

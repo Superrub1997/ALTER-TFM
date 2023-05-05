@@ -55,7 +55,7 @@ public interface PhysicClass extends EObject {
 	 * @return the value of the '<em>Bit Masks</em>' containment reference.
 	 * @see #setBitMasks(BitMasks)
 	 * @see Ardsl.ArdslPackage#getPhysicClass_BitMasks()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	BitMasks getBitMasks();

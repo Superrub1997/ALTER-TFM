@@ -21,7 +21,7 @@
  				"name": "[objattr.attribute.name /]",
 				"value": "[objattr.value /]"
  			}[/for][ ']' /],
-			"rule": ['[' /][for (rule : Rule | obj.rules) separator(',')]{
+			"rules": ['[' /][for (rule : Rule | obj.rules) separator(',')]{
 				"condition":{
 					[rule.condition.generateElement()/]
 				},

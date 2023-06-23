@@ -25,6 +25,7 @@
       <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//BasicActions/win"/>
       <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//BasicActions/lose"/>
       <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//BasicActions/start"/>
+      <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//BasicActions/restart"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Ardsl.ecore#//Action">
       <genEnumLiterals ecoreEnumLiteral="Ardsl.ecore#//Action/create"/>
@@ -198,6 +199,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ardsl.ecore#//ObjInit/class"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Ardsl.ecore#//ObjInit/attribute"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ardsl.ecore#//ObjInit/rules"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Ardsl.ecore#//ObjInit/rotation"/>
     </genClasses>
     <genClasses ecoreClass="Ardsl.ecore#//ObjAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Ardsl.ecore#//ObjAttribute/attribute"/>

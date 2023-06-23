@@ -16,7 +16,8 @@
 			"class": "[obj.class.name /]",
 			"posX": "[obj.posX /]",
 			"posY": "[obj.posY /]",
-			"posZ": "[obj.posZ /]",
+			"posZ": "[obj.posZ /]",[if(obj.rotation <> 0)]
+			"rotation": [obj.rotation /],[/if]
 			"attributes": [ '[' /][for (objattr : ObjAttribute | obj.attribute) separator(',')]{
  				"name": "[objattr.attribute.name /]",
 				"value": "[objattr.value /]"
@@ -53,7 +54,8 @@
 				"action": "[pc.action /]"[if (pc.changeValue.oclIsUndefined() = false)],
 				"changeValue":[pc.changeValue /][/if][if (pc.scale.oclIsUndefined() = false)],
 				"scale":[pc.scale /][/if][if (pc.attribute.oclIsUndefined() = false)],
-				"attribute":"[pc.attribute /]"[/if][if (pc.position.oclIsUndefined() = false)],
+				"attribute":"[pc.attribute /]"[/if][if (pc.force.oclIsUndefined() = false)],
+				"force":"[pc.force.name /]"[/if][if (pc.position.oclIsUndefined() = false)],
 				"position":"[pc.position /]"[/if]
  			
 			}[/for][ ']' /] 
@@ -69,7 +71,7 @@
 			"finish":[aGame.score.finish /],
 			"lives":[aGame.score.lives /]
 		},
-		"gamePad":[ '[' /][for (gp : GamePad | aGame.gamepad)]{
+		"gamePad":[ '[' /][for (gp : GamePad | aGame.gamepad) separator(',')]{
 			"name":"[gp.name /]",
 			"trigger":"[gp.trigger.name /]"
 		}[/for][ ']' /]

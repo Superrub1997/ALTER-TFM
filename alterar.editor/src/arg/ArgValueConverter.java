@@ -31,4 +31,27 @@ public class ArgValueConverter extends DefaultTerminalConverters {
 			}
 		};
 	}
+	@ValueConverter(rule = "PosOrCamera")
+	public IValueConverter<Double> PosOrCamera() {
+		return new IValueConverter<Double>() {
+
+			@Override
+			public Double toValue(String attr, INode node) throws ValueConverterException {
+				if (Strings.isEmpty(attr))
+                    throw new ValueConverterException("Position cannot be empty", node, null);
+                else if ("camera".equals(attr.trim()))
+                    return 999.0;
+                try {
+                    return Double.valueOf(attr);
+                } catch (NumberFormatException e) {
+                    throw new ValueConverterException(attr+"' is not number", node, e);
+                }
+			}
+
+			@Override
+			public String toString(Double value) throws ValueConverterException {
+				return ((value == 999.0) ? "camera" : Double.toString(value));
+			}
+		};
+	}
 }

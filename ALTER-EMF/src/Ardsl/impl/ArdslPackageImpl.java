@@ -1583,6 +1583,15 @@ public class ArdslPackageImpl extends EPackageImpl implements ArdslPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getObjInit_Rotation() {
+		return (EAttribute)objInitEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getObjAttribute() {
 		return objAttributeEClass;
 	}
@@ -2054,6 +2063,7 @@ public class ArdslPackageImpl extends EPackageImpl implements ArdslPackage {
 		createEReference(objInitEClass, OBJ_INIT__CLASS);
 		createEReference(objInitEClass, OBJ_INIT__ATTRIBUTE);
 		createEReference(objInitEClass, OBJ_INIT__RULES);
+		createEAttribute(objInitEClass, OBJ_INIT__ROTATION);
 
 		objAttributeEClass = createEClass(OBJ_ATTRIBUTE);
 		createEReference(objAttributeEClass, OBJ_ATTRIBUTE__ATTRIBUTE);
@@ -2290,6 +2300,7 @@ public class ArdslPackageImpl extends EPackageImpl implements ArdslPackage {
 		initEReference(getObjInit_Class(), this.getClass_(), null, "class", null, 1, 1, ObjInit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getObjInit_Attribute(), this.getObjAttribute(), null, "attribute", null, 0, -1, ObjInit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getObjInit_Rules(), this.getRule(), null, "rules", null, 0, -1, ObjInit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObjInit_Rotation(), ecorePackage.getEInt(), "rotation", null, 0, 1, ObjInit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(objAttributeEClass, ObjAttribute.class, "ObjAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getObjAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, ObjAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2348,6 +2359,7 @@ public class ArdslPackageImpl extends EPackageImpl implements ArdslPackage {
 		addEEnumLiteral(basicActionsEEnum, BasicActions.WIN);
 		addEEnumLiteral(basicActionsEEnum, BasicActions.LOSE);
 		addEEnumLiteral(basicActionsEEnum, BasicActions.START);
+		addEEnumLiteral(basicActionsEEnum, BasicActions.RESTART);
 
 		initEEnum(actionEEnum, Action.class, "Action");
 		addEEnumLiteral(actionEEnum, Action.CREATE);

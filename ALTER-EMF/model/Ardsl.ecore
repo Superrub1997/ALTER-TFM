@@ -199,6 +199,7 @@
     <eLiterals name="win" value="1"/>
     <eLiterals name="lose" value="2"/>
     <eLiterals name="start" value="3"/>
+    <eLiterals name="restart" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PhysicChange">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="object" lowerBound="1"
@@ -240,6 +241,7 @@
         eType="#//ObjAttribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
         eType="#//Rule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"

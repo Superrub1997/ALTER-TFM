@@ -1,2 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
+    <fullyQualifiedTypeName name="Ontologicals.OntologicalsPackage"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.mwe.internal.core.ast.util.Injector"/>
+    <fullyQualifiedTypeName name="com.google.inject.Injector"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.resource.XtextResourceSet"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.ResourceSet"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.resource.XtextResource"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.xml.type.internal.DataValue.URI"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.util.EcoreUtil"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.impl.ResourceSetImpl"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.eclipse.swt.internal.Platform"/>
+    <fullyQualifiedTypeName name="org.eclipse.jface.dialogs.MessageDialog"/>
+    <fullyQualifiedTypeName name="org.eclipse.core.commands.ExecutionException"/>
+    <fullyQualifiedTypeName name="Ardsl.ArdslPackage"/>
+    <fullyQualifiedTypeName name="org.eclipse.core.commands.AbstractHandler"/>
+    <fullyQualifiedTypeName name="org.eclipse.jface.viewers.IStructuredSelection"/>
+    <fullyQualifiedTypeName name="org.eclipse.core.runtime.Platform"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource"/>
+    <fullyQualifiedTypeName name="org.eclipse.core.runtime.Status"/>
+    <fullyQualifiedTypeName name="java.net.URI"/>
+    <fullyQualifiedTypeName name="Ardsl.impl.ClassImpl"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.common.services.DefaultTerminalConverters"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.conversion.ValueConverter"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.conversion.IValueConverter"/>
+    <fullyQualifiedTypeName name="com.google.common.base.Strings"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.util.Strings"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.conversion.IValueConverterService"/>
+    <fullyQualifiedTypeName name="java.util.Dictionary"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="org.apache.http.client.methods.HttpPost"/>
+    <fullyQualifiedTypeName name="java.net.http.HttpClient"/>
+    <fullyQualifiedTypeName name="java.net.URL"/>
+    <fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
+    <fullyQualifiedTypeName name="java.nio.charset.StandardCharsets"/>
+    <fullyQualifiedTypeName name="java.io.OutputStream"/>
+</qualifiedTypeNameHistroy>

@@ -1618,13 +1618,22 @@ public interface ArdslPackage extends EPackage {
 	int OBJ_INIT__RULES = 6;
 
 	/**
+	 * The feature id for the '<em><b>Rotation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJ_INIT__ROTATION = 7;
+
+	/**
 	 * The number of structural features of the '<em>Obj Init</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJ_INIT_FEATURE_COUNT = 7;
+	int OBJ_INIT_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Obj Init</em>' class.
@@ -3589,6 +3598,17 @@ public interface ArdslPackage extends EPackage {
 	EReference getObjInit_Rules();
 
 	/**
+	 * Returns the meta object for the attribute '{@link Ardsl.ObjInit#getRotation <em>Rotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Rotation</em>'.
+	 * @see Ardsl.ObjInit#getRotation()
+	 * @see #getObjInit()
+	 * @generated
+	 */
+	EAttribute getObjInit_Rotation();
+
+	/**
 	 * Returns the meta object for class '{@link Ardsl.ObjAttribute <em>Obj Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5044,6 +5064,14 @@ public interface ArdslPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OBJ_INIT__RULES = eINSTANCE.getObjInit_Rules();
+
+		/**
+		 * The meta object literal for the '<em><b>Rotation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBJ_INIT__ROTATION = eINSTANCE.getObjInit_Rotation();
 
 		/**
 		 * The meta object literal for the '{@link Ardsl.impl.ObjAttributeImpl <em>Obj Attribute</em>}' class.

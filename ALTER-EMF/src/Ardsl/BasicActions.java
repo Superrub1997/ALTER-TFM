@@ -52,7 +52,15 @@ public enum BasicActions implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	START(3, "start", "start");
+	START(3, "start", "start"), /**
+	 * The '<em><b>Restart</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #RESTART_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	RESTART(4, "restart", "restart");
 
 	/**
 	 * The '<em><b>None</b></em>' literal value.
@@ -99,6 +107,17 @@ public enum BasicActions implements Enumerator {
 	public static final int START_VALUE = 3;
 
 	/**
+	 * The '<em><b>Restart</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #RESTART
+	 * @model name="restart"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int RESTART_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Basic Actions</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,6 +129,7 @@ public enum BasicActions implements Enumerator {
 			WIN,
 			LOSE,
 			START,
+			RESTART,
 		};
 
 	/**
@@ -170,6 +190,7 @@ public enum BasicActions implements Enumerator {
 			case WIN_VALUE: return WIN;
 			case LOSE_VALUE: return LOSE;
 			case START_VALUE: return START;
+			case RESTART_VALUE: return RESTART;
 		}
 		return null;
 	}

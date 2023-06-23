@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Ardsl.ObjInit#getClass_ <em>Class</em>}</li>
  *   <li>{@link Ardsl.ObjInit#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link Ardsl.ObjInit#getRules <em>Rules</em>}</li>
+ *   <li>{@link Ardsl.ObjInit#getRotation <em>Rotation</em>}</li>
  * </ul>
  *
  * @see Ardsl.ArdslPackage#getObjInit()
@@ -162,5 +163,27 @@ public interface ObjInit extends EObject {
 	 * @generated
 	 */
 	EList<Rule> getRules();
+
+	/**
+	 * Returns the value of the '<em><b>Rotation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rotation</em>' attribute.
+	 * @see #setRotation(int)
+	 * @see Ardsl.ArdslPackage#getObjInit_Rotation()
+	 * @model
+	 * @generated
+	 */
+	int getRotation();
+
+	/**
+	 * Sets the value of the '{@link Ardsl.ObjInit#getRotation <em>Rotation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rotation</em>' attribute.
+	 * @see #getRotation()
+	 * @generated
+	 */
+	void setRotation(int value);
 
 } // ObjInit

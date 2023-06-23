@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link Ardsl.impl.ObjInitImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link Ardsl.impl.ObjInitImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link Ardsl.impl.ObjInitImpl#getRules <em>Rules</em>}</li>
+ *   <li>{@link Ardsl.impl.ObjInitImpl#getRotation <em>Rotation</em>}</li>
  * </ul>
  *
  * @generated
@@ -152,6 +153,26 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 	 * @ordered
 	 */
 	protected EList<Rule> rules;
+
+	/**
+	 * The default value of the '{@link #getRotation() <em>Rotation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRotation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ROTATION_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getRotation() <em>Rotation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRotation()
+	 * @generated
+	 * @ordered
+	 */
+	protected int rotation = ROTATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -323,6 +344,27 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getRotation() {
+		return rotation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRotation(int newRotation) {
+		int oldRotation = rotation;
+		rotation = newRotation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArdslPackage.OBJ_INIT__ROTATION, oldRotation, rotation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -357,6 +399,8 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 				return getAttribute();
 			case ArdslPackage.OBJ_INIT__RULES:
 				return getRules();
+			case ArdslPackage.OBJ_INIT__ROTATION:
+				return getRotation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -393,6 +437,9 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 				getRules().clear();
 				getRules().addAll((Collection<? extends Rule>)newValue);
 				return;
+			case ArdslPackage.OBJ_INIT__ROTATION:
+				setRotation((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -426,6 +473,9 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 			case ArdslPackage.OBJ_INIT__RULES:
 				getRules().clear();
 				return;
+			case ArdslPackage.OBJ_INIT__ROTATION:
+				setRotation(ROTATION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -452,6 +502,8 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 				return attribute != null && !attribute.isEmpty();
 			case ArdslPackage.OBJ_INIT__RULES:
 				return rules != null && !rules.isEmpty();
+			case ArdslPackage.OBJ_INIT__ROTATION:
+				return rotation != ROTATION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -474,6 +526,8 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 		result.append(posY);
 		result.append(", posZ: ");
 		result.append(posZ);
+		result.append(", rotation: ");
+		result.append(rotation);
 		result.append(')');
 		return result.toString();
 	}

@@ -508,7 +508,7 @@ public class ArgSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         score=ScoreSystem 
 	 *         (actionsTriggers+=Trigger actionsTriggers+=Trigger*)? 
 	 *         (collisions+=Collision collisions+=Collision*)? 
-	 *         gamepad+=GamePad? 
+	 *         (gamepad+=GamePad gamepad+=GamePad*)? 
 	 *         (objInit+=ObjInit objInit+=ObjInit*)?
 	 *     )
 	 * </pre>
@@ -599,9 +599,10 @@ public class ArgSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (
 	 *         name=EString 
 	 *         class=[Class|EString] 
-	 *         posX=EDouble 
-	 *         posY=EDouble 
-	 *         posZ=EDouble 
+	 *         posX=PosOrCamera 
+	 *         posY=PosOrCamera 
+	 *         posZ=PosOrCamera 
+	 *         rotation=EInt? 
 	 *         (attribute+=ObjAttribute attribute+=ObjAttribute*)? 
 	 *         (rules+=Rule rules+=Rule*)?
 	 *     )

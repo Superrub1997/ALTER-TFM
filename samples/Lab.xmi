@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Ardsl:Ontological xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Ardsl="http://ardsl/1.0" name="Labirinth">
+  <classes name="Ball"/>
+  <classes name="wall"/>
+  <classes name="finish"/>
+  <classes name="Plane"/>
+  <graphic>
+    <classes ontoClass="//@classes.1">
+      <constraints sizeMin="1.0" sizeMax="1.0" overlapping="true"/>
+      <versions name="v1" URL="&quot;https://github.com/Albertojuanse/miso_ar_test/blob/master/Ikea/Ikea/Models.scnassets/wall.scn?raw=true&quot;"/>
+    </classes>
+    <classes ontoClass="//@classes.2">
+      <constraints sizeMin="1.0" sizeMax="1.0" overlapping="true"/>
+      <versions name="v1finish" URL="&quot;https://github.com/Albertojuanse/miso_ar_test/blob/master/Ikea/Ikea/Models.scnassets/finish.scn?raw=true&quot;"/>
+    </classes>
+    <classes ontoClass="//@classes.0">
+      <constraints sizeMin="1.0" sizeMax="2.0" overlapping="true"/>
+      <versions name="v1ball" URL="&quot;https://github.com/Albertojuanse/miso_ar_test/blob/master/Ikea/Ikea/Models.scnassets/Ball.scn?raw=true&quot;"/>
+    </classes>
+    <classes ontoClass="//@classes.2">
+      <constraints sizeMin="1.0" sizeMax="1.0" overlapping="true"/>
+      <versions name="v1finish" URL="&quot;https://github.com/Albertojuanse/miso_ar_test/blob/master/Ikea/Ikea/Models.scnassets/finish.scn?raw=true&quot;"/>
+    </classes>
+    <classes ontoClass="//@classes.3">
+      <constraints sizeMin="1.0" sizeMax="1.0" overlapping="true"/>
+      <versions name="v1plane" URL="&quot;https://github.com/Albertojuanse/miso_ar_test/blob/master/Ikea/Ikea/Models.scnassets/Plane.scn?raw=true&quot;"/>
+    </classes>
+  </graphic>
+  <physic>
+    <classes ontoClass="//@classes.1">
+      <physicBody/>
+      <bitMasks collision="//@classes.0" contact="//@classes.0"/>
+    </classes>
+    <classes ontoClass="//@classes.2">
+      <physicBody/>
+      <bitMasks collision="//@classes.0" contact="//@classes.0"/>
+    </classes>
+    <classes ontoClass="//@classes.3">
+      <physicBody friction="1.0" rollingFriction="1.0"/>
+      <bitMasks collision="//@classes.0" contact="//@classes.0"/>
+    </classes>
+    <classes ontoClass="//@classes.0">
+      <physicBody mass="0.6" bodyType="dynamic" friction="1.0" rollingFriction="1.0" damping="0.1" angularDamping="0.1"/>
+      <forces name="up" xVector="1.0" zVector="-1.0"/>
+      <forces name="down" xVector="-1.0" zVector="1.0"/>
+      <forces name="left" xVector="-1.0" zVector="-1.0"/>
+      <forces name="right" xVector="1.0" zVector="1.0"/>
+    </classes>
+  </physic>
+  <game win="scaped" lose="lost" start="go">
+    <gamepad name="up" trigger="//@game/@actionsTriggers.2"/>
+    <gamepad name="down" trigger="//@game/@actionsTriggers.3"/>
+    <gamepad name="left" trigger="//@game/@actionsTriggers.4"/>
+    <gamepad name="right" trigger="//@game/@actionsTriggers.5"/>
+    <score finish="3" lives="3"/>
+    <actionsTriggers name="gameover" action="lose"/>
+    <actionsTriggers name="winning" action="win"/>
+    <actionsTriggers name="up">
+      <physicChanges object="ball" action="edit" class="//@classes.0" force="//@physic/@classes.3/@forces.0"/>
+    </actionsTriggers>
+    <actionsTriggers name="down">
+      <physicChanges object="ball" action="edit" class="//@classes.0" force="//@physic/@classes.3/@forces.1"/>
+    </actionsTriggers>
+    <actionsTriggers name="left">
+      <physicChanges object="ball" action="edit" class="//@classes.0" force="//@physic/@classes.3/@forces.2"/>
+    </actionsTriggers>
+    <actionsTriggers name="right">
+      <physicChanges object="ball" action="edit" class="//@classes.0" force="//@physic/@classes.3/@forces.3"/>
+    </actionsTriggers>
+    <actionsTriggers name="levelUp" message="LevelUP" scoreChange="1" action="restart">
+      <physicChanges object="floor" action="edit" class="//@classes.3" scale="-0.1"/>
+      <physicChanges object="wallO" action="edit" class="//@classes.1" scale="0.3"/>
+      <physicChanges object="wallE" action="edit" class="//@classes.1" scale="0.3"/>
+      <physicChanges object="wallN" action="edit" class="//@classes.1" scale="0.3"/>
+      <physicChanges object="wallNO" action="edit" class="//@classes.1" scale="0.3"/>
+    </actionsTriggers>
+    <collisions classA="//@classes.0" classB="//@classes.1" action="//@game/@actionsTriggers.0"/>
+    <collisions classA="//@classes.0" classB="//@classes.2" action="//@game/@actionsTriggers.6"/>
+    <objInit name="finish" posX="-2.0" posY="-5.0" posZ="-7.0" class="//@classes.2"/>
+    <objInit name="wallO" posX="-1.0" posY="-5.0" posZ="-6.0" class="//@classes.1"/>
+    <objInit name="wallE" posX="2.0" posY="-5.0" posZ="-2.0" class="//@classes.1"/>
+    <objInit name="wallN" posX="1.0" posY="-6.0" posZ="-5.0" class="//@classes.1"/>
+    <objInit name="wallNO" posX="-2.0" posY="-5.0" posZ="-4.0" class="//@classes.1"/>
+    <objInit name="floor" posY="-5.0" posZ="-5.0" class="//@classes.3"/>
+    <objInit name="ball" posX="2.5" posY="1.0" posZ="-5.0" class="//@classes.0"/>
+  </game>
+</Ardsl:Ontological>

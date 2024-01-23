@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Ardsl:Ontological xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Ardsl="http://ardsl/1.0" name="playground">
+  <classes name="Ball"/>
+  <classes name="Floor"/>
+  <classes name="Box"/>
+  <graphic>
+    <classes ontoClass="//@classes.0">
+      <constraints sizeMin="0.1" sizeMax="1.0" overlapping="true"/>
+      <versions name="ball" URL="&quot;https://github.com/Albertojuanse/miso_ar_test/blob/master/Ikea/Ikea/Models.scnassets/Ball.scn?raw=true&quot;"/>
+    </classes>
+    <classes ontoClass="//@classes.1">
+      <constraints planes="horizontal" sizeMin="1.0" sizeMax="1.0" overlapping="true"/>
+      <versions name="floor" URL="&quot;https://github.com/Albertojuanse/miso_ar_test/blob/master/Ikea/Ikea/Models.scnassets/Floor.scn?raw=true&quot;"/>
+    </classes>
+    <classes ontoClass="//@classes.2">
+      <constraints planes="horizontal" sizeMin="1.0" sizeMax="1.0" overlapping="true"/>
+      <versions name="floor" URL="&quot;https://github.com/Albertojuanse/miso_ar_test/blob/master/Ikea/Ikea/Models.scnassets/Box.scn?raw=true&quot;"/>
+    </classes>
+  </graphic>
+  <physic>
+    <classes ontoClass="//@classes.0">
+      <physicBody mass="0.6" bodyType="dynamic" friction="0.5" restitution="0.5" damping="0.1" angularDamping="0.1"/>
+      <bitMasks collision="//@classes.2 //@classes.1" contact="//@classes.2 //@classes.1"/>
+      <forces name="push" yVector="0.3" zVector="3.0"/>
+      <forces/>
+    </classes>
+    <classes ontoClass="//@classes.1">
+      <physicBody friction="0.5" restitution="0.5" damping="0.1" angularDamping="0.1"/>
+      <bitMasks collision="//@classes.0" contact="//@classes.0"/>
+      <forces gesture="tilt"/>
+    </classes>
+    <classes ontoClass="//@classes.2">
+      <physicBody friction="0.5" restitution="0.5" damping="0.1" angularDamping="0.1"/>
+      <bitMasks collision="//@classes.0" contact="//@classes.0"/>
+    </classes>
+  </physic>
+  <game win="&quot;&quot;" lose="&quot;YOU LOST&quot;" start="&quot;START&quot;">
+    <score finish="-1"/>
+    <actionsTriggers name="levelUp" message="&quot;LEVEL UP&quot;" timeTrigger="10">
+      <physicChanges object="pad" action="edit" class="//@classes.1" scale="-0.1"/>
+    </actionsTriggers>
+    <actionsTriggers name="pointUp" timeTrigger="1" scoreChange="1"/>
+    <actionsTriggers name="penalty" scoreChange="-10"/>
+    <collisions classA="//@classes.0" classB="//@classes.2" action="//@game/@actionsTriggers.2"/>
+    <objInit name="pad" posY="-2.0" posZ="-0.2" class="//@classes.1"/>
+    <objInit name="penaltyBox" posX="-0.3" posY="-1.9" posZ="-0.6" class="//@classes.2"/>
+    <objInit name="ball" posY="-1.0" posZ="-0.2" class="//@classes.0"/>
+  </game>
+</Ardsl:Ontological>

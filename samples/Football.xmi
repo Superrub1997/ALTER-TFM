@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Ardsl:Ontological xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Ardsl="http://ardsl/1.0" name="football">
+  <classes name="ball"/>
+  <classes name="net"/>
+  <classes name="obstacle"/>
+  <classes name="floor"/>
+  <graphic>
+    <classes ontoClass="//@classes.0">
+      <constraints sizeMin="1.0" sizeMax="1.0" overlapping="true"/>
+      <versions name="v1" URL="&quot;.../ball.scn&quot;"/>
+    </classes>
+    <classes ontoClass="//@classes.1">
+      <constraints planes="horizontal" sizeMin="1.0" sizeMax="1.0" overlapping="true"/>
+      <versions name="v1" URL="&quot;.../net.scn&quot;"/>
+    </classes>
+    <classes ontoClass="//@classes.2">
+      <constraints sizeMin="1.0" sizeMax="1.0" overlapping="true"/>
+      <versions name="v1" URL="&quot;.../obstacle.scn&quot;"/>
+      <versions name="v2" URL="&quot;.../poste.scn&quot;"/>
+    </classes>
+    <classes ontoClass="//@classes.3">
+      <constraints sizeMin="1.0" sizeMax="1.0" overlapping="true"/>
+      <versions name="v1" URL="&quot;.../floor.scn&quot;"/>
+    </classes>
+  </graphic>
+  <physic>
+    <classes ontoClass="//@classes.0">
+      <physicBody mass="0.5" bodyType="dynamic" friction="0.5" rollingFriction="0.5" restitution="0.5" damping="0.1" angularDamping="0.1"/>
+      <bitMasks collision="//@classes.3 //@classes.2 //@classes.1" contact="//@classes.3 //@classes.2 //@classes.1"/>
+      <forces name="kick" gesture="drag"/>
+    </classes>
+    <classes ontoClass="//@classes.1">
+      <physicBody/>
+    </classes>
+    <classes ontoClass="//@classes.2">
+      <physicBody/>
+    </classes>
+    <classes ontoClass="//@classes.3">
+      <physicBody friction="0.3" rollingFriction="0.2" restitution="0.5"/>
+    </classes>
+  </physic>
+  <game win="TIMEOVER" lose="TIMEOVER" start="START">
+    <score finish="-1" lives="1"/>
+    <actionsTriggers name="gameover" timeTrigger="60" action="win"/>
+    <actionsTriggers name="gol" scoreChange="1">
+      <physicChanges object="balon" action="delete" class="//@classes.0"/>
+      <physicChanges object="balon" class="//@classes.0"/>
+    </actionsTriggers>
+    <actionsTriggers name="miss">
+      <physicChanges object="balon" action="delete" class="//@classes.0"/>
+      <physicChanges object="balon" class="//@classes.0"/>
+    </actionsTriggers>
+    <collisions classA="//@classes.0" classB="//@classes.1" action="//@game/@actionsTriggers.1"/>
+    <collisions classA="//@classes.0" classB="//@classes.2" action="//@game/@actionsTriggers.2"/>
+    <objInit name="balon" posY="1.0" posZ="1.0" class="//@classes.0"/>
+    <objInit name="porteria" posZ="10.0" class="//@classes.1"/>
+    <objInit name="suelo" class="//@classes.3"/>
+    <objInit name="poste1" posX="5.0" posZ="10.0" class="//@classes.2"/>
+    <objInit name="poste2" posX="-5.0" posZ="10.0" class="//@classes.2"/>
+    <objInit name="limite" posZ="12.0" class="//@classes.2"/>
+    <objInit name="barrera" posZ="5.0" class="//@classes.2"/>
+  </game>
+</Ardsl:Ontological>

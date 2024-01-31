@@ -16,4 +16,4 @@ Import-Package: org.eclipse.core.commands,
  org.eclipse.ui,
  org.eclipse.ui.handlers
 Automatic-Module-Name: alterar.pluginPost
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-11

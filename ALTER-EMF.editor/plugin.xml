@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Ardsl -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="Ardsl.presentation.ArdslModelWizardID"
+            name="%_UI_ArdslModelWizard_label"
+            class="Ardsl.presentation.ArdslModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ArdslModelFile.gif">
+         <description>%_UI_ArdslModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Ardsl -->
+      <editor
+            id="Ardsl.presentation.ArdslEditorID"
+            name="%_UI_ArdslEditor_label"
+            icon="icons/full/obj16/ArdslModelFile.gif"
+            extensions="ardsl"
+            class="Ardsl.presentation.ArdslEditor"
+            contributorClass="Ardsl.presentation.ArdslActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

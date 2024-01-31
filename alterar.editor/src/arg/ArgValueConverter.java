@@ -31,6 +31,29 @@ public class ArgValueConverter extends DefaultTerminalConverters {
 			}
 		};
 	}
+	@ValueConverter(rule = "NoLimit")
+	public IValueConverter<Integer> NoLimit() {
+		return new IValueConverter<Integer>() {
+
+			@Override
+			public Integer toValue(String limit, INode node) throws ValueConverterException {
+				if (Strings.isEmpty(limit))
+                    throw new ValueConverterException("Goal cannot be empty", node, null);
+                else if ("*".equals(limit.trim()))
+                    return -1;
+                try {
+                    return Integer.parseInt(limit);
+                } catch (NumberFormatException e) {
+                    throw new ValueConverterException(limit+"' is not number", node, e);
+                }
+			}
+
+			@Override
+			public String toString(Integer attr) throws ValueConverterException {
+				 return ((attr == -1) ? "*" : Integer.toString(attr));
+			}
+		};
+	}
 	@ValueConverter(rule = "PosOrCamera")
 	public IValueConverter<Double> PosOrCamera() {
 		return new IValueConverter<Double>() {

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ARGDSL.feature"
+      label="ARGDSL"
+      version="1.0.0.qualifier">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="ALTER-EMF"
+         version="0.0.0"/>
+
+   <plugin
+         id="ALTER-EMF.edit"
+         version="0.0.0"/>
+
+   <plugin
+         id="ALTER-EMF.editor"
+         version="0.0.0"/>
+
+   <plugin
+         id="ALTER-EMF.tests"
+         version="0.0.0"/>
+
+   <plugin
+         id="alterar.acceleo"
+         version="0.0.0"/>
+
+   <plugin
+         id="alterar.editor"
+         version="0.0.0"/>
+
+   <plugin
+         id="alterar.editor.ide"
+         version="0.0.0"/>
+
+   <plugin
+         id="alterar.editor.tests"
+         version="0.0.0"/>
+
+   <plugin
+         id="alterar.editor.ui"
+         version="0.0.0"/>
+
+   <plugin
+         id="alterar.editor.ui.tests"
+         version="0.0.0"/>
+
+   <plugin
+         id="alterar.plugin"
+         version="0.0.0"/>
+
+   <plugin
+         id="alterar.pluginPost"
+         version="0.0.0"/>
+
+</feature>

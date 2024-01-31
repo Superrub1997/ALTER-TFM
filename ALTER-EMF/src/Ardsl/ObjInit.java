@@ -23,6 +23,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Ardsl.ObjInit#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link Ardsl.ObjInit#getRules <em>Rules</em>}</li>
  *   <li>{@link Ardsl.ObjInit#getRotation <em>Rotation</em>}</li>
+ *   <li>{@link Ardsl.ObjInit#getForce <em>Force</em>}</li>
+ *   <li>{@link Ardsl.ObjInit#getScale <em>Scale</em>}</li>
  * </ul>
  *
  * @see Ardsl.ArdslPackage#getObjInit()
@@ -185,5 +187,49 @@ public interface ObjInit extends EObject {
 	 * @generated
 	 */
 	void setRotation(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Force</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Force</em>' reference.
+	 * @see #setForce(Force)
+	 * @see Ardsl.ArdslPackage#getObjInit_Force()
+	 * @model
+	 * @generated
+	 */
+	Force getForce();
+
+	/**
+	 * Sets the value of the '{@link Ardsl.ObjInit#getForce <em>Force</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Force</em>' reference.
+	 * @see #getForce()
+	 * @generated
+	 */
+	void setForce(Force value);
+
+	/**
+	 * Returns the value of the '<em><b>Scale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scale</em>' attribute.
+	 * @see #setScale(double)
+	 * @see Ardsl.ArdslPackage#getObjInit_Scale()
+	 * @model
+	 * @generated
+	 */
+	double getScale();
+
+	/**
+	 * Sets the value of the '{@link Ardsl.ObjInit#getScale <em>Scale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Scale</em>' attribute.
+	 * @see #getScale()
+	 * @generated
+	 */
+	void setScale(double value);
 
 } // ObjInit

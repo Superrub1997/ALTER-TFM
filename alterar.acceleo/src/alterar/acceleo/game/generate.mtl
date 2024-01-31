@@ -18,6 +18,8 @@
 			"posY": "[obj.posY /]",
 			"posZ": "[obj.posZ /]",[if(obj.rotation <> 0)]
 			"rotation": [obj.rotation /],[/if]
+			[if(obj.force.oclIsUndefined() = false)]
+			"force": "[obj.force.name /]",[/if]
 			"attributes": [ '[' /][for (objattr : ObjAttribute | obj.attribute) separator(',')]{
  				"name": "[objattr.attribute.name /]",
 				"value": "[objattr.value /]"

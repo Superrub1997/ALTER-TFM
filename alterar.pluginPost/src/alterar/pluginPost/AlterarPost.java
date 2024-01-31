@@ -48,13 +48,13 @@ public class AlterarPost extends AbstractHandler {
 		 // perform action
 		 try {
 			 	String x = new String(file.getContents().readAllBytes(), StandardCharsets.UTF_8);
-				URL url = new URL("https://alter-server.onrender.com/jsonOntological");
+				URL url = new URL("https://miso.ii.uam.es:3001/jsonOntological");
 				if(file.getName().contains("graphic")) {
-					url = new URL("https://alter-server.onrender.com/jsonGraphic");
+					url = new URL("https://miso.ii.uam.es:3001/jsonGraphic");
 				} else if(file.getName().contains("physic")) {
-					url = new URL("https://alter-server.onrender.com/jsonPhysic");
+					url = new URL("https://miso.ii.uam.es:3001/jsonPhysic");
 				} else if(file.getName().contains("gameloop")) {
-					url = new URL("https://alter-server.onrender.com/jsonGameloop");
+					url = new URL("https://miso.ii.uam.es:3001/jsonGameloop");
 				}
 				HttpURLConnection con = (HttpURLConnection)url.openConnection();
 				con.setRequestMethod("POST");

@@ -82,7 +82,7 @@ public interface PhysicChange extends EObject {
 	 * @return the value of the '<em>Class</em>' reference.
 	 * @see #setClass(Ardsl.Class)
 	 * @see Ardsl.ArdslPackage#getPhysicChange_Class()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	Ardsl.Class getClass_();

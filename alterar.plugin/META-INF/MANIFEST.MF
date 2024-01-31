@@ -15,6 +15,8 @@ Import-Package: alterar.acceleo.main,
  org.eclipse.jface.viewers,
  org.eclipse.swt,
  org.eclipse.ui,
- org.eclipse.ui.handlers
+ org.eclipse.ui.handlers,
+ org.eclipse.ui.plugin,
+ org.osgi.framework;version="1.10.0"
 Automatic-Module-Name: alterar.plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-11

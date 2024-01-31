@@ -166,14 +166,16 @@ GamePad returns GamePad:
 
 ScoreSystem returns ScoreSystem:
 	'start' start=EInt
-	'goal' finish=EInt
+	'finish' finish=NoLimit
 	'lives' lives=EInt
 ;
+NoLimit returns ecore::EIntegerObject:
+    '*' | INT;
 
 Trigger returns Trigger:
 	name=EString '{'
 	('action' action=BasicActions)?
-	('display' message=EString)?
+	('message' message=EString)?
 	('score' scoreChange=EInt)?
 	('timeEach' timeTrigger=EInt)?
 	('changes' '{' physicChanges+=PhysicChange ( physicChanges+=PhysicChange)* '}' )?
@@ -188,6 +190,8 @@ ObjInit returns ObjInit:
 	name=EString ':' class=[Class|EString] '[' posX=PosOrCamera ',' posY=PosOrCamera ',' posZ=PosOrCamera (',' rotation=EInt)? ']'
 	('attributes' '{' attribute+=ObjAttribute (',' attribute+=ObjAttribute)* '}')?
 	('rules' '{' rules+=Rule (',' rules+=Rule)* '}')?
+	('force' force=[Force|EString])?
+	('scale' scale=EDouble)?
 ;
 
 PosOrCamera returns ecore::EDoubleObject:
@@ -195,9 +199,9 @@ PosOrCamera returns ecore::EDoubleObject:
 
 PhysicChange returns PhysicChange:
 	'do' action=Action
-	'in' class=[Class|EString]
-	'named' object=EString
-	('where' position=Position)?
+	(('in')? class=[Class|EString])?
+	('named')? object=EString
+	('at' position=Position)?
 	('scale' scale=EDouble)?
 	('stat' attribute=EString)?
 	('changeStat' changeValue=EInt)?

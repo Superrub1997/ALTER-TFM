@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/ARGDSL.feature_1.0.0.202401311358.jar" id="ARGDSL.feature" version="1.0.0.202401311358">
+      <category name="ARGDSL"/>
+   </feature>
+   <category-def name="ARGDSL" label="ARGDSL"/>
+</site>

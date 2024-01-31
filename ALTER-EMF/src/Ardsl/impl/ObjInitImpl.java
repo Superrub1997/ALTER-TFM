@@ -3,6 +3,7 @@
 package Ardsl.impl;
 
 import Ardsl.ArdslPackage;
+import Ardsl.Force;
 import Ardsl.ObjAttribute;
 import Ardsl.ObjInit;
 import Ardsl.Rule;
@@ -39,6 +40,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link Ardsl.impl.ObjInitImpl#getAttribute <em>Attribute</em>}</li>
  *   <li>{@link Ardsl.impl.ObjInitImpl#getRules <em>Rules</em>}</li>
  *   <li>{@link Ardsl.impl.ObjInitImpl#getRotation <em>Rotation</em>}</li>
+ *   <li>{@link Ardsl.impl.ObjInitImpl#getForce <em>Force</em>}</li>
+ *   <li>{@link Ardsl.impl.ObjInitImpl#getScale <em>Scale</em>}</li>
  * </ul>
  *
  * @generated
@@ -173,6 +176,36 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 	 * @ordered
 	 */
 	protected int rotation = ROTATION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getForce() <em>Force</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getForce()
+	 * @generated
+	 * @ordered
+	 */
+	protected Force force;
+
+	/**
+	 * The default value of the '{@link #getScale() <em>Scale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScale()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double SCALE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getScale() <em>Scale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScale()
+	 * @generated
+	 * @ordered
+	 */
+	protected double scale = SCALE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -365,6 +398,65 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Force getForce() {
+		if (force != null && force.eIsProxy()) {
+			InternalEObject oldForce = (InternalEObject)force;
+			force = (Force)eResolveProxy(oldForce);
+			if (force != oldForce) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArdslPackage.OBJ_INIT__FORCE, oldForce, force));
+			}
+		}
+		return force;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Force basicGetForce() {
+		return force;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setForce(Force newForce) {
+		Force oldForce = force;
+		force = newForce;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArdslPackage.OBJ_INIT__FORCE, oldForce, force));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double getScale() {
+		return scale;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setScale(double newScale) {
+		double oldScale = scale;
+		scale = newScale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ArdslPackage.OBJ_INIT__SCALE, oldScale, scale));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -401,6 +493,11 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 				return getRules();
 			case ArdslPackage.OBJ_INIT__ROTATION:
 				return getRotation();
+			case ArdslPackage.OBJ_INIT__FORCE:
+				if (resolve) return getForce();
+				return basicGetForce();
+			case ArdslPackage.OBJ_INIT__SCALE:
+				return getScale();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -440,6 +537,12 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 			case ArdslPackage.OBJ_INIT__ROTATION:
 				setRotation((Integer)newValue);
 				return;
+			case ArdslPackage.OBJ_INIT__FORCE:
+				setForce((Force)newValue);
+				return;
+			case ArdslPackage.OBJ_INIT__SCALE:
+				setScale((Double)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -476,6 +579,12 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 			case ArdslPackage.OBJ_INIT__ROTATION:
 				setRotation(ROTATION_EDEFAULT);
 				return;
+			case ArdslPackage.OBJ_INIT__FORCE:
+				setForce((Force)null);
+				return;
+			case ArdslPackage.OBJ_INIT__SCALE:
+				setScale(SCALE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -504,6 +613,10 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 				return rules != null && !rules.isEmpty();
 			case ArdslPackage.OBJ_INIT__ROTATION:
 				return rotation != ROTATION_EDEFAULT;
+			case ArdslPackage.OBJ_INIT__FORCE:
+				return force != null;
+			case ArdslPackage.OBJ_INIT__SCALE:
+				return scale != SCALE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -528,6 +641,8 @@ public class ObjInitImpl extends MinimalEObjectImpl.Container implements ObjInit
 		result.append(posZ);
 		result.append(", rotation: ");
 		result.append(rotation);
+		result.append(", scale: ");
+		result.append(scale);
 		result.append(')');
 		return result.toString();
 	}
